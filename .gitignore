@@ -1,0 +1,8 @@
+*.py[co]
+*.log
+.*.swp
+~*
+parts/*
+bin/*
+eggs/*
+var/*
