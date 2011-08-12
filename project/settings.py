@@ -75,7 +75,7 @@ STATIC_URL = '/static/'
 # URL prefix for admin static files -- CSS, JavaScript and images.
 # Make sure to use a trailing slash.
 # Examples: "http://foo.com/static/admin/", "/static/admin/".
-ADMIN_MEDIA_PREFIX = '/static/admin/'
+ADMIN_MEDIA_PREFIX = STATIC_URL + 'grappelli/'
 
 # Additional locations of static files
 STATICFILES_DIRS = (
@@ -126,13 +126,9 @@ BASE_INSTALLED_APPS = (
     'south',
     'linaro_django_pagination',
     'django_extensions',
-
-
-    #'django.contrib.admin',
-    #'django.contrib.admindocs',
 )
 
-INSTALLED_APPS = BASE_INSTALLED_APPS + (,)
+INSTALLED_APPS = BASE_INSTALLED_APPS + ()
 
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to
