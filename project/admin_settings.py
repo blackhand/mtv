@@ -10,4 +10,6 @@ INSTALLED_APPS = BASE_INSTALLED_APPS + (
     'django.contrib.admin',
 )
 
-ROOT_URLCONF = 'project.admin_urls'
+ROOT_URLCONF = 'admin_urls'
+
+GRAPPELLI_ADMIN_TITLE = 'CMS - MANEJA TU VIDA CON NOSOTRAS'
