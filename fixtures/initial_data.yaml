@@ -1,0 +1,20 @@
+-   fields: 
+        domain: 0.0.0.0:9000
+        name: Admin CMS
+    model: sites.site
+    pk: 1
+-   fields:
+        date_joined: 2011-08-19 13:08:48
+        email: admin@example.net
+        first_name: ''
+        groups: []
+        is_active: true
+        is_staff: true
+        is_superuser: true
+        last_login: 2011-08-19 13:09:48
+        last_name: ''
+        password: sha1$516ee$8201caf8bea7c7f218b7f37f47fd283d5206f3ac
+        user_permissions: []
+        username: admin
+    model: auth.user
+    pk: 1

@@ -8,7 +8,7 @@ from django.db import models
 
 class Ubigeo(models.Model):
     name = models.CharField('nombre', max_length=255)
-    parent = models.ForeignKey("self")
+    parent = models.ForeignKey('self', blank=True, null=True, default=None)
     
     class Meta:
         verbose_name = 'Ubigeo'

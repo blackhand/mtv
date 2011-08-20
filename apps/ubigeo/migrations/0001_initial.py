@@ -12,7 +12,7 @@ class Migration(SchemaMigration):
         db.create_table('ubigeo_ubigeo', (
             ('id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
             ('name', self.gf('django.db.models.fields.CharField')(max_length=255)),
-            ('parent', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['ubigeo.Ubigeo'])),
+            ('parent', self.gf('django.db.models.fields.related.ForeignKey')(default=None, to=orm['ubigeo.Ubigeo'], null=True, blank=True)),
         ))
         db.send_create_signal('ubigeo', ['Ubigeo'])
 
@@ -28,7 +28,7 @@ class Migration(SchemaMigration):
             'Meta': {'object_name': 'Ubigeo'},
             'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
             'name': ('django.db.models.fields.CharField', [], {'max_length': '255'}),
-            'parent': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['ubigeo.Ubigeo']"})
+            'parent': ('django.db.models.fields.related.ForeignKey', [], {'default': 'None', 'to': "orm['ubigeo.Ubigeo']", 'null': 'True', 'blank': 'True'})
         }
     }
 

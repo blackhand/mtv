@@ -43,7 +43,7 @@ TIME_ZONE = 'America/Lima'
 # http://www.i18nguy.com/unicode/language-identifiers.html
 LANGUAGE_CODE = 'es-pe'
 
-SITE_ID = 1
+SITE_ID = 2
 
 # If you set this to False, Django will make some optimizations so as not
 # to load the internationalization machinery.
@@ -129,6 +129,11 @@ BASE_INSTALLED_APPS = (
 )
 
 INSTALLED_APPS = BASE_INSTALLED_APPS + ()
+
+
+FIXTURE_DIRS = (
+    join(BUILD_DIR, 'fixtures'),
+)
 
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to
