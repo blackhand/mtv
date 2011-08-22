@@ -130,10 +130,13 @@ BASE_INSTALLED_APPS = (
 
 INSTALLED_APPS = BASE_INSTALLED_APPS + ()
 
-
+# Fixtures
 FIXTURE_DIRS = (
     join(BUILD_DIR, 'fixtures'),
 )
+
+# Profile
+AUTH_PROFILE_MODULE = 'profile.Profile'
 
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to
