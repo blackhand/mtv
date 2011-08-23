@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from django.db import models
+from django.contrib.auth.models import User
 from ubigeo.models import Ubigeo
 
 
@@ -21,20 +22,37 @@ class Profile(models.Model):
     document_code   = models.CharField('DNI', max_length=8)
     is_participant  = models.BooleanField('Participa', default=False, editable=False)
 
+    objects = models.Manager()
     
     class Meta:
         verbose_name = 'Usuaria Registrado'
         verbose_name_plural = 'Usuarias Registradas'
     
     def __unicode__(self):
-        return u'%s %s'% (self.first_name, self.last_name)
+        return u'%s %s %s'% (self.first_name, self.first_surname, self.second_surname)
+
+    def generate_username(self):
+        return self.email.replace('@','_').replace('.','_')
+
     
-    def save(self, force_insert=False, force_update=False):
+    def save(self, *args, **kwargs):
         """
         we overload here save to maintain sincronized User with Profile model
         first_name, last_name and email fields Profile fields -> User fields
         """
-        super(Profile, self).save(force_insert=force_insert, force_update=force_update)
+        try:
+            user = self.user
+        except User.DoesNotExist:
+            user = User(username=self.generate_username(), email=self.email)
+            user.set_unusable_password()
+            user.save()
+            self.user = user
+
+        user.first_name = self.first_name
+        user.last_name = u'%s %s' % (self.first_surname, self.second_surname)
+        user.email = self.email
+        user.save()
+        super(Profile, self).save(*args, **kwargs)
     
     @models.permalink
     def get_absolute_url(self):

@@ -126,10 +126,11 @@ BASE_INSTALLED_APPS = (
     'south',
     'linaro_django_pagination',
     'django_extensions',
-    'registration',
 )
 
-INSTALLED_APPS = BASE_INSTALLED_APPS + ()
+INSTALLED_APPS = BASE_INSTALLED_APPS + (
+    'registration',
+)
 
 # Fixtures
 FIXTURE_DIRS = (
