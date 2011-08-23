@@ -19,5 +19,6 @@ urlpatterns = patterns('',
         register,
         {'backend': 'registration.backends.simple.SimpleBackend','form_class':ProfileForm},
         name='registration_register'),
+    (r'^accounts/form/', 'profile.views.register'),
     (r'^accounts/', include('registration.backends.simple.urls')),
 )
