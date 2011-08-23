@@ -15,3 +15,28 @@ class Ubigeo(models.Model):
     class Meta:
         verbose_name = 'Ubigeo'
         verbose_name_plural = 'Ubigeos'
+
+    def __unicode__(self):
+        return u'%s' % self.name
+
+    def is_department(self):
+        return bool(not self.parent)
+
+    def is_province(self):
+        return bool(self.parent and not self.parent.parent)
+
+    def is_district(self):
+        return bool(self.parent and self.parent.parent)
+
+    def department(self):
+        return self.name if not self.parent else self.department(self.parent)
+
+    def province(self):
+        parent = self.parent
+        return None if not parent else parent.name if not parent.parent else parent.parent.name
+
+    def district(self):
+        parent = self.parent
+        return None if not (parent or parent.parent) else parent.parent.name
+
+

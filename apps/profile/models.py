@@ -8,9 +8,10 @@ class Profile(models.Model):
     """
     Generic Profile for Sancela - Nosotras - MTV registered users
     """
-    user            = models.OneToOneField('auth.User')
+    user            = models.OneToOneField('auth.User', editable=False)
     first_name      = models.CharField('nombres', max_length=64)
-    last_name       = models.CharField('apellidos', max_length=64)
+    first_surname   = models.CharField('apellidos', max_length=64)
+    second_surname  = models.CharField('apellidos', max_length=64)
     email           = models.EmailField('email', unique=True)
     birth_date      = models.DateField('fecha de nacimiento')
     ubigeo          = models.ForeignKey(Ubigeo, verbose_name='ubigeo')
@@ -18,6 +19,8 @@ class Profile(models.Model):
     home_phone      = models.CharField('telefono fijo', max_length=9)
     mobile_phone    = models.CharField('movil', max_length=9)
     document_code   = models.CharField('DNI', max_length=8)
+    is_participant  = models.BooleanField('Participa', default=False, editable=False)
+
     
     class Meta:
         verbose_name = 'Usuaria Registrado'
