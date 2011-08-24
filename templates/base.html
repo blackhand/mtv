@@ -13,8 +13,8 @@
         <link rel="shortcut icon" type="image/x-icon" href="http://dev.tribalperu.com/sancela_nosotras/favicon.ico">
     {% endblock %}
     {% block css %}
-        <link rel="stylesheet" type="text/css" href="./Maneja tu vida con Nosotras_files/style.css">
-        <link rel="stylesheet" type="text/css" href="./Maneja tu vida con Nosotras_files/jquery.jscrollpane.css">
+        <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/style.css">
+        <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/jquery.jscrollpane.css">
     {% endblock %}
 </head>
 <body id="bg-horizontal">
@@ -55,8 +55,8 @@
 						<div class="content-cycle">
 							<a href="javascript:void(0)" class="prev"></a>
 							<div class="cycle" style="position: relative; overflow-x: hidden; overflow-y: hidden; ">
-								<span style="position: absolute; opacity: 1; width: 404px; height: 142px; z-index: 2; top: 0px; left: -404px; display: none; "><img src="./Maneja tu vida con Nosotras_files/img-cycle-suzuki-vitara.png" width="399" height="113" alt=""></span>
-								<span style="position: absolute; z-index: 3; top: 0px; opacity: 1; display: block; width: 404px; height: 142px; left: 0px; "><img src="./Maneja tu vida con Nosotras_files/img-cycle-suzuki-vitara.png" width="399" height="113" alt=""></span>
+								<span style="position: absolute; opacity: 1; width: 404px; height: 142px; z-index: 2; top: 0px; left: -404px; display: none; "><img src="{{ STATIC_URL }}img-cycle-suzuki-vitara.png" width="399" height="113" alt=""></span>
+								<span style="position: absolute; z-index: 3; top: 0px; opacity: 1; display: block; width: 404px; height: 142px; left: 0px; "><img src="{{ STATIC_URL }}img-cycle-suzuki-vitara.png" width="399" height="113" alt=""></span>
 							</div>
 							<a href="javascript:void(0)" class="next"></a>
 						</div>
@@ -65,8 +65,8 @@
 						<div class="content-cycle">
 							<a href="javascript:void(0)" class="prev"></a>
 							<div class="cycle" style="overflow-x: hidden; overflow-y: hidden; position: relative; ">
-								<span style="opacity: 1; position: absolute; z-index: 2; top: 0px; left: 0px; display: none; "><img src="./Maneja tu vida con Nosotras_files/img-cycle-suzuki-swift.png" width="399" height="113" alt=""></span>
-								<span style="position: absolute; z-index: 3; top: 0px; opacity: 1; display: block; left: 0px; "><img src="./Maneja tu vida con Nosotras_files/img-cycle-suzuki-swift.png" width="399" height="113" alt=""></span>
+								<span style="opacity: 1; position: absolute; z-index: 2; top: 0px; left: 0px; display: none; "><img src="{{ STATIC_URL }}img-cycle-suzuki-swift.png" width="399" height="113" alt=""></span>
+								<span style="position: absolute; z-index: 3; top: 0px; opacity: 1; display: block; left: 0px; "><img src="{{ STATIC_URL }}img-cycle-suzuki-swift.png" width="399" height="113" alt=""></span>
 							</div>
 							<a href="javascript:void(0)" class="next"></a>
 						</div>
@@ -75,8 +75,8 @@
 						<div class="content-cycle">
 							<a href="javascript:void(0)" class="prev"></a>
 							<div class="cycle" style="overflow-x: hidden; overflow-y: hidden; position: relative; ">
-								<span style="opacity: 1; position: absolute; z-index: 2; top: 0px; left: 0px; display: none; "><img src="./Maneja tu vida con Nosotras_files/img-cycle-ipod.png" width="399" height="113" alt=""></span>
-								<span style="position: absolute; z-index: 3; top: 0px; opacity: 1; display: block; left: 0px; "><img src="./Maneja tu vida con Nosotras_files/img-cycle-ipod.png" width="399" height="113" alt=""></span>
+								<span style="opacity: 1; position: absolute; z-index: 2; top: 0px; left: 0px; display: none; "><img src="{{ STATIC_URL }}img-cycle-ipod.png" width="399" height="113" alt=""></span>
+								<span style="position: absolute; z-index: 3; top: 0px; opacity: 1; display: block; left: 0px; "><img src="{{ STATIC_URL }}img-cycle-ipod.png" width="399" height="113" alt=""></span>
 							</div>
 							<a href="javascript:void(0)" class="next"></a>
 						</div>
@@ -104,12 +104,12 @@
 
 
 {% block js %}
-<script type="text/javascript" src="./Maneja tu vida con Nosotras_files/jquery-1.4.2.min.js"></script>
-<script type="text/javascript" src="./Maneja tu vida con Nosotras_files/jquery.pngFix.js"></script>
-<script type="text/javascript" src="./Maneja tu vida con Nosotras_files/jquery.jscrollpane.min.js"></script>
-<script type="text/javascript" src="./Maneja tu vida con Nosotras_files/jquery.mousewheel.js"></script>
-<script type="text/javascript" src="./Maneja tu vida con Nosotras_files/jquery.cycle.all.2.74.js"></script>
-<script type="text/javascript" src="./Maneja tu vida con Nosotras_files/init.js"></script>
+<script type="text/javascript" src="{{ STATIC_URL }}js/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="{{ STATIC_URL }}js/jquery.pngFix.js"></script>
+<script type="text/javascript" src="{{ STATIC_URL }}js/jquery.jscrollpane.min.js"></script>
+<script type="text/javascript" src="{{ STATIC_URL }}js/jquery.mousewheel.js"></script>
+<script type="text/javascript" src="{{ STATIC_URL }}js/jquery.cycle.all.2.74.js"></script>
+<script type="text/javascript" src="{{ STATIC_URL }}js/init.js"></script>
 <script>window["_GOOG_TRANS_EXT_VER"] = "1";</script>
 {% endblock js %}
 </body>
