@@ -11,7 +11,6 @@ class ProfileAdmin(admin.ModelAdmin):
     """
     ModelAdmin for Profile
     """
-    exclude = ('user',)
 
 
 admin.site.register(Profile, ProfileAdmin)

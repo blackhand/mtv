@@ -124,12 +124,12 @@ BASE_INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'south',
-    'linaro_django_pagination',
     'django_extensions',
 )
 
 INSTALLED_APPS = BASE_INSTALLED_APPS + (
-    'registration',
+    'linaro_django_pagination',
+    'home',
 )
 
 # Fixtures
