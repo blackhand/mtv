@@ -10,15 +10,24 @@
 <meta http-equiv="cache-control" content="no-cache" />
 <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
 <link rel="stylesheet" type="text/css" href="css/style.css" />
-<link rel="stylesheet" type="text/css" href="css/jquery.jscrollpane.css">
+<link rel="stylesheet" type="text/css" href="css/jquery.jscrollpane.css" />
+<link rel="stylesheet" type="text/css" href="css/colorbox.css" />
 <script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
 <script type="text/javascript" src="js/jquery.pngFix.js"></script>
 <script type="text/javascript" src="js/jquery.jscrollpane.min.js"></script>
 <script type="text/javascript" src="js/jquery.mousewheel.js"></script>
 <script type="text/javascript" src="js/jquery.cycle.all.2.74.js"></script>
+<script type="text/javascript" src="js/jquery.colorbox.js"></script>
 <script type="text/javascript" src="js/init.js"></script>
+<script>
+$(document).ready(function(){
+	$("#ganadoras").colorbox({iframe:true, innerWidth:547, innerHeight:381});
+	$("#bases").colorbox({iframe:true, innerWidth:974, innerHeight:653});
+	$("#contactenos").colorbox({iframe:true, innerWidth:974, innerHeight:653});
+});
+</script>
 </head>
-<body id="bg-horizontal">
+<body>
 <div class="wrapper">
 	<div class="header">
 		<div class="h-logo"></div>
@@ -28,276 +37,307 @@
 		</div>
 		<ul class="h-menu">
 			<li><a href="javascript:void(0)" class="on">Iniciar sesión</a></li>
-			<li><a href="javascript:void(0)">Ganadoras</a></li>
-			<li><a href="javascript:void(0)">Bases</a></li>
-			<li><a href="javascript:void(0)">Contáctenos</a></li>
+			<li><a id="ganadoras" href="ganadoras.html">Ganadoras</a></li>
+			<li><a id="bases" href="bases.html">Bases</a></li>
+			<li><a id="contactenos" href="contactenos.html">Contáctenos</a></li>
 		</ul>
-		<!-- content inicio-->
-		
-		<!--<div class="form1">
-			<h1>Ingresa la clave de tu empaque y participa del sorteo de <b>1 Grand Vitara, 1 Suzuki Swift y 1 iPod diario</b> que regala Nosotras.</h1>
-			<ul class="formulario1">
-				<li class="text">Correo electrónico:*</li>
+	</div>
+	<div class="clear"></div>
+	<!-- content inicio-->
+	
+	<!--<div class="form1">
+		<h1>Ingresa la clave de tu empaque y participa del sorteo de <b>1 Grand Vitara, 1 Suzuki Swift y 1 iPod diario</b> que regala Nosotras.</h1>
+		<ul class="formulario1">
+			<li class="text">Correo electrónico:*</li>
+			<li class="textbox"><input id="" name="" type="text" /></li>
+			<li class="text">Fecha de nacimiento:*</li>
+			<li class="textbox">
+				<select id="" name="" class="cboDia">
+					<option value="">Día</option>
+				</select>
+				<select id="" name="" class="cboMes">
+					<option value="">Mes</option>
+				</select>
+				<select id="" name="" class="cboAnio">
+					<option value="">Año</option>
+				</select>
+			</li>
+			<li class="text">&nbsp;</li>
+			<li class="textbox">&nbsp;</li>
+			<li class="msg">Mensaje de error al ingresar email y/o fec. Nac</li>
+			<li class="botones">
+				<a href="javascript:void(0)" class="btn-enviar"></a>
+				<a href="javascript:void(0)" class="btn-borrar"></a>
+			</li>
+			<li class="msg">(*) Campos obliigatorios</li>
+		</ul>
+	</div>-->
+	
+	<!--<div class="form2">
+		<h1>Regístrate para ingresar tus claves</h1>
+		<ul class="form-reg">
+			<div class="scroll-pane">
+				<li class="text">Correo electrónico (*)</li>
 				<li class="textbox"><input id="" name="" type="text" /></li>
-				<li class="text">Fecha de nacimiento:*</li>
+				<li class="text">Fecha de nacimiento (*)</li>
 				<li class="textbox">
 					<select id="" name="" class="cboDia">
-						<option value="">Día</option>
+						<option value="">[día]</option>
 					</select>
 					<select id="" name="" class="cboMes">
-						<option value="">Mes</option>
+						<option value="">[mes]</option>
 					</select>
 					<select id="" name="" class="cboAnio">
-						<option value="">Año</option>
+						<option value="">[año]</option>
 					</select>
 				</li>
-				<li class="text">&nbsp;</li>
-				<li class="textbox">&nbsp;</li>
-				<li class="msg">Mensaje de error al ingresar email y/o fec. Nac</li>
-				<li class="botones">
-					<a href="javascript:void(0)" class="btn-enviar"></a>
-					<a href="javascript:void(0)" class="btn-borrar"></a>
+				<li class="text">Nombres (*)</li>
+				<li class="textbox"><input id="" name="" type="text" /></li>
+				<li class="text">Apellido paterno (*)</li>
+				<li class="textbox"><input id="" name="" type="text" /></li>
+				<li class="text">Apellido materno (*)</li>
+				<li class="textbox"><input id="" name="" type="text" /></li>
+				<li class="text">Departamento (*)</li>
+				<li class="textbox">
+					<select id="" name="" class="cboUbigeo">
+						<option value="">[seleccionar]</option>
+					</select>
 				</li>
-				<li class="msg">(*) Campos obliigatorios</li>
-			</ul>
-		</div>-->
-		
-		<!--<div class="form2">
-			<h1>Regístrate para ingresar tus claves</h1>
-			<ul class="form-reg">
-				<div class="scroll-pane">
-					<li class="text">Correo electrónico (*)</li>
-					<li class="textbox"><input id="" name="" type="text" /></li>
-					<li class="text">Fecha de nacimiento (*)</li>
-					<li class="textbox">
-						<select id="" name="" class="cboDia">
-							<option value="">[día]</option>
-						</select>
-						<select id="" name="" class="cboMes">
-							<option value="">[mes]</option>
-						</select>
-						<select id="" name="" class="cboAnio">
-							<option value="">[año]</option>
-						</select>
-					</li>
-					<li class="text">Nombres (*)</li>
-					<li class="textbox"><input id="" name="" type="text" /></li>
-					<li class="text">Apellido paterno (*)</li>
-					<li class="textbox"><input id="" name="" type="text" /></li>
-					<li class="text">Apellido materno (*)</li>
-					<li class="textbox"><input id="" name="" type="text" /></li>
-					<li class="text">Departamento (*)</li>
-					<li class="textbox">
-						<select id="" name="" class="cboUbigeo">
-							<option value="">[seleccionar]</option>
-						</select>
-					</li>
-					<li class="text">Provincia (*)</li>
-					<li class="textbox">
-						<select id="" name="" class="cboUbigeo">
-							<option value="">[seleccionar]</option>
-						</select>
-					</li>
-					<li class="text">Distrito (*)</li>
-					<li class="textbox">
-						<select id="" name="" class="cboUbigeo">
-							<option value="">[seleccionar]</option>
-						</select>
-					</li>
-					<li class="text">Dirección (*)</li>
-					<li class="textbox"><input id="" name="" type="text" /></li>
-					<li class="text">Teléfono casa (*)</li>
-					<li class="textbox"><input id="" name="" type="text" /></li>
-					<li class="text">Teléfono celular (*)</li>
-					<li class="textbox"><input id="" name="" type="text" /></li>
-					<li class="text">Tipo documento (*)</li>
-					<li class="textbox">
-						<select id="" name="" class="cboUbigeo">
-							<option value="">[seleccionar]</option>
-						</select>
-					</li>
-					<li class="text">Número documento (*)</li>
-					<li class="textbox"><input id="" name="" type="text" /></li>
-				</div>
-				<li class="text">&nbsp;</li>
-				<li class="textbox">&nbsp;</li>
-				<li class="botones">
-					<span class="msg">(*) Campos obliigatorios</span>
-					<a href="javascript:void(0)" class="btn-enviar"></a>
-					<a href="javascript:void(0)" class="btn-borrar"></a>
+				<li class="text">Provincia (*)</li>
+				<li class="textbox">
+					<select id="" name="" class="cboUbigeo">
+						<option value="">[seleccionar]</option>
+					</select>
 				</li>
-			</ul>
-		</div>-->
-		
-		<!--<div class="form1">
-			<h1>Ingresa la clave de tu empaque y participa del sorteo de <b>un iPod diario y<br />dos autos que regala Nosotras</b>.</h1>
-			<ul class="formulario3">
-				<li class="text">Ingresa tu clave de empaque:</li>
-				<li class="textbox"><input id="" name="" type="text" /> <a href="javascript:void(0)" class="btn-interrogante" onclick="codEmpaque()"></a><span class="codigo-empaque hidden" style="visibility:hidden;"></span></li>
-				<li class="clear">&nbsp;</li>
-				<li class="captcha">
-					<span class="captcha_image"><img src="images/img-captcha.gif" width="215" height="50" alt="" /></span>
-					<span class="captcha_textbox"><input id="" name="" type="text" /></span>
+				<li class="text">Distrito (*)</li>
+				<li class="textbox">
+					<select id="" name="" class="cboUbigeo">
+						<option value="">[seleccionar]</option>
+					</select>
 				</li>
-				<li class="botones">
-					<a href="javascript:void(0)" class="btn-enviar"></a>
-					<a href="javascript:void(0)" class="btn-borrar"></a>
+				<li class="text">Dirección (*)</li>
+				<li class="textbox"><input id="" name="" type="text" /></li>
+				<li class="text">Teléfono casa (*)</li>
+				<li class="textbox"><input id="" name="" type="text" /></li>
+				<li class="text">Teléfono celular (*)</li>
+				<li class="textbox"><input id="" name="" type="text" /></li>
+				<li class="text">Tipo documento (*)</li>
+				<li class="textbox">
+					<select id="" name="" class="cboUbigeo">
+						<option value="">[seleccionar]</option>
+					</select>
 				</li>
-				<li class="msg">Recuerda que participará en el sorteo del día, las claves ingresadas desde las 00 horas hasta las 23:59. No son acumulables. ** Recuerda guardar el empaque con la clave.</li>
-			</ul>
-		</div>-->
-		
-		<!--<div class="form3">
-			<p class="messages"><span>Suerte,</span> Catherin Rivera</p>
-			<p>&nbsp;</p>
-			<div class="content-msg"><img src="images/txt-clave-satisfactoria.png" width="377" height="67" alt="" /></div>
-			<p>&nbsp;</p>
-			<div class="content-msg"><a href="javascript:void(0)" class="btn-ingresa-otra-clave"></a></div>
-		</div>-->
-		
-		<!--<div class="form3">
-			<p class="messages"><span>Lo sentimos</span> Catherin Rivera</p>
-			<p>&nbsp;</p>
-			<div class="content-msg"><img src="images/txt-clave-ingresada-igual.png" width="329" height="56" alt="" /></div>
-			<p>&nbsp;</p>
-			<div class="content-msg"><a href="javascript:void(0)" class="btn-ingresa-otra-clave"></a></div>
-		</div>-->
-		
-		<!--<div class="form3">
-			<p class="messages"><span>Lo sentimos</span> Catherin Rivera</p>
-			<p>&nbsp;</p>
-			<div class="content-msg"><img src="images/txt-clave-ingresada-no-valida.png" width="346" height="55" alt="" /></div>
-			<p>&nbsp;</p>
-			<div class="content-msg"><a href="javascript:void(0)" class="btn-intentar-nuevamente-aqui"></a></div>
-		</div>-->
-		
-		<!--<div class="form4">
-			<h1 style="font-size:16px;">¡Compártelo con todos!</h1>
-			<p>&nbsp;</p><p>&nbsp;</p>
-			<p><img src="images/img-sticker.png" width="436" height="172" alt="" /></p>
-			<p align="right"><a href="javscript:void(0)" class="btn-intentar-nuevamente-aqui"></a></p>
-		</div>-->
-		
-		<!--<div class="form-premios">
-			<div class="content-tabs">
-				<ul class="tabs-menu">
-					<li class="tab-menu-suzuki-vitara">
-						<a href="javascript:void(0)" class="tab-suzuki-vitara"></a>
-						<a href="javascript:void(0)" class="tab-suzuki-swift"></a>
-						<a href="javascript:void(0)" class="tab-ipod"></a>
-					</li>
-					<li class="tab-menu-suzuki-swift not-visible">
-						<a href="javascript:void(0)" class="tab-suzuki-vitara"></a>
-						<a href="javascript:void(0)" class="tab-suzuki-swift"></a>
-						<a href="javascript:void(0)" class="tab-ipod"></a>
-					</li>
-					<li class="tab-menu-ipod not-visible">
-						<a href="javascript:void(0)" class="tab-suzuki-vitara"></a>
-						<a href="javascript:void(0)" class="tab-suzuki-swift"></a>
-						<a href="javascript:void(0)" class="tab-ipod"></a>
-					</li>
-				</ul>
-				<ul class="tabs-content">
-					<li class="tab-bg-suzuki-vitara">
-						<div class="content-cycle">
-							<a href="javascript:void(0)" class="prev"></a>
-							<div class="cycle">
-								<span><img src="images/img-cycle-suzuki-vitara.png" width="399" height="113" alt="" /></span>
-								<span><img src="images/img-cycle-suzuki-vitara.png" width="399" height="113" alt="" /></span>
-							</div>
-							<a href="javascript:void(0)" class="next"></a>
-						</div>
-					</li>
-					<li class="tab-bg-suzuki-swift not-visible">
-						<div class="content-cycle">
-							<a href="javascript:void(0)" class="prev"></a>
-							<div class="cycle">
-								<span><img src="images/img-cycle-suzuki-swift.png" width="399" height="113" alt="" /></span>
-								<span><img src="images/img-cycle-suzuki-swift.png" width="399" height="113" alt="" /></span>
-							</div>
-							<a href="javascript:void(0)" class="next"></a>
-						</div>
-					</li>
-					<li class="tab-bg-ipod not-visible">
-						<div class="content-cycle">
-							<a href="javascript:void(0)" class="prev"></a>
-							<div class="cycle">
-								<span><img src="images/img-cycle-ipod.png" width="399" height="113" alt="" /></span>
-								<span><img src="images/img-cycle-ipod.png" width="399" height="113" alt="" /></span>
-							</div>
-							<a href="javascript:void(0)" class="next"></a>
-						</div>
-					</li>
-				</ul>
+				<li class="text">Número documento (*)</li>
+				<li class="textbox"><input id="" name="" type="text" /></li>
 			</div>
-		</div>-->
-		
-		<div class="form-premios">
-			<div class="content-tabs">
-				<ul class="tabs-menu">
-					<li class="tab-menu-suzuki-vitara">
-						<a href="javascript:void(0)" class="tab-suzuki-vitara"></a>
-						<a href="javascript:void(0)" class="tab-suzuki-swift"></a>
-						<a href="javascript:void(0)" class="tab-ipod"></a>
-					</li>
-					<li class="tab-menu-suzuki-swift not-visible">
-						<a href="javascript:void(0)" class="tab-suzuki-vitara"></a>
-						<a href="javascript:void(0)" class="tab-suzuki-swift"></a>
-						<a href="javascript:void(0)" class="tab-ipod"></a>
-					</li>
-					<li class="tab-menu-ipod not-visible">
-						<a href="javascript:void(0)" class="tab-suzuki-vitara"></a>
-						<a href="javascript:void(0)" class="tab-suzuki-swift"></a>
-						<a href="javascript:void(0)" class="tab-ipod"></a>
-					</li>
-				</ul>
-				<ul class="tabs-content">
-					<li class="tab-bg-suzuki-vitara">
-						<div class="content-cycle">
-							<a href="javascript:void(0)" class="prev"></a>
-							<div class="cycle">
-								<span><img src="images/img-cycle-suzuki-vitara.png" width="399" height="113" alt="" /></span>
-								<span><img src="images/img-cycle-suzuki-vitara.png" width="399" height="113" alt="" /></span>
-							</div>
-							<a href="javascript:void(0)" class="next"></a>
+			<li class="text">&nbsp;</li>
+			<li class="textbox">&nbsp;</li>
+			<li class="botones">
+				<span class="msg">(*) Campos obliigatorios</span>
+				<a href="javascript:void(0)" class="btn-enviar"></a>
+				<a href="javascript:void(0)" class="btn-borrar"></a>
+			</li>
+		</ul>
+	</div>-->
+	
+	<!--<div class="form1">
+		<h1>Ingresa la clave de tu empaque y participa del sorteo de <b>un iPod diario y<br />dos autos que regala Nosotras</b>.</h1>
+		<ul class="formulario3">
+			<li class="text">Ingresa tu clave de empaque:</li>
+			<li class="textbox"><input id="" name="" type="text" /> <a href="javascript:void(0)" class="btn-interrogante" onclick="codEmpaque()"></a><span class="codigo-empaque hidden" style="visibility:hidden;"></span></li>
+			<li class="clear">&nbsp;</li>
+			<li class="captcha">
+				<span class="captcha_image"><img src="images/img-captcha.gif" width="215" height="50" alt="" /></span>
+				<span class="captcha_textbox"><input id="" name="" type="text" /></span>
+			</li>
+			<li class="botones">
+				<a href="javascript:void(0)" class="btn-enviar"></a>
+				<a href="javascript:void(0)" class="btn-borrar"></a>
+			</li>
+			<li class="msg">Recuerda que participará en el sorteo del día, las claves ingresadas desde las 00 horas hasta las 23:59. No son acumulables. ** Recuerda guardar el empaque con la clave.</li>
+		</ul>
+	</div>-->
+	
+	<!--<div class="form3">
+		<p class="messages"><span>Suerte,</span> Catherin Rivera</p>
+		<p>&nbsp;</p>
+		<div class="content-msg"><img src="images/txt-clave-satisfactoria.png" width="377" height="67" alt="" /></div>
+		<p>&nbsp;</p>
+		<div class="content-msg"><a href="javascript:void(0)" class="btn-ingresa-otra-clave"></a></div>
+	</div>-->
+	
+	<!--<div class="form3">
+		<p class="messages"><span>Lo sentimos</span> Catherin Rivera</p>
+		<p>&nbsp;</p>
+		<div class="content-msg"><img src="images/txt-clave-ingresada-igual.png" width="329" height="56" alt="" /></div>
+		<p>&nbsp;</p>
+		<div class="content-msg"><a href="javascript:void(0)" class="btn-ingresa-otra-clave"></a></div>
+	</div>-->
+	
+	<!--<div class="form3">
+		<p class="messages"><span>Lo sentimos</span> Catherin Rivera</p>
+		<p>&nbsp;</p>
+		<div class="content-msg"><img src="images/txt-clave-ingresada-no-valida.png" width="346" height="55" alt="" /></div>
+		<p>&nbsp;</p>
+		<div class="content-msg"><a href="javascript:void(0)" class="btn-intentar-nuevamente-aqui"></a></div>
+	</div>-->
+	
+	<!--<div class="form4">
+		<h1 style="font-size:16px;">¡Compártelo con todos!</h1>
+		<p>&nbsp;</p><p>&nbsp;</p>
+		<p><img src="images/img-sticker.png" width="436" height="172" alt="" /></p>
+		<p align="right"><a href="javscript:void(0)" class="btn-intentar-nuevamente-aqui"></a></p>
+	</div>-->
+	
+	<!--<div class="form-premios">
+		<div class="content-tabs">
+			<ul class="tabs-menu">
+				<li class="tab-menu-suzuki-vitara">
+					<a href="javascript:void(0)" class="tab-suzuki-vitara"></a>
+					<a href="javascript:void(0)" class="tab-suzuki-swift"></a>
+					<a href="javascript:void(0)" class="tab-ipod"></a>
+				</li>
+				<li class="tab-menu-suzuki-swift not-visible">
+					<a href="javascript:void(0)" class="tab-suzuki-vitara"></a>
+					<a href="javascript:void(0)" class="tab-suzuki-swift"></a>
+					<a href="javascript:void(0)" class="tab-ipod"></a>
+				</li>
+				<li class="tab-menu-ipod not-visible">
+					<a href="javascript:void(0)" class="tab-suzuki-vitara"></a>
+					<a href="javascript:void(0)" class="tab-suzuki-swift"></a>
+					<a href="javascript:void(0)" class="tab-ipod"></a>
+				</li>
+			</ul>
+			<ul class="tabs-content">
+				<li class="tab-bg-suzuki-vitara">
+					<div class="content-cycle" style="margin-left:20px;">
+						<a href="javascript:void(0)" class="prev"></a>
+						<div class="cycle">
+							<span><img src="images/img-cycle-suzuki-vitara.png" width="399" height="113" alt="" /></span>
+							<span><img src="images/img-cycle-suzuki-vitara.png" width="399" height="113" alt="" /></span>
 						</div>
-					</li>
-					<li class="tab-bg-suzuki-swift not-visible">
-						<div class="content-cycle">
-							<a href="javascript:void(0)" class="prev"></a>
-							<div class="cycle">
-								<span><img src="images/img-cycle-suzuki-swift.png" width="399" height="113" alt="" /></span>
-								<span><img src="images/img-cycle-suzuki-swift.png" width="399" height="113" alt="" /></span>
-							</div>
-							<a href="javascript:void(0)" class="next"></a>
+						<a href="javascript:void(0)" class="next"></a>
+					</div>
+				</li>
+				<li class="tab-bg-suzuki-swift not-visible">
+					<div class="content-cycle">
+						<a href="javascript:void(0)" class="prev"></a>
+						<div class="cycle">
+							<span><img src="images/img-cycle-suzuki-swift.png" width="399" height="113" alt="" /></span>
+							<span><img src="images/img-cycle-suzuki-swift.png" width="399" height="113" alt="" /></span>
 						</div>
-					</li>
-					<li class="tab-bg-ipod not-visible">
-						<div class="content-cycle">
-							<a href="javascript:void(0)" class="prev"></a>
-							<div class="cycle">
-								<span><img src="images/img-cycle-ipod.png" width="399" height="113" alt="" /></span>
-								<span><img src="images/img-cycle-ipod.png" width="399" height="113" alt="" /></span>
-							</div>
-							<a href="javascript:void(0)" class="next"></a>
+						<a href="javascript:void(0)" class="next"></a>
+					</div>
+				</li>
+				<li class="tab-bg-ipod not-visible">
+					<div class="content-cycle">
+						<a href="javascript:void(0)" class="prev"></a>
+						<div class="cycle">
+							<span><img src="images/img-cycle-ipod.png" width="399" height="113" alt="" /></span>
+							<span><img src="images/img-cycle-ipod.png" width="399" height="113" alt="" /></span>
 						</div>
-					</li>
-				</ul>
+						<a href="javascript:void(0)" class="next"></a>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>-->
+	
+	<!--<div class="form-productos">
+		<h1><b>¡Que ninguno se te escape!</b> Entérate qué productos Nosotras participan en la promoción. ¡¡A más códigos, más opciones de ganar!!</h1>
+		<div class="content-cycle" style="margin-left:40px;">
+			<a href="javascript:void(0)" class="prev"></a>
+			<div class="cycle">
+				<span>
+					<img src="images/img-prod-01.png" width="83" height="123" alt="" />
+					<img src="images/img-prod-02.png" width="83" height="123" alt="" />
+					<img src="images/img-prod-03.png" width="83" height="123" alt="" />
+					<img src="images/img-prod-04.png" width="83" height="123" alt="" />
+				</span>
+				<span>
+					<img src="images/img-prod-01.png" width="83" height="123" alt="" />
+					<img src="images/img-prod-02.png" width="83" height="123" alt="" />
+					<img src="images/img-prod-03.png" width="83" height="123" alt="" />
+					<img src="images/img-prod-04.png" width="83" height="123" alt="" />
+				</span>
+			</div>
+			<a href="javascript:void(0)" class="next"></a>
+		</div>
+	</div>-->
+	
+	<!--<div class="form-comercial">
+		<h1><b>Mira el comercial de la promo Nosotras</b><br />y prepárate para ser una chica Nosotras.</h1>
+		<div class="content-comercial">
+			<object width="313" height="213">
+				<param name="movie" value="http://www.youtube.com/v/HSJ0VoN7w38?version=3&amp;hl=es_ES&amp;rel=0"></param>
+				<param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param>
+				<embed src="http://www.youtube.com/v/HSJ0VoN7w38?version=3&amp;hl=es_ES&amp;rel=0" type="application/x-shockwave-flash" width="313" height="213" allowscriptaccess="always" allowfullscreen="true"></embed>
+			</object>
+		</div>
+	</div>-->
+	
+	<!--<div class="form-ganadoras">
+		<h1>La ganadora del iPod de hoy es <b>Marina Manuela Orozco</b></h1>
+		<ul class="lista-ganadoras">
+			<li class="fecha h">fecha</li><li class="ganadoras h">Nombres y Apellidos</li>
+			<div class="scroll-pane">
+				<li class="fecha">15/08/1984</li><li class="ganadoras">Ariana Valdiviezo</li>
+				<li class="fecha">15/08/1984</li><li class="ganadoras">Ariana Valdiviezo</li>
+				<li class="fecha">15/08/1984</li><li class="ganadoras">Ariana Valdiviezo</li>
+				<li class="fecha">15/08/1984</li><li class="ganadoras">Ariana Valdiviezo</li>
+				<li class="fecha">15/08/1984</li><li class="ganadoras">Ariana Valdiviezo</li>
+				<li class="fecha">15/08/1984</li><li class="ganadoras">Ariana Valdiviezo</li>
+				<li class="fecha">15/08/1984</li><li class="ganadoras">Ariana Valdiviezo</li>
+				<li class="fecha">15/08/1984</li><li class="ganadoras">Ariana Valdiviezo</li>
+				<li class="fecha">15/08/1984</li><li class="ganadoras">Ariana Valdiviezo</li>
+				<li class="fecha">15/08/1984</li><li class="ganadoras">Ariana Valdiviezo</li>
+				<li class="fecha">15/08/1984</li><li class="ganadoras">Ariana Valdiviezo</li>
+				<li class="fecha">15/08/1984</li><li class="ganadoras">Ariana Valdiviezo</li>
+				<li class="fecha">15/08/1984</li><li class="ganadoras">Ariana Valdiviezo</li>
+				<li class="fecha">15/08/1984</li><li class="ganadoras">Ariana Valdiviezo</li>
+				<li class="fecha">15/08/1984</li><li class="ganadoras">Ariana Valdiviezo</li>
+			</div>
+		</ul>
+	</div>-->
+	
+	<!--<div class="form-bases">
+		<div class="txt-bases-promo">
+			<div class="scroll-pane bases">
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse facilisis consectetur lorem, vel dapibus lorem faucibus et. Mauris vehicula, libero vitae volutpat molestie, risus metus sagittis tortor, et commodo nibh orci eu neque. Praesent tempor, justo vel tristique consequat, est mi sollicitudin nisi, non tristique tortor erat at nibh. Vestibulum fringilla vulputate nibh, ut mollis erat adipiscing a. In eros lacus, pellentesque vitae rhoncus tempus, pulvinar sed nisi. Nam non sapien nec nisl auctor tristique. Sed tincidunt vulputate rutrum. Aenean purus dui, dapibus at tempor sed, aliquet non elit.</p>
+				<p>Fusce sollicitudin, nibh sed faucibus tincidunt, urna ipsum adipiscing justo, ut mattis tortor felis vitae purus. Morbi non sapien nec mi tincidunt accumsan. Phasellus id est eu ligula malesuada rhoncus. Integer quis velit libero. Quisque lectus eros, adipiscing at accumsan id, auctor vel tortor. Phasellus malesuada, leo sit amet tempus elementum, nibh neque consectetur mi, quis posuere lectus mi non risus. Etiam eget ipsum neque. Phasellus at leo nibh. Nam quis nibh in felis ultrices ornare vitae vel neque. In enim nisl, commodo quis tempus id, ullamcorper ut magna.</p>
 			</div>
 		</div>
-		
-		<!-- content fin -->
-		<div class="clear"></div>
-		<div class="footer">
-			<div class="botonera">
-				<div class="botonera-mascara"></div>
-				<a href="javascript:void(0)" class="btn-left"></a>
-				<a href="javascript:void(0)" class="btn-right"></a>
-				<a href="javascript:void(0)" class="btn-comercial"></a>
-			</div>
-			<div class="mascara-auto">
-				<a href="javascript:void(0)" class="btn-auto"></a>
-			</div>
+	</div>-->
+	
+	<div class="form-contactenos">
+		<h1>Si tienes dudas, comentarios o sugerencias escríbenos.</h1>
+		<ul class="form-contact">
+			<li class="text">Nombres:</li>
+			<li class="textbox"><input id="" name="" type="text" /></li>
+			<li class="text">Apellidos:</li>
+			<li class="textbox"><input id="" name="" type="text" /></li>
+			<li class="text">E-mail:</li>
+			<li class="textbox"><input id="" name="" type="text" /></li>
+			<li class="text">Mensaje:</li>
+			<li style="height:auto;"><textarea id="" name=""></textarea></li>
+			<li class="botones">
+				<a href="javascript:void(0)" class="btn-enviar"></a>
+				<a href="javascript:void(0)" class="btn-borrar"></a>
+			</li>
+		</ul>
+	</div>
+	
+	<!-- content fin -->
+	<div class="clear"></div>
+	<div class="footer">
+		<div class="botonera">
+			<div class="botonera-mascara"></div>
+			<a href="javascript:void(0)" class="btn-left"></a>
+			<a href="javascript:void(0)" class="btn-right"></a>
+			<a href="javascript:void(0)" class="btn-comercial"></a>
+		</div>
+		<div class="mascara-auto">
+			<a href="javascript:void(0)" class="btn-auto"></a>
 		</div>
 	</div>
 </div>

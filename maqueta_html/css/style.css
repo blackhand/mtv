@@ -7,9 +7,7 @@
 	border:none;
 }
 
-body{
-	background:url(../images/bg-city.jpg) no-repeat 0 28px;
-}
+body{ background:url(../images/bg-city.jpg) no-repeat 0 28px; }
 
 a{ cursor:pointer; }
 
@@ -22,14 +20,22 @@ a{ cursor:pointer; }
 }
 .right{ float:right; }
 
-p{
+p{ float:left; width:100%; }
+
+.not-bg{ background:none !important; }
+.not-visible{ display:none !important; }
+
+.scroll-pane, .bases{
 	float:left;
 	width:100%;
+	height:150px;
 }
-
-.not-visible{
-	display:none !important;
+.bases{
+	height:234px;
 }
+	.bases .jspTrack{
+		background:url(../images/bg-scroll-pane-bases.png) no-repeat 0 0;
+	}
 
 .wrapper{
 	margin:0 auto;
@@ -146,7 +152,7 @@ p{
 				left:165px;
 			}
 	/* *************************** */
-	.form1, .form2, .form3, .form4{
+	.form1, .form2, .form3, .form4, .form-premios, .form-productos, .form-comercial, .form-ganadoras, .form-bases, .form-contactenos{
 		margin:50px auto 0 auto;
 		width:563px;
 		height:397px;
@@ -192,11 +198,11 @@ p{
 			padding:0;
 			margin:70px 0 0 40px;
 		}
-			.form1 ul, .form2 ul{
+			.form1 ul, .form2 ul, .form-ganadoras ul, .form-contactenos ul{
 				list-style:none;
 				float:left;
 			}
-			.form1 ul li, .form2 ul li{
+			.form1 ul li, .form2 ul li, .form-ganadoras ul li, .form-contactenos ul li{
 				float:left;
 				font:normal 12px Arial, Helvetica, sans-serif;
 				color:#FFFFFF;
@@ -205,7 +211,7 @@ p{
 				font:bold 11px Arial, Helvetica, sans-serif;
 				color:#96fdf6;
 			}
-			input, select{
+			input, select, textarea{
 				float:left;
 				font:normal 12px Arial, Helvetica, sans-serif;
 				color:#636263;
@@ -343,11 +349,6 @@ p{
 					color:#96fdf6;
 					padding:3px 0 0 10px;
 				}
-			.scroll-pane{
-				float:left;
-				width:100%;
-				height:150px;
-			}
 		/* form captcha */
 		ul.formulario3{
 			width:410px;
@@ -429,87 +430,212 @@ p{
 			margin:0 0 0 40px;
 		}
 		
-		/*  form premios */
-		.form-premios{
-			width:547px;
-			height:381px;
-			background:url(../images/bg-premios.png) no-repeat 0 0;
-			position:absolute;
-			z-index:9999;
-			top:50%;
-			left:50%;
-			margin-top:-190px;
-		    margin-left:-273px;
+	/*  form premios */
+	.form-premios{
+		width:547px;
+		height:381px;
+		background:url(../images/bg-premios.png) no-repeat 0 0;
+	}
+		.content-tabs{
+			float:left;
+			width:509px;
+			height:auto;
+			margin-top:71px;
+			margin-left:19px;
 		}
-			.content-tabs{
-				margin:0 auto;
+			ul.tabs-menu, ul.tabs-content,
+			ul.tabs-menu li, ul.tabs-content li{
+				list-style:none;
+				float:left;
 				width:509px;
-				height:auto;
-				margin-top:71px;
+				height:31px;
+				overflow:hidden;
 			}
-				ul.tabs-menu, ul.tabs-content,
-				ul.tabs-menu li, ul.tabs-content li{
-					list-style:none;
-					float:left;
-					width:509px;
-					height:31px;
-					overflow:hidden;
-				}
-				ul.tabs-content, ul.tabs-content li{
-					height:260px;
-				}
-				a.tab-suzuki-vitara, a.tab-suzuki-swift, a.tab-ipod{
-					float:left;
-					width:203px;
-					height:31px;
-				}
-				a.tab-suzuki-swift{
-					width:144px;
-				}
-				a.tab-ipod{
-					width:130px;
-				}
-				
-				ul.tabs-menu li.tab-menu-suzuki-vitara{ background:url(../images/tab-menu-suzuki-vitara.png) no-repeat 0 0; }
-				ul.tabs-menu li.tab-menu-suzuki-swift{ background:url(../images/tab-menu-suzuki-swift.png) no-repeat 0 0; }
-				ul.tabs-menu li.tab-menu-ipod{ background:url(../images/tab-menu-ipod.png) no-repeat 0 0; }
-				
-				ul.tabs-content li.tab-bg-suzuki-vitara{ background:url(../images/tab-bg-suzuki-vitara.png) no-repeat 0 0; }
-				ul.tabs-content li.tab-bg-suzuki-swift{ background:url(../images/tab-bg-suzuki-swift.png) no-repeat 0 0; }
-				ul.tabs-content li.tab-bg-ipod{ background:url(../images/tab-bg-ipod.png) no-repeat 0 0; }
-			.content-cycle{
-				margin:0 auto;
-				width:463px;
-				height:143px;
-				margin-top:60px;
-				
+			ul.tabs-content, ul.tabs-content li{
+				height:260px;
 			}
-				a.prev, a.next{
-					float:left;
-					width:27px;
-					height:54px;
-					background:url(../images/btn-prev.png) no-repeat 0 0;
-					margin-top:43px;
-				}
-				a.next{
-					float:right;
-					background:url(../images/btn-next.png) no-repeat 0 0;
-				}
-				.cycle{
-					float:left;
-					width:405px;
-					height:115px;
-					margin-top:28px;
-					overflow:hidden;
-				}
-					.cycle span{
-						float:left;
-						width:100%;
-						height:143px;
-						text-align:center;
-					}
+			a.tab-suzuki-vitara, a.tab-suzuki-swift, a.tab-ipod{
+				float:left;
+				width:203px;
+				height:31px;
+			}
+			a.tab-suzuki-swift{
+				width:144px;
+			}
+			a.tab-ipod{
+				width:130px;
+			}
 			
-
+			ul.tabs-menu li.tab-menu-suzuki-vitara{ background:url(../images/tab-menu-suzuki-vitara.png) no-repeat 0 0; }
+			ul.tabs-menu li.tab-menu-suzuki-swift{ background:url(../images/tab-menu-suzuki-swift.png) no-repeat 0 0; }
+			ul.tabs-menu li.tab-menu-ipod{ background:url(../images/tab-menu-ipod.png) no-repeat 0 0; }
+			
+			ul.tabs-content li.tab-bg-suzuki-vitara{ background:url(../images/tab-bg-suzuki-vitara.png) no-repeat 0 0; }
+			ul.tabs-content li.tab-bg-suzuki-swift{ background:url(../images/tab-bg-suzuki-swift.png) no-repeat 0 0; }
+			ul.tabs-content li.tab-bg-ipod{ background:url(../images/tab-bg-ipod.png) no-repeat 0 0; }
+		
+		.content-cycle{
+			float:left;
+			width:463px;
+			height:143px;
+			margin-top:60px;
+		}
+			a.prev, a.next{
+				float:left;
+				width:27px;
+				height:54px;
+				background:url(../images/btn-prev.png) no-repeat 0 0;
+				margin-top:43px;
+			}
+			a.next{
+				float:right;
+				background:url(../images/btn-next.png) no-repeat 0 0;
+			}
+			.cycle{
+				float:left;
+				width:405px;
+				height:115px;
+				margin-top:28px;
+				overflow:hidden;
+			}
+				.cycle span{
+					float:left;
+					width:100%;
+					height:143px;
+					text-align:center;
+				}
+	/*  form premios */
+	.form-productos{
+		width:547px;
+		height:381px;
+		background:url(../images/bg-productos.png) no-repeat 0 0;
+	}
+		.form-productos h1{
+			float:left;
+			width:465px;
+			height:40px;
+			font:normal 12px Arial, Helvetica, sans-serif;
+			color:#FFFFFF;
+			padding:0;
+			margin:70px 0 0 40px;
+		}
+	/* form comercial */
+	.form-comercial{
+		width:577px;
+		height:391px;
+		background:url(../images/bg-comercial.png) no-repeat 0 0;
+	}
+		.form-comercial h1{
+			float:left;
+			width:370px;
+			height:43px;
+			font:normal 12px Arial, Helvetica, sans-serif;
+			color:#FFFFFF;
+			margin:70px 0 0 40px;
+		}
+		.form-comercial .content-comercial{
+			float:left;
+			width:370px;
+			height:43px;
+			margin:17px 0 0 60px;
+		}
+	
+	/* form ganadoras */
+	.form-ganadoras{
+		margin:0 auto;
+		width:547px;
+		height:381px;
+		background:url(../images/bg-ganadoras.png) no-repeat 0 0;
+	}
+		.form-ganadoras h1{
+			float:left;
+			width:450px;
+			height:27px;
+			font:normal 12px Arial, Helvetica, sans-serif;
+			color:#FFFFFF;
+			margin:70px 0 0 40px;
+		}
+		ul.lista-ganadoras-h, ul.lista-ganadoras{
+			width:435px;
+			height:auto;
+			margin:70px 0 0 60px;
+		}
+		ul.lista-ganadoras{
+			/*height:150px;*/
+			margin:0 0 0 60px;
+		}
+			ul.lista-ganadoras-h li{ color:#FFF; }
+			ul.lista-ganadoras li{ color:#a7e1ff; }
+			ul.lista-ganadoras-h li.fecha, ul.lista-ganadoras li.fecha{
+				width:105px;
+			}
+			ul.lista-ganadoras-h li.ganadoras, ul.lista-ganadoras li.ganadoras{
+				width:260px;
+			}
+			
+	/* form bases */
+	.form-bases{
+		width:547px;
+		height:381px;
+		background:url(../images/bg-bases.png) no-repeat 0 0;
+	}
+		.txt-bases-promo{
+			float:left;
+			width:440px;
+			height:234px;
+			margin:100px 0 0 60px;
+		}
+			.txt-bases-promo p{
+				width:385px;
+				height:auto;
+				font:normal 12px Arial, Helvetica, sans-serif;
+				color:#FFFFFF;
+				margin-bottom:10px;
+			}
+	
+	/* form contactenos */
+	.form-contactenos{
+		width:547px;
+		height:381px;
+		background:url(../images/bg-contactenos.png) no-repeat 0 0;
+	}
+		.form-contactenos h1{
+			float:left;
+			width:470px;
+			height:27px;
+			font:normal 12px Arial, Helvetica, sans-serif;
+			color:#FFFFFF;
+			margin:70px 0 0 40px;
+		}
+		ul.form-contact{
+			width:470px;
+			height:auto;
+			margin:32px 0 0 37px;
+		}
+			ul.form-contact li{
+				height:32px;
+			}
+			ul.form-contact li.text{
+				width:130px;
+				height:29px;
+				text-align:right;
+				padding:3px 20px 0 0;
+			}
+			ul.form-contact li.textbox{
+				width:290px;
+			}
+				ul.form-contact li.textbox input, ul.form-contact li textarea{
+					width:250px;
+					margin-top:2px;
+				}
+				ul.form-contact li textarea{
+					height:65px;
+				}
+				ul.form-contact li.botones{
+					width:415px;
+					margin-top:15px;
+					text-align:right;
+				}
 
 
 
