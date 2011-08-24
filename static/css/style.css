@@ -1,0 +1,543 @@
+@charset "utf-8";
+/* CSS Document */
+
+*{
+	padding:0;
+	margin:0;
+	border:none;
+}
+
+body{
+	background:url(../images/bg-city.jpg) no-repeat 0 28px;
+}
+
+a{ cursor:pointer; }
+
+.clear{ clear:both; }
+
+.left, .right{
+	float:left;
+	width:auto;
+	height:;
+}
+.right{ float:right; }
+
+p{
+	float:left;
+	width:100%;
+}
+
+.not-visible{
+	display:none !important;
+}
+
+.wrapper{
+	margin:0 auto;
+	width:100%;
+	height:auto;
+}
+	.header{
+		float:left;
+		width:100%;
+		height:28px;
+		background:url(../images/bg-header.jpg) repeat-x;
+	}
+	.h-logo{
+		float:left;
+		width:193px;
+		height:197px;
+		background:url(../images/logo-nosotras.png) no-repeat 0 0;
+		margin:0 0 0 20px;
+	}
+	.h-social{
+		float:right;
+		width:134px;
+		height:37px;
+		background:url(../images/bg-social.png) no-repeat 0 0;
+	}
+		a.s-facebook, a.s-youtube{
+			float:left;
+			width:22px;
+			height:22px;
+			background:url(../images/bg-s-facebook.png) no-repeat 0 0;
+			margin:4px 0 0 61px;
+		}
+		a.s-youtube{
+			background:url(../images/bg-s-youtube.png) no-repeat 0 0;
+			margin-left:12px;
+		}
+	ul.h-menu{
+		list-style:none;
+		float:right;
+		width:auto;
+		height:28px;
+	}
+		ul.h-menu li{
+			float:left;
+			width:auto;
+			background:url(../images/bg-h-li.jpg) no-repeat top left;
+		}
+		ul.h-menu li a{
+			float:left;
+			font:bold 10px Arial, Helvetica, sans-serif;
+			color:#FFFFFF;
+			text-transform:uppercase;
+			text-decoration:none;
+			padding:8px 15px 8px 15px;
+		}
+		ul.h-menu li a:hover, ul.h-menu li a.on{
+			background:#03296D;
+		}
+	.footer{
+		float:left;
+		width:100%;
+		height:63px;
+		background:url(../images/bg-footer.png) repeat-x;
+		position:absolute;
+		bottom:0;
+	}
+		.botonera{
+			margin:0 auto;
+			width:722px;
+			height:67px;
+			background:url(../images/bg-botonera.png) no-repeat 0 0;
+			margin-top:-24px;
+		}
+			.botonera-mascara{
+				margin:0 auto;
+				width:722px;
+				height:67px;
+				background:url(../images/bg-botonera-mascara.png) no-repeat 0 0;
+			}
+			a.btn-left, a.btn-right{
+				float:left;
+				width:44px;
+				height:44px;
+				background:url(../images/btn-left.png) no-repeat 0 0;
+				margin:-50px 0 0 75px;
+			}
+			a.btn-right{
+				float:right;
+				background:url(../images/btn-right.png) no-repeat 0 0;
+				margin:-50px 75px 0 0;
+			}
+			a.btn-comercial{
+				float:left;
+				position:absolute;
+				width:144px;
+				height:39px;
+				background:url(../images/btn-comercial.png) no-repeat 0 0;
+				margin:-20px 0 0 0;
+				left:10px;
+			}
+		.mascara-auto{
+			margin:0 auto;
+			width:722px;
+			height:81px;
+			margin-top:-70px;
+		}
+			a.btn-auto{
+				display:block;
+				width:80px;
+				height:81px;
+				background:url(../images/btn-auto.png) no-repeat 0 0;
+				position:relative;
+				z-index:9999;
+				left:165px;
+			}
+	/* *************************** */
+	.form1, .form2, .form3, .form4{
+		margin:50px auto 0 auto;
+		width:563px;
+		height:397px;
+		background:url(../images/bg-form-1.png) no-repeat 0 0;
+	}
+	.form2{
+		background:url(../images/bg-form-2.png) no-repeat 0 0;
+	}
+	.form3{
+		width:651px;
+		height:381px;
+		background:url(../images/bg-form-3.png) no-repeat 0 0;
+	}
+	.form4{
+		width:547px;
+		height:381px;
+		background:url(../images/bg-form-4.png) no-repeat 0 0;
+	}
+		.form1 h1{
+			float:left;
+			width:470px;
+			height:40px;
+			font:normal 12px Arial, Helvetica, sans-serif;
+			color:#FFFFFF;
+			padding:0;
+			margin:78px 0 0 45px;
+		}
+		.form2 h1{
+			float:left;
+			width:470px;
+			height:27px;
+			font:normal 12px Arial, Helvetica, sans-serif;
+			color:#FFFFFF;
+			padding:0;
+			margin:77px 0 0 45px;
+		}
+		.form4 h1{
+			float:left;
+			width:470px;
+			height:27px;
+			font:normal 12px Arial, Helvetica, sans-serif;
+			color:#FFFFFF;
+			padding:0;
+			margin:70px 0 0 40px;
+		}
+			.form1 ul, .form2 ul{
+				list-style:none;
+				float:left;
+			}
+			.form1 ul li, .form2 ul li{
+				float:left;
+				font:normal 12px Arial, Helvetica, sans-serif;
+				color:#FFFFFF;
+			}
+			.form1 ul li.msg, .form2 ul li.msg{
+				font:bold 11px Arial, Helvetica, sans-serif;
+				color:#96fdf6;
+			}
+			input, select{
+				float:left;
+				font:normal 12px Arial, Helvetica, sans-serif;
+				color:#636263;
+				padding:3px 6px;
+			}
+			a.btn-enviar, a.btn-borrar{
+				display:inline-block;
+				width:82px;
+				height:29px;
+				background:url(../images/btn-enviar.png) no-repeat 0 0;
+			}
+			a.btn-borrar{
+				background:url(../images/btn-borrar.png) no-repeat 0 0;
+				margin:0 0 0 10px;
+			}
+			a.btn-interrogante{
+				display:inline-block;
+				width:34px;
+				height:26px;
+				background:url(../images/btn-interrogante.png) no-repeat 0 0;
+			}
+			a.btn-ingresa-otra-clave{
+				display:inline-block;
+				width:152px;
+				height:29px;
+				background:url(../images/btn-ingresa-otra-clave.png) no-repeat 0 0;
+			}
+			a.btn-intentar-nuevamente-aqui{
+				display:inline-block;
+				width:182px;
+				height:29px;
+				background:url(../images/btn-intentar-nuevamente-aqui.png) no-repeat 0 0;
+			}
+			a.btn-intentar-nuevamente-aqui{
+				display:inline-block;
+				width:123px;
+				height:29px;
+				background:url(../images/btn-compartir-facebook.png) no-repeat 0 0;
+			}
+		/* *********************************** */
+		/* formulario 1*/
+		ul.formulario1{
+			width:400px;
+			height:auto;
+			margin:45px 0 0 86px;
+		}
+			ul.formulario1 li.text{
+				width:130px;
+				height:25px; /* 30px */
+				padding:5px 0 0 0;
+			}
+			ul.formulario1 li.textbox{
+				width:265px;
+				height:30px;
+			}
+				ul.formulario1 li.textbox input{
+					width:253px;
+				}
+				ul.formulario1 li.textbox select{
+					padding:3px 6px;
+					margin-right:10px;
+				}
+					ul.formulario1 li.textbox select.cboDia{
+						width:60px;
+					}
+					ul.formulario1 li.textbox select.cboMes{
+						width:125px;
+					}
+					ul.formulario1 li.textbox select.cboAnio{
+						width:60px;
+						margin:0;
+					}
+			ul.formulario1 li.msg{
+				width:100%;
+				height:30px;
+				
+			}
+			ul.formulario1 li.botones{
+				width:100%;
+				height:40px;
+				text-align:right;
+			}
+		
+		/* formulario registro*/
+		ul.form-reg{
+			/*width:470px;*/
+			width:460px;
+			height:auto;
+			margin:45px 0 0 36px;
+		}
+			ul.form-reg li.text{
+				width:145px;
+				height:25px; /* 30px */
+				text-align:right;
+				padding:5px 5px 0 0;
+			}
+			ul.form-reg li.textbox{
+				/*width:320px;*/
+				width:270px;
+				height:30px;
+			}
+				ul.form-reg li.textbox input{
+					width:253px;
+				}
+				ul.form-reg li.textbox select{
+					float:left;
+					padding:3px 6px;
+					margin-right:10px;
+				}
+					ul.form-reg li.textbox select.cboDia{
+						width:60px;
+					}
+					ul.form-reg li.textbox select.cboMes{
+						width:125px;
+					}
+					ul.form-reg li.textbox select.cboAnio{
+						width:60px;
+						margin:0;
+					}
+					ul.form-reg li.textbox select.cboUbigeo{
+						width:265px;
+					}
+			ul.form-reg li.msg{
+				width:100%;
+				height:30px;
+			}
+			ul.form-reg li.botones{
+				width:100%;
+				height:40px;
+				text-align:right;
+			}
+				ul.form-reg li.botones span{
+					float:left;
+					font:bold 11px Arial, Helvetica, sans-serif;
+					color:#96fdf6;
+					padding:3px 0 0 10px;
+				}
+			.scroll-pane{
+				float:left;
+				width:100%;
+				height:150px;
+			}
+		/* form captcha */
+		ul.formulario3{
+			width:410px;
+			height:auto;
+			margin:30px 0 0 70px;
+		}
+			ul.formulario3 li.text{
+				width:190px;
+				text-align:right;
+				padding:3px 10px 0 0;
+			}
+			ul.formulario3 li.textbox{
+				width:210px;
+			}
+				ul.formulario3 li.textbox input{
+					width:150px;
+					margin-top:2px;
+				}
+				ul.formulario3 li.textbox a{ float:right; }
+			ul.formulario3 li.captcha{
+				width:394px;
+				height:67px;
+				background:url(../images/bg-captcha.png) no-repeat 0 0;
+				margin-left:15px;
+			}
+				.captcha_image{
+					float:left;
+					width:215px;
+					height:50px;
+					border:solid 1px #00AEA7;
+					margin:6px 0 0 10px;
+				}
+				.captcha_textbox{
+					float:right;
+					width:auto;
+					height:auto;
+					margin:6px 13px 0 0;
+				}
+					.captcha_textbox input{
+						border:solid 1px #00AEA7;
+					}
+			ul.formulario3 li.botones{
+				width:100%;
+				height:40px;
+				text-align:right;
+				margin-top:15px;
+			}
+			.codigo-empaque{
+				float:right;
+				position:relative;
+				z-index:9999;
+				width:136px;
+				height:134px;
+				background:url(../images/img-codigo-empaque.png) no-repeat 0 0;
+				margin:-100px -175px 0 0;
+			}
+		/* forms mensajes */
+		p.messages{
+			float:left;
+			width:465px;
+			height:auto;
+			font:normal 18px Arial, Helvetica, sans-serif;
+			color:#FFF;
+			margin:67px 0 0 86px;
+		}
+			p.messages span{
+				color:#fd98d9;
+			}
+			.content-msg{
+				float:left;
+				width:100%;
+				height:auto;
+				text-align:center;
+				margin:15px 0 0 0;
+			}
+		/* form compartir */
+		.form4 p{
+			width:465px;
+			margin:0 0 0 40px;
+		}
+		
+		/*  form premios */
+		.form-premios{
+			width:547px;
+			height:381px;
+			background:url(../images/bg-premios.png) no-repeat 0 0;
+			position:absolute;
+			z-index:9999;
+			top:50%;
+			left:50%;
+			margin-top:-190px;
+		    margin-left:-273px;
+		}
+			.content-tabs{
+				margin:0 auto;
+				width:509px;
+				height:auto;
+				margin-top:71px;
+			}
+				ul.tabs-menu, ul.tabs-content,
+				ul.tabs-menu li, ul.tabs-content li{
+					list-style:none;
+					float:left;
+					width:509px;
+					height:31px;
+					overflow:hidden;
+				}
+				ul.tabs-content, ul.tabs-content li{
+					height:260px;
+				}
+				a.tab-suzuki-vitara, a.tab-suzuki-swift, a.tab-ipod{
+					float:left;
+					width:203px;
+					height:31px;
+				}
+				a.tab-suzuki-swift{
+					width:144px;
+				}
+				a.tab-ipod{
+					width:130px;
+				}
+				
+				ul.tabs-menu li.tab-menu-suzuki-vitara{ background:url(../images/tab-menu-suzuki-vitara.png) no-repeat 0 0; }
+				ul.tabs-menu li.tab-menu-suzuki-swift{ background:url(../images/tab-menu-suzuki-swift.png) no-repeat 0 0; }
+				ul.tabs-menu li.tab-menu-ipod{ background:url(../images/tab-menu-ipod.png) no-repeat 0 0; }
+				
+				ul.tabs-content li.tab-bg-suzuki-vitara{ background:url(../images/tab-bg-suzuki-vitara.png) no-repeat 0 0; }
+				ul.tabs-content li.tab-bg-suzuki-swift{ background:url(../images/tab-bg-suzuki-swift.png) no-repeat 0 0; }
+				ul.tabs-content li.tab-bg-ipod{ background:url(../images/tab-bg-ipod.png) no-repeat 0 0; }
+			.content-cycle{
+				margin:0 auto;
+				width:463px;
+				height:143px;
+				margin-top:60px;
+				
+			}
+				a.prev, a.next{
+					float:left;
+					width:27px;
+					height:54px;
+					background:url(../images/btn-prev.png) no-repeat 0 0;
+					margin-top:43px;
+				}
+				a.next{
+					float:right;
+					background:url(../images/btn-next.png) no-repeat 0 0;
+				}
+				.cycle{
+					float:left;
+					width:405px;
+					height:115px;
+					margin-top:28px;
+					overflow:hidden;
+				}
+					.cycle span{
+						float:left;
+						width:100%;
+						height:143px;
+						text-align:center;
+					}
+			
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

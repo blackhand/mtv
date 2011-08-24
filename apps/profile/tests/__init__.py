@@ -1,4 +1,4 @@
 # -*- coding: utf-8 -*-
 
 from test_models import ModelsTestCase
-from tewst_views import ViewsTestCase
+from test_views import ViewsTestCase

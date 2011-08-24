@@ -125,12 +125,16 @@ BASE_INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'south',
     'django_extensions',
+    'linaro_django_pagination',
+
+    # Apps
+    'home',
+    'ubigeo',
+    'profile',
+    'contest',
 )
 
-INSTALLED_APPS = BASE_INSTALLED_APPS + (
-    'linaro_django_pagination',
-    'home',
-)
+INSTALLED_APPS = BASE_INSTALLED_APPS + ()
 
 # Fixtures
 FIXTURE_DIRS = (

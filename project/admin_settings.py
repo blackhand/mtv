@@ -9,9 +9,6 @@ INSTALLED_APPS = BASE_INSTALLED_APPS + (
     'grappelli',
     'django.contrib.admin',
     #apps
-    'ubigeo',
-    'profile',
-    'contest',
 )
 
 

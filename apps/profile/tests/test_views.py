@@ -9,19 +9,41 @@ class ViewsTestCase(TestCase):
 
     fixtures = ['initial_data.yaml']
 
-    TEST_EMAIL = 'ana@mailinator.com'
-    TEST_BIRTHDATE = date(1999, 9, 9)
+    EMAIL = 'ana@mailinator.com'
+    BIRTH_DATE = date(1999, 9, 9)
+
+    def get(self, url_name, *args, **kwargs):
+        return self.client.get(reverse(url_name, args=args, kwargs=kwargs))
+
+    def post(self, url_name, *args, **kwargs):
+        data = kwargs.pop("data", None)
+        return self.client.post(reverse(url_name, args=args, kwargs=kwargs), data)
 
     def test_get_login(self):
-        resp = self.client.get(reverse('profile_login'))
+        """
+        basic view login page
+        """
+        resp = self.get('profile_login')
         self.assertEqual(resp.status_code, 200)
 
     def test_post_login(self):
-        resp = self.client.post(reverse('profile_login'), {
-            'email': ViewsTestCase.TEST_EMAIL,
-            'birth_date': ViewsTestCase.TEST_BIRTHDATE,
+        """
+        basic login attempt
+        """
+        resp = self.post('profile_login', data = {
+            'email': ViewsTestCase.EMAIL,
+            'birth_date': ViewsTestCase.BIRTH_DATE,
             })
         self.assertEqual(resp.status_code, 200)
 
     def test_login_new(self):
+        """
+        login attempt with and unregistered user
+        must go to register profile view
+        """
+        self.test_post_login()
+
+    def test_login_existing(self):
+        """
+        """
         self.test_post_login()

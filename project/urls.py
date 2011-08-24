@@ -1,12 +1,11 @@
 # -*- coding: utf-8 -*-
 
 from django.conf.urls.defaults import *
-from profile.forms import ProfileForm
 
 urlpatterns = patterns('',
-    # Profile and Registration URLs
-    (r'^accounts/', include('profile.urls'),
-    (r'^accounts/', include('registration.backends.simple.urls')),
+    # Profile URLs
+    (r'^profile/', include('profile.urls')),
+
     # Home URLs
     (r'', include('home.urls')),
 )
