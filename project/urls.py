@@ -7,7 +7,7 @@ urlpatterns = patterns('',
     (r'^profile/', include('profile.urls')),
 
     # Home URLs
-    (r'', include('home.urls')),
+    (r'', include('main.urls')),
 )
 
 if settings.DEBUG:

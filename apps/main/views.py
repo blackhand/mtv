@@ -6,5 +6,5 @@ from django.shortcuts import render
 def not_implemented(request):
     return HttpResponse('NOT IMPLEMENTED')
 
-def homepage(request):
-    return render(request, 'home/homepage.html')
+def main_homepage(request):
+    return render(request, 'main/main_homepage.html')
