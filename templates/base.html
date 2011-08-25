@@ -10,11 +10,12 @@
         <meta http-equiv="cache-control" content="no-cache">
     {% endblock meta %}
     {% block favicon %}
-        <link rel="shortcut icon" type="image/x-icon" href="http://dev.tribalperu.com/sancela_nosotras/favicon.ico">
+        <link rel="shortcut icon" type="image/x-icon" href="{{ STATIC_URL }}images/favicon.ico">
     {% endblock %}
     {% block css %}
         <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/style.css">
         <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/jquery.jscrollpane.css">
+        <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/colorbox.css" />
     {% endblock %}
 </head>
 <body id="bg-horizontal">
@@ -26,10 +27,11 @@
 			<a href="javascript:void(0)" class="s-youtube"></a>
 		</div>
 		<ul class="h-menu">
-			<li><a href="javascript:void(0)" class="on">Iniciar sesión</a></li>
-			<li><a href="javascript:void(0)">Ganadoras</a></li>
-			<li><a href="javascript:void(0)">Bases</a></li>
-			<li><a href="javascript:void(0)">Contáctenos</a></li>
+            <li><a href="javascript:void(0)" class="on">Iniciar sesión</a></li>
+            <li><a id="ganadoras" href="ganadoras.html">Ganadoras</a></li>
+            <li><a id="bases" href="bases.html">Bases</a></li>
+            <li><a id="contactenos" href="contactenos.html">Contáctenos</a></li>
+
         </ul>
         {% block content %}
         {% endblock %}
@@ -47,17 +49,21 @@
 		</div>
 	</div>
 </div>
-<div id="window-resizer-tooltip" style="display: block; "><a href="http://dev.tribalperu.com/sancela_nosotras/#" title="Edit settings" style="background-image: url(chrome-extension://kkelicaakdanhinjdeammmilcgefonfh/images/icon_19.png); "></a><span class="tooltipTitle">Window size: </span><span class="tooltipWidth" id="winWidth">1360</span> x <span class="tooltipHeight" id="winHeight">742</span><br><span class="tooltipTitle">Viewport size: </span><span class="tooltipWidth" id="vpWidth">1632</span> x <span class="tooltipHeight" id="vpHeight">768</span></div>
-
-
 {% block js %}
 <script type="text/javascript" src="{{ STATIC_URL }}js/jquery-1.4.2.min.js"></script>
 <script type="text/javascript" src="{{ STATIC_URL }}js/jquery.pngFix.js"></script>
 <script type="text/javascript" src="{{ STATIC_URL }}js/jquery.jscrollpane.min.js"></script>
 <script type="text/javascript" src="{{ STATIC_URL }}js/jquery.mousewheel.js"></script>
 <script type="text/javascript" src="{{ STATIC_URL }}js/jquery.cycle.all.2.74.js"></script>
+<script type="text/javascript" src="{{ STATIC_URL }}js/jquery.colorbox.js"></script>
 <script type="text/javascript" src="{{ STATIC_URL }}js/init.js"></script>
-<script>window["_GOOG_TRANS_EXT_VER"] = "1";</script>
+<script>
+    $(document).ready(function(){
+        $("#ganadoras").colorbox({iframe:true, innerWidth:547, innerHeight:381});
+        $("#bases").colorbox({iframe:true, innerWidth:974, innerHeight:653});
+        $("#contactenos").colorbox({iframe:true, innerWidth:974, innerHeight:653});
+        });
+</script>
 {% endblock js %}
 </body>
 </html>
