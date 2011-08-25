@@ -7,7 +7,9 @@
 	border:none;
 }
 
-body{ background:url(../images/bg-city.jpg) no-repeat 0 28px; }
+body{
+	background:url(../images/bg-city.jpg) no-repeat 0 28px;
+}
 
 a{ cursor:pointer; }
 
@@ -36,71 +38,76 @@ p{ float:left; width:100%; }
 	.bases .jspTrack{
 		background:url(../images/bg-scroll-pane-bases.png) no-repeat 0 0;
 	}
-
+	
 .wrapper{
 	margin:0 auto;
 	width:100%;
 	height:auto;
 }
 	.header{
+		position:absolute;
+		z-index:9999;
+		top:0;
 		float:left;
 		width:100%;
 		height:28px;
 		background:url(../images/bg-header.jpg) repeat-x;
 	}
-	.h-logo{
-		float:left;
-		width:193px;
-		height:197px;
-		background:url(../images/logo-nosotras.png) no-repeat 0 0;
-		margin:0 0 0 20px;
-	}
-	.h-social{
-		float:right;
-		width:134px;
-		height:37px;
-		background:url(../images/bg-social.png) no-repeat 0 0;
-	}
-		a.s-facebook, a.s-youtube{
+		.h-logo{
 			float:left;
-			width:22px;
-			height:22px;
-			background:url(../images/bg-s-facebook.png) no-repeat 0 0;
-			margin:4px 0 0 61px;
+			width:193px;
+			height:197px;
+			background:url(../images/logo-nosotras.png) no-repeat 0 0;
+			margin:0 0 0 20px;
 		}
-		a.s-youtube{
-			background:url(../images/bg-s-youtube.png) no-repeat 0 0;
-			margin-left:12px;
+		.h-social{
+			float:right;
+			width:134px;
+			height:37px;
+			background:url(../images/bg-social.png) no-repeat 0 0;
 		}
-	ul.h-menu{
-		list-style:none;
-		float:right;
-		width:auto;
-		height:28px;
-	}
-		ul.h-menu li{
-			float:left;
+			a.s-facebook, a.s-youtube{
+				float:left;
+				width:22px;
+				height:22px;
+				background:url(../images/bg-s-facebook.png) no-repeat 0 0;
+				margin:4px 0 0 61px;
+			}
+			a.s-youtube{
+				background:url(../images/bg-s-youtube.png) no-repeat 0 0;
+				margin-left:12px;
+			}
+		ul.h-menu{
+			list-style:none;
+			float:right;
 			width:auto;
-			background:url(../images/bg-h-li.jpg) no-repeat top left;
+			height:28px;
 		}
-		ul.h-menu li a{
-			float:left;
-			font:bold 10px Arial, Helvetica, sans-serif;
-			color:#FFFFFF;
-			text-transform:uppercase;
-			text-decoration:none;
-			padding:8px 15px 8px 15px;
-		}
-		ul.h-menu li a:hover, ul.h-menu li a.on{
-			background:#03296D;
-		}
+			ul.h-menu li{
+				float:left;
+				width:auto;
+				background:url(../images/bg-h-li.jpg) no-repeat top left;
+			}
+			ul.h-menu li a{
+				float:left;
+				font:bold 10px Arial, Helvetica, sans-serif;
+				color:#FFFFFF;
+				text-transform:uppercase;
+				text-decoration:none;
+				padding:8px 15px 8px 15px;
+			}
+			ul.h-menu li a:hover, ul.h-menu li a.on{
+				background:#03296D;
+			}
+	
 	.footer{
+		position:absolute;
+		z-index:9999;
+		bottom:0;
 		float:left;
 		width:100%;
 		height:63px;
 		background:url(../images/bg-footer.png) repeat-x;
-		position:absolute;
-		bottom:0;
 	}
 		.botonera{
 			margin:0 auto;
@@ -151,25 +158,55 @@ p{ float:left; width:100%; }
 				z-index:9999;
 				left:165px;
 			}
-	/* *************************** */
-	.form1, .form2, .form3, .form4, .form-premios, .form-productos, .form-comercial, .form-ganadoras, .form-bases, .form-contactenos{
-		margin:50px auto 0 auto;
+			
+	/* *************************************************************************************************************************** */
+	
+	ul.cycleSite{
+		position:absolute;
+		z-index:100;
+		top:0;
+		left:0;
+		width:100%;
+		height:100%;
+	}
+		ul.cycleSite li{
+			float:left;
+			width:100%;
+			height:100%;
+			text-align:center;
+		}
+	
+	/* *************************************************************************************************************************** */
+	
+	.form1, .form2, .form3, .form4, .form-premios, .form-productos, .form-comercial{
+		/*margin:50px auto 0 auto;*/
+		position:absolute;
+		top:50%;
+		left:50%;
 		width:563px;
 		height:397px;
 		background:url(../images/bg-form-1.png) no-repeat 0 0;
+		margin-top:-198px;
+		margin-left:-281px;
 	}
 	.form2{
 		background:url(../images/bg-form-2.png) no-repeat 0 0;
+		margin-top:-198px;
+		margin-left:-281px;
 	}
 	.form3{
 		width:651px;
 		height:381px;
 		background:url(../images/bg-form-3.png) no-repeat 0 0;
+		margin-top:-190px;
+		margin-left:-325px;
 	}
 	.form4{
 		width:547px;
 		height:381px;
 		background:url(../images/bg-form-4.png) no-repeat 0 0;
+		margin-top:-190px;
+		margin-left:-273px;
 	}
 		.form1 h1{
 			float:left;
@@ -262,6 +299,7 @@ p{ float:left; width:100%; }
 				width:130px;
 				height:25px; /* 30px */
 				padding:5px 0 0 0;
+				text-align:left !important;
 			}
 			ul.formulario1 li.textbox{
 				width:265px;
@@ -287,7 +325,7 @@ p{ float:left; width:100%; }
 			ul.formulario1 li.msg{
 				width:100%;
 				height:30px;
-				
+				text-align:left !important;
 			}
 			ul.formulario1 li.botones{
 				width:100%;
@@ -435,6 +473,8 @@ p{ float:left; width:100%; }
 		width:547px;
 		height:381px;
 		background:url(../images/bg-premios.png) no-repeat 0 0;
+		margin-top:-190px;
+		margin-left:-273px;
 	}
 		.content-tabs{
 			float:left;
@@ -509,6 +549,8 @@ p{ float:left; width:100%; }
 		width:547px;
 		height:381px;
 		background:url(../images/bg-productos.png) no-repeat 0 0;
+		margin-top:-190px;
+		margin-left:-273px;
 	}
 		.form-productos h1{
 			float:left;
@@ -524,6 +566,8 @@ p{ float:left; width:100%; }
 		width:577px;
 		height:391px;
 		background:url(../images/bg-comercial.png) no-repeat 0 0;
+		margin-top:-195px;
+		margin-left:-288px;
 	}
 		.form-comercial h1{
 			float:left;
@@ -539,10 +583,12 @@ p{ float:left; width:100%; }
 			height:43px;
 			margin:17px 0 0 60px;
 		}
+	/* ********************************************************************************* */
+	/* popups */
 	
 	/* form ganadoras */
 	.form-ganadoras{
-		margin:0 auto;
+		float:left;
 		width:547px;
 		height:381px;
 		background:url(../images/bg-ganadoras.png) no-repeat 0 0;
@@ -575,6 +621,7 @@ p{ float:left; width:100%; }
 			
 	/* form bases */
 	.form-bases{
+		float:left;
 		width:547px;
 		height:381px;
 		background:url(../images/bg-bases.png) no-repeat 0 0;
@@ -595,6 +642,7 @@ p{ float:left; width:100%; }
 	
 	/* form contactenos */
 	.form-contactenos{
+		float:left;
 		width:547px;
 		height:381px;
 		background:url(../images/bg-contactenos.png) no-repeat 0 0;

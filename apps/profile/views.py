@@ -5,7 +5,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from forms import LoginForm, ProfileForm
 
-from home.views import not_implemented
+from main.views import not_implemented
 
 
 def profile_login(request):

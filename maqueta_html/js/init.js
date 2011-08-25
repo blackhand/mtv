@@ -11,10 +11,18 @@ $(document).ready(function(){
 	
 	$('.scroll-pane').jScrollPane();
 	
+	$('#cycleSite').cycle({
+		fx:     'scrollHorz',
+		speed:  5000,
+		timeout: 0,
+		next:   '.btn-right',
+		prev:   '.btn-left'
+	});
+	
 	$('.cycle').cycle({
 		fx:     'scrollHorz',
 		speed:  'fast',
-		timeout: 22000,
+		timeout: 0,
 		next:   '.next',
 		prev:   '.prev'
 	});
