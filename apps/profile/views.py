@@ -1,6 +1,9 @@
 # -*- coding: utf-8 -*-
 
 from django.contrib.auth import login
+from django.shortcuts import get_or_create, render_to_response
+from django.http import HttpResponseRedirect
+from django.core.urlresolvers import reverse
 from home.views import not_implemented
 
 
@@ -16,7 +19,7 @@ def profile_login(request):
             if created:
 				return HttpResponseRedirect(reverse('profile_register',))
 			else:
-				return not_implemented(request)
+				return render_to_response('main/homepage.html', context_instance=RequestContext(request))
     profile_form = LoginForm()
     return render_to_response('profile/profile_login.html', { 'profile_form': profile_form, }, context_instance=RequestContext(request))
 
