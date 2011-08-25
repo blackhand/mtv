@@ -7,6 +7,7 @@ from os.path import join, dirname
 
 BUILD_DIR = join(dirname(dirname(__file__)))
 PROJECT_DIR = join(dirname(__file__))
+PROJECT_PATH = BUILD_DIR
 
 ADMINS = (
      ('Yonsy Solis', 'ysolis@tribalperu.com'),
@@ -126,6 +127,7 @@ BASE_INSTALLED_APPS = (
     'south',
     'django_extensions',
     'linaro_django_pagination',
+    'clean',
 
     # Apps
     'main',
