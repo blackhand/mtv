@@ -128,7 +128,7 @@ BASE_INSTALLED_APPS = (
     'linaro_django_pagination',
 
     # Apps
-    'home',
+    'main',
     'ubigeo',
     'profile',
     'contest',
