@@ -56,8 +56,11 @@ class ViewsTestCase(TestCase):
         login attempt with and unregistered user
         must go to register profile view
         """
-        self.test_post_login()
-        self.assertRedirects(reverse('profile_register'))
+        resp = self.post('profile_login', data = {
+            'email': self.EMAIL, 
+            'birth_date': self.BIRTH_DATE,
+            })
+        self.assertRedirects(resp, reverse('profile_register'))
         resp = self.post('profile_register', data = self.ANA_PROFILE)
         self.assertEqual(resp.status_code, 301)
 

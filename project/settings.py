@@ -2,7 +2,7 @@
 """
 Django settings for project
 """
-
+import sys
 from os.path import join, dirname
 
 BUILD_DIR = join(dirname(dirname(__file__)))
@@ -30,6 +30,14 @@ DATABASES = {
             }
     }
 }
+
+
+# Faster Tests
+
+SOUTH_TESTS_MIGRATE = False
+if 'test' in sys.argv:
+    DATABASES['default']['ENGINE'] = 'django.db.backends.sqlite3'
+    DATABASES['default']['OPTIONS'] = {}
 
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
