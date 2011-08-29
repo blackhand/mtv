@@ -40,6 +40,6 @@ def profile_register(request):
             return redirect('profile_enter_code')
 
     profile_form = ProfileForm(request.POST)
-    return render('profile/profile_register.html', {
+    return render(request, 'profile/profile_register.html', {
         'profile_form': profile_form, 
         })
