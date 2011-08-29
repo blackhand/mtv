@@ -2,7 +2,9 @@
 
 from django.db import models
 from django.core.mail import send_mail
+from django.http import HttpResponse
 from smtplib import SMTPException
+
 
 class Contact(models.Model):
     """
@@ -10,19 +12,21 @@ class Contact(models.Model):
     """
     first_name   = models.CharField('nombres', max_length=64)
     second_name  = models.CharField('apellidos', max_length=64)
-    email         = models.EmailField('email')
+    email        = models.EmailField('email')
     comment      = models.TextField('comentario')
     reply        = models.TextField('respuesta',blank=True)
     responded    = models.BooleanField('respondido',editable=False,default=False)
+    
+    objects = models.Manager()
 
     class Meta:
         verbose_name = 'Comentario Enviado'
         verbose_name_plural = 'Comentarios Enviados'
     
     def __unicode__(self):
-        return u'%s %s %s'% (self.first_name, self.first_surname, self.second_surname)
+        return u'%s %s %s'% ('Comentario de ', self.first_name, self.second_name, )
 
-    def getSubject():
+    def get_subject(self):
         """
         return subject
         """

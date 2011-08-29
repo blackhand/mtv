@@ -8,6 +8,3 @@ class ModelsTestCase(TestCase):
 
     def setUp(self):
         pass
-
-##    def test_send_reply_mail(self):
-        

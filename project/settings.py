@@ -171,8 +171,6 @@ LOGGING = {
 }
 
 # PROVISIONAL GMAIL ACCOUNT
-#
-#
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'themiseck.rock@gmail.com'
 EMAIL_HOST_PASSWORD = 'Dianateamo25'
