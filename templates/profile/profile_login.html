@@ -3,28 +3,30 @@
 <div class="form1">
     <h1>Ingresa la clave de tu empaque y participa del sorteo de <b>1 Grand Vitara, 1 Suzuki Swift y 1 iPod diario</b> que regala Nosotras.</h1>
     <ul class="formulario1">
-        <li class="text">Correo electrónico:*</li>
-        <li class="textbox"><input id="" name="" type="text" /></li>
-        <li class="text">Fecha de nacimiento:*</li>
-        <li class="textbox">
-        <select id="" name="" class="cboDia">
-            <option value="">Día</option>
-            </select>
-            <select id="" name="" class="cboMes">
-                <option value="">Mes</option>
-            </select>
-            <select id="" name="" class="cboAnio">
-                <option value="">Año</option>
-            </select>
-        </li>
-        <li class="text">&nbsp;</li>
-        <li class="textbox">&nbsp;</li>
-        <li class="msg">Mensaje de error al ingresar email y/o fec. Nac</li>
-        <li class="botones">
-        <a href="javascript:void(0)" class="btn-enviar"></a>
-        <a href="javascript:void(0)" class="btn-borrar"></a>
-        </li>
-        <li class="msg">(*) Campos obligatorios</li>
-    </ul>
+        <form action='.' method='post'>
+            <li class="text">Correo electrónico:*</li>
+            <li class="textbox"><input id="" name="" type="text" /></li>
+            <li class="text">Fecha de nacimiento:*</li>
+            <li class="textbox">
+                <select id="" name="" class="cboDia">
+                    <option value="">Día</option>
+                </select>
+                <select id="" name="" class="cboMes">
+                    <option value="">Mes</option>
+                </select>
+                <select id="" name="" class="cboAnio">
+                    <option value="">Año</option>
+                </select>
+            </li>
+            <li class="text">&nbsp;</li>
+            <li class="textbox">&nbsp;</li>
+            <li class="msg">Mensaje de error al ingresar email y/o fec. Nac</li>
+            <li class="botones">
+                <a href="javascript:void(0)" class="btn-enviar"></a>
+                <a href="javascript:void(0)" class="btn-borrar"></a>
+            </li>
+            <li class="msg">(*) Campos obligatorios</li>
+        </ul>
+    </form>
 </div>
 {% endblock %}
