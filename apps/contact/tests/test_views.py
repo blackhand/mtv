@@ -20,7 +20,7 @@ class ViewsTestCase(TestCase):
 
     def post(self, url_name, *args, **kwargs):
         data = kwargs.pop("data", None)
-        return self.client.post(reverse(url_name), data)
+        return self.client.post(reverse(url_name, args=args, kwargs=kwargs), data)
 
     def test_send_comment(self):
         resp = self.post('contact_send',data = self.USER_EMAIL)

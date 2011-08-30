@@ -5,9 +5,13 @@ from django.conf import settings
 urlpatterns = patterns('',
     # Profile URLs
     (r'^profile/', include('profile.urls')),
+    
+    # Contact URLs
+    (r'^contact/', include('contact.urls')),
 
     # Home URLs
     (r'', include('main.urls')),
+
 )
 
 if settings.DEBUG:
