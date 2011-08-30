@@ -4,7 +4,6 @@ from django.conf import settings
 
 urlpatterns = patterns('',
     # Profile URLs
-    (r'^contact/', include('contact.urls')),
     (r'^profile/', include('profile.urls')),
     
     # Contact URLs
