@@ -1,7 +1,5 @@
 # -*- coding: utf-8 -*-
 
-from django.contrib.auth.models import User
-from django.core.mail import send_mail
 from django.shortcuts import render
 
 from models import Contact

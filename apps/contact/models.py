@@ -38,7 +38,7 @@ class Contact(models.Model):
         """
         if not self.responded:
             try:
-                send_mail(self.getSubject, self.comment, self.email, ['themiseck.rock@gmail.com'])
+                send_mail(self.get_subject, self.comment, self.email, ['themiseck.rock@gmail.com'])
             except SMTPException:
                 return HttpResponse('Error al enviar mail')
         else:
