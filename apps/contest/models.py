@@ -11,6 +11,7 @@ class Product(models.Model):
 class Options(models.Model):
     participant = models.ForeignKey(Profile)
     product = models.ForeignKey(Product)
+    register_date = models.DateField()
 
 
 class Draw(models.Model):
@@ -24,4 +25,3 @@ class Draw(models.Model):
     }
     play_date = models.DateField()
     winner = models.ForeignKey(Profile)
-
