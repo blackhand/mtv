@@ -2,6 +2,7 @@
 
 from datetime import date
 from django.shortcuts import render
+from models import Draw,
 
 MIN_DATE = date(2011,9,1)
 MAX_DATE = date(2011,10,31)
@@ -23,12 +24,9 @@ def show_winners(request):
 
 def get_winners(request):
     day = 0
-    winners = []
     participants = Options.objects.filter(register_date__renge=(MIN_DATE, MAX_DATE))
     while day <=6:
         number_win = random.randint(0,participants.count()-1)
-        winners.append(participants.get(number_win))
+        Draw.objects.create(winner=participants.get(number_win).participant,play_date=self.NOW).save()
         day = day+1
-	return render(request, 'template',{
-	    'winners':winners,
-	    })
+	return redirect('show_winners')
