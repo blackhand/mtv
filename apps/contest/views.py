@@ -30,5 +30,5 @@ def get_winners(request):
         winners.append(participants.get(number_win))
         day = day+1
 	return render(request, 'template',{
-	    'winners':winners
+	    'winners':winners,
 	    })

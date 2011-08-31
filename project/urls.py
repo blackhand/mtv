@@ -9,6 +9,9 @@ urlpatterns = patterns('',
     # Contact URLs
     (r'^contact/', include('contact.urls')),
 
+    # Profile URLs
+    (r'^contest/', include('contest.urls')),
+    
     # Home URLs
     (r'', include('main.urls')),
 
