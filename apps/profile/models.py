@@ -11,8 +11,8 @@ class Profile(models.Model):
     """
     user            = models.OneToOneField('auth.User', editable=False)
     first_name      = models.CharField('nombres', max_length=64)
-    first_surname   = models.CharField('apellidos', max_length=64)
-    second_surname  = models.CharField('apellidos', max_length=64)
+    first_surname   = models.CharField('apellido materno', max_length=64)
+    second_surname  = models.CharField('apellido paterno', max_length=64)
     email           = models.EmailField('email', unique=True)
     birth_date      = models.DateField('fecha de nacimiento')
     ubigeo          = models.ForeignKey(Ubigeo, verbose_name='ubigeo')
