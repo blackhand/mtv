@@ -58,24 +58,19 @@
 {
 	/*background: #dde;*/
 	width:27px;
-	background:url(../images/bg-scroll-pane.png) no-repeat 0 0;
-	position: relative;
+	background:url(../images/bg-scroll-pane.png) no-repeat top center;
+	position:relative;
 }
 
 .jspDrag
 {
 	/*background: #bbd;*/
-	/*background:url(../images/bg-scroll-hand.gif) no-repeat 0 0;*/
-	width:21px;
-	-webkit-border-radius: 5px;
-	-moz-border-radius: 5px;
-	border-radius: 5px;
-	background:#FFF;
+	background:url(../images/bg-jspDrag.png) no-repeat 0 0;
+	width:27px;
 	position: relative;
 	top: 0;
 	left: 0;
 	cursor: pointer;
-	margin-left:3px;
 }
 
 .jspHorizontalBar .jspTrack,

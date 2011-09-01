@@ -732,7 +732,8 @@ function clearTypeFix($slides) {
 			if (v && v != 'transparent')
 				return v;
 		}
-		return '#ffffff';
+		//return '#ffffff';
+		return 'transparent';
 	};
 	$slides.each(function() { $(this).css('background-color', getBg(this)); });
 };
