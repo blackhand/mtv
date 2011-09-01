@@ -20,7 +20,8 @@ class Profile(models.Model):
     home_phone      = models.CharField('telefono fijo', max_length=9)
     mobile_phone    = models.CharField('movil', max_length=9)
     document_code   = models.CharField('DNI', max_length=8)
-    is_participant  = models.BooleanField('Participa', default=False, editable=False)
+    is_participant  = models.BooleanField('participa', default=False, editable=False)
+    is_winner       = models.BooleanField('ganadora', default=False, editable=False)
 
     objects = models.Manager()
     
@@ -54,7 +55,39 @@ class Profile(models.Model):
         user.save()
         super(Profile, self).save(*args, **kwargs)
     
-    @models.permalink
-    def get_absolute_url(self):
-        return ('profile')
+
+class Registered(Profile):
+    " Proxy model for registered users"
+    
+    class Meta:
+        proxy = True
+        verbose_name = 'Usuaria Registrada'
+        verbose_name_plural = 'Usuarias Registradas'
+
+
+class ParticipantManager(models.Manager):
+    def get_query_set(self):
+        return super(ParticipantManager, self).get_query_set().filter(is_participant=True)
+
+
+class Participant(Profile):
+    objects = ParticipantManager()
+    class Meta:
+        proxy = True
+        verbose_name = 'Participante Registrada'
+        verbose_name_plural = 'Participantes Registradas'
+
+
+class WinnerManager(models.Manager):
+    def get_query_set(self):
+        return super(WinnerManager, self).get_query_set().filter(is_winner=True)
+
+
+class Winner(Profile):
+    objects = WinnerManager()
+    class Meta:
+        proxy = True
+        verbose_name = 'Ganadoras'
+        verbose_name_plural = 'Ganadoras'
+
 

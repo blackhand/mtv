@@ -20,8 +20,8 @@ class Contact(models.Model):
     objects = models.Manager()
 
     class Meta:
-        verbose_name = 'Comentario Enviado'
-        verbose_name_plural = 'Comentarios Enviados'
+        verbose_name = 'comentario enviado'
+        verbose_name_plural = 'comentarios enviados (todos)'
     
     def __unicode__(self):
         return u'%s %s %s'% ('Comentario de ', self.first_name, self.second_name, )
@@ -48,3 +48,17 @@ class Contact(models.Model):
                 return HttpResponse('Error al enviar mail')
         self.responded = True
         super(Contact, self).save(*args, **kwargs)
+
+
+class PendingContact(Contact):
+    class Meta:
+        proxy = True
+        verbose_name = 'comentario pendiente de respuesta'
+        verbose_name_plural = 'comentarios pendientes de respuesta'
+
+
+class RespondedContact(Contact):
+    class Meta:
+        proxy = True
+        verbose_name = 'comentario respondido'
+        verbose_name_plural = 'comentarios respondidos'

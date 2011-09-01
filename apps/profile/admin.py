@@ -4,13 +4,21 @@ Admin for Profile model
 """
 
 from django.contrib import admin
-from models import Profile
+from models import Registered, Participant, Winner
 
 
-class ProfileAdmin(admin.ModelAdmin):
-    """
-    ModelAdmin for Profile
-    """
+class RegisteredAdmin(admin.ModelAdmin):
+    pass
 
 
-admin.site.register(Profile, ProfileAdmin)
+class ParticipantAdmin(admin.ModelAdmin):
+    pass
+
+
+class WinnerAdmin(admin.ModelAdmin):
+    pass
+
+
+admin.site.register(Registered, RegisteredAdmin)
+admin.site.register(Participant, ParticipantAdmin)
+admin.site.register(Winner, WinnerAdmin)

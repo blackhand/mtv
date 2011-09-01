@@ -7,12 +7,20 @@ from profile.models import Profile
 class Product(models.Model):
     code = models.CharField(max_length=32)
 
+    class Meta:
+        verbose_name = 'producto'
+        verbose_name_plural = 'productos'
 
-class Options(models.Model):
+
+class Option(models.Model):
     participant = models.ForeignKey(Profile)
     product = models.ForeignKey(Product)
     register_date = models.DateField()
-
+    
+    class Meta:
+        verbose_name = 'opcion'
+        verbose_name_plural = 'opciones'
+        
 
 class Draw(models.Model):
     DIARY = 1
@@ -25,3 +33,8 @@ class Draw(models.Model):
     }
     play_date = models.DateField()
     winner = models.ForeignKey(Profile)
+
+
+    class Meta:
+        verbose_name = 'sorteo'
+        verbose_name_plural = 'sorteos'
