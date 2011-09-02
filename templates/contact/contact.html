@@ -27,13 +27,13 @@
 		<h1>Si tienes dudas, comentarios o sugerencias escríbenos.</h1>
 		<ul class="form-contact">
 			<li class="text">Nombres:</li>
-			<li class="textbox"><input id="first_name" name="first_name" type="text" /></li>
+			<li class="textbox">{{ contact_form.errors.first_name }}<input id="first_name" name="first_name" type="text" /></li>
 			<li class="text">Apellidos:</li>
-			<li class="textbox"><input id="second_name" name="second_name" type="text" /></li>
+			<li class="textbox">{{ contact_form.errors.second_name }}<input id="second_name" name="second_name" type="text" /></li>
 			<li class="text">E-mail:</li>
-			<li class="textbox"><input id="email" name="email" type="text" /></li>
+			<li class="textbox">{{ contact_form.errors.email }}<input id="email" name="email" type="text" /></li>
 			<li class="text">Mensaje:</li>
-			<li style="height:auto;"><textarea id="comment" name="comment"></textarea></li>
+			<li style="height:auto;">{{ contact_form.errors.comment }}<textarea id="comment" name="comment"></textarea></li>
 			<li class="botones">
 				<a href="javascript:void(0)" class="btn-enviar" onClick="$('#contacnt_form').submit();"></a>
 				<a href="javascript:void(0)" class="btn-borrar"></a>

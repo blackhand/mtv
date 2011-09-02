@@ -14,6 +14,9 @@ urlpatterns = patterns('',
     
     # Home URLs
     (r'', include('main.urls')),
+    
+    # Home URLs
+    (r'^ubigeo/', include('ubigeo.urls')),
 
 )
 

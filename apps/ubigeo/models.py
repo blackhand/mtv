@@ -38,5 +38,3 @@ class Ubigeo(models.Model):
     def district(self):
         parent = self.parent
         return None if not (parent or parent.parent) else parent.parent.name
-
-

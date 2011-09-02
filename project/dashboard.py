@@ -42,6 +42,13 @@ class CustomIndexDashboard(Dashboard):
         ))
 
         self.children.append(modules.ModelList(
+            _('Ubigeo'),
+            column=1,
+            collapsible=False,
+            models=('ubigeo.*',),
+        ))
+        
+        self.children.append(modules.ModelList(
             _('Administration de usuarios del CMS'),
             column=1,
             collapsible=False,
