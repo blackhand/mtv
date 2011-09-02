@@ -14,4 +14,4 @@ def contact_send(request):
                                    comment = request.POST["comment"],
                                    )
         contact.save()
-    return render(request, 'main/main_homepage.html')
+    return render(request, 'contact/contact.html')

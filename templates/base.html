@@ -11,7 +11,7 @@
         <meta http-equiv="cache-control" content="no-cache"/>
         {% endblock meta %}
         {% block favicon %}
-        <link rel="shortcut icon" type="image/x-icon" href="{{ STATIC_URL }}images/favicon.ico"/>
+        <link rel="shortcut icon" type="image/x-icon" href="{{ STATIC_URL }}favicon.ico"/>
         {% endblock %}
         {% block css %}
         <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/style.css"/>
@@ -21,7 +21,7 @@
     </head>
 <body class="not-bg">
 <div class="wrapper">
-    <div class="header">
+	<div class="header">
 		<div class="h-logo"></div>
 		<div class="h-social">
 			<a href="javascript:void(0)" class="s-facebook"></a>
@@ -31,41 +31,41 @@
 			<li><a href="javascript:void(0)" class="on">Iniciar sesión</a></li>
 			<li><a id="ganadoras" href="ganadoras.html">Ganadoras</a></li>
 			<li><a id="bases" href="bases.html">Bases</a></li>
-			<li><a id="contactenos" href="/contact/send/">Contáctenos</a></li>
+			<li><a id="contactenos" href="contact/send/">Contáctenos</a></li>
 		</ul>
 	</div>
 	<div class="clear"></div>
             {% block content %}
             {% endblock %}
         <div class="clear"></div>
-		<div class="footer">
-			<div class="botonera">
-				<div class="botonera-mascara"></div>
-				<a href="javascript:void(0)" class="btn-comercial"></a>
-				<ul class="btns-cycle">
-					<li><a href="javascript:void(0)" class="btn-bot-01" onmouseover="secCycle(1)" onmouseout="secCycleOut()"></a></li>
-					<li><a href="javascript:void(0)" class="btn-bot-02" onmouseover="secCycle(2)" onmouseout="secCycleOut()"></a></li>
-					<li><a href="javascript:void(0)" class="btn-bot-03" onmouseover="secCycle(3)" onmouseout="secCycleOut()"></a></li>
-					<li><a href="javascript:void(0)" class="btn-bot-04" onmouseover="secCycle(4)" onmouseout="secCycleOut()"></a></li>
-					<li><a href="javascript:void(0)" class="btn-bot-05" onmouseover="secCycle(5)" onmouseout="secCycleOut()"></a></li>
-					<li><a href="javascript:void(0)" class="btn-bot-06" onmouseover="secCycle(6)" onmouseout="secCycleOut()"></a></li>
-				</ul>
-				<ul class="btns-popups">
-					<li class="not-margin"><a href="javascript:void(0)" class="popup-bot-01 not-visible"></a></li>
-					<li><a href="javascript:void(0)" class="popup-bot-02 not-visible"></a></li>
-					<li><a href="javascript:void(0)" class="popup-bot-03 not-visible"></a></li>
-					<li><a href="javascript:void(0)" class="popup-bot-04 not-visible"></a></li>
-					<li><a href="javascript:void(0)" class="popup-bot-05 not-visible"></a></li>
-					<li><a href="javascript:void(0)" class="popup-bot-06 not-visible"></a></li>
-				</ul>
-			</div>
-			<div class="mascara-auto">
-				<a href="javascript:void(0)" class="btn-auto"></a>
-			</div>
+	<div class="footer">
+		<div class="botonera">
+			<div class="botonera-mascara"></div>
+			<a href="javascript:void(0)" class="btn-comercial"></a>
+			<ul class="btns-cycle">
+				<li><a href="javascript:void(0)" class="btn-bot-01" onmouseover="secCycle(1)" onmouseout="secCycleOut()"></a></li>
+				<li><a href="javascript:void(0)" class="btn-bot-02" onmouseover="secCycle(2)" onmouseout="secCycleOut()"></a></li>
+				<li><a href="javascript:void(0)" class="btn-bot-03" onmouseover="secCycle(3)" onmouseout="secCycleOut()"></a></li>
+				<li><a href="javascript:void(0)" class="btn-bot-04" onmouseover="secCycle(4)" onmouseout="secCycleOut()"></a></li>
+				<li><a href="javascript:void(0)" class="btn-bot-05" onmouseover="secCycle(5)" onmouseout="secCycleOut()"></a></li>
+				<li><a href="javascript:void(0)" class="btn-bot-06" onmouseover="secCycle(6)" onmouseout="secCycleOut()"></a></li>
+			</ul>
+			<ul class="btns-popups">
+				<li class="not-margin"><a href="javascript:void(0)" class="popup-bot-01 not-visible"></a></li>
+				<li><a href="javascript:void(0)" class="popup-bot-02 not-visible"></a></li>
+				<li><a href="javascript:void(0)" class="popup-bot-03 not-visible"></a></li>
+				<li><a href="javascript:void(0)" class="popup-bot-04 not-visible"></a></li>
+				<li><a href="javascript:void(0)" class="popup-bot-05 not-visible"></a></li>
+				<li><a href="javascript:void(0)" class="popup-bot-06 not-visible"></a></li>
+			</ul>
+		</div>
+		<div class="mascara-auto">
+			<a href="javascript:void(0)" class="btn-auto"></a>
 		</div>
 	</div>
-	<input id="txtAutoCycle" name="txtAutoCycle" type="hidden" value="0" />
-	<input id="txtBGCycle" name="txtBGCycle" type="hidden" value="0" />
+</div>
+<input id="txtAutoCycle" name="txtAutoCycle" type="hidden" value="0" />
+<input id="txtBGCycle" name="txtBGCycle" type="hidden" value="0" />
     {% block js %}
         <script type="text/javascript" src="{{ STATIC_URL }}js/jquery-1.4.2.min.js"></script>
         <script type="text/javascript" src="{{ STATIC_URL }}js/jquery.pngFix.js"></script>
@@ -79,16 +79,19 @@
         <script type="text/javascript" src="{{ STATIC_URL }}js/init.js"></script>
         <script>
         $(document).ready(function(){
-	        $('#txtAutoCycle').val('1');
-	        $('#txtBGCycle').val('0');
-	        $("#ganadoras, #bases, #contactenos").colorbox({iframe:true, innerWidth:547, innerHeight:381});
-	        var myImages = new Array();
-	        myImages[0] = "{{ STATIC_URL }}images/img-home-layer-0.png";
-	        myImages[1] = "{{ STATIC_URL }}images/img-home-layer-1.png";
-	        myImages[2] = "{{ STATIC_URL }}images/img-home-layer-2.png";
-	        myImages[3] = "{{ STATIC_URL }}images/img-home-layer-3.png";
-	        $("#myimage2").imageparallax({ images: myImages, allowVertical: false });
-        });
+	        // inicializar valor
+			$('#txtAutoCycle').val('1');
+			$('#txtBGCycle').val('0');
+			// colorbox
+			$("#ganadoras, #bases, #contactenos").colorbox({iframe:true, innerWidth:547, innerHeight:381});
+			//$('#parallax').jparallax();
+			var myImages = new Array();
+			myImages[0] = "{{ STATIC_URL }}images/img-home-layer-0.png";
+			myImages[1] = "{{ STATIC_URL }}images/img-home-layer-1.png";
+			myImages[2] = "{{ STATIC_URL }}images/img-home-layer-2.png";
+			myImages[3] = "{{ STATIC_URL }}images/img-home-layer-3.png";
+			$("#myimage2").imageparallax({ images: myImages, allowVertical: false });
+		});
         </script>
     {% endblock js %}
 </body>
