@@ -15,7 +15,8 @@ class Contact(models.Model):
     email        = models.EmailField('email')
     comment      = models.TextField('comentario')
     reply        = models.TextField('respuesta',blank=True)
-    responded    = models.BooleanField('respondido',editable=False,default=False)
+    responded    = models.BooleanField('respondido',editable=False,default=True)
+    new          = models.BooleanField('nuevo',editable=False,default=True)
     
     objects = models.Manager()
 
@@ -36,18 +37,20 @@ class Contact(models.Model):
         """
         we overload here save to send mail
         """
-        if not self.responded:
+        if self.new:
             try:
                 send_mail(self.get_subject, self.comment, self.email, ['themiseck.rock@gmail.com'])
             except SMTPException:
                 return HttpResponse('Error al enviar mail')
         else:
-            try:
-                send_mail('Nosotroas', self.reply, 'themiseck.rock@gmail.com', [self.email])
-            except SMTPException:
-                return HttpResponse('Error al enviar mail')
-        self.responded = True
+            if not self.responded:
+                try:
+                    send_mail('Nosotras', self.reply, 'themiseck.rock@gmail.com', [self.email])
+                except SMTPException:
+                    return HttpResponse('Error al enviar mail')
+            self.responded = False
         super(Contact, self).save(*args, **kwargs)
+        self.new = False
 
 
 class PendingContact(Contact):
