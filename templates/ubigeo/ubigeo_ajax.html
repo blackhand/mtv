@@ -9,7 +9,16 @@
 	(function($) {
         $(document).ready(function() {
             $('#department').change(function(){
-				$.getJSON('/ubigeo/json/province/'+this.value+'/',function(data){
+				$.getJSON('http://0.0.0.0:8000/ubigeo/province/'+$('#department').val()+'/',function(data){
+					var items = [];
+					$.each(data, function(key, val) {
+						items.push('<li id="' + key + '">' + val + '</li>');
+					});
+					alert(items);
+				});
+			});
+			$('#province').change(function(){
+				$.getJSON('ubigeo/distric/'+this.value+'/',function(data){
 					alert(data);
 				});
 			});

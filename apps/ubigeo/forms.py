@@ -18,9 +18,9 @@ class UbigeoWidget(forms.MultiWidget):
     Widget to draw three selects for ubigeo, department, province and district
     """
     def __init__(self, attrs=None, *args, **kwargs):
-        departments = UbigeoWidget.get_department()
-        provinces = UbigeoWidget.get_province(departments[0][0])
-        districts = UbigeoWidget.get_district(provinces[0][0])
+        departments = self.get_department()
+        provinces = self.get_province(departments[0][0])
+        districts = self.get_district(provinces[0][0])
         widgets = (
                 Select(choices = departments, attrs={'name':'department','id':'department',}),
                 Select(choices = provinces, attrs={'name':'province','id':'department',}),
@@ -39,18 +39,15 @@ class UbigeoWidget(forms.MultiWidget):
         except AttributeError:
             pass 
 
-    @staticmethod
-    def get_department():
+    def get_department(self):
         departments = Ubigeo.objects.values_list('id','name').filter(parent__isnull=True)
         return departments
 
-    @staticmethod
-    def get_province(department):
+    def get_province(self, department):
         province = Ubigeo.objects.values_list('id','name').filter(parent=department)
         return province
 
-    @staticmethod
-    def get_district(province):
+    def get_district(self, province):
         district = Ubigeo.objects.values_list('id','name').filter(parent=province)
         return district
 

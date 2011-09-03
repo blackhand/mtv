@@ -3,6 +3,7 @@
 from django.shortcuts import render
 from ubigeo.forms import UbigeoForm, UbigeoWidget
 from django.utils import simplejson
+from django.http import HttpResponse
 
 
 def widget(request):
@@ -12,10 +13,12 @@ def widget(request):
         })
 
 
-def get_provinces(request, department_id):
-    provinces = UbigeoWidget.get_province(department_id)
-    print provinces
-    return HttpResponse(simplejson.dumps(provinces),mimetype='application/json')
+def get_provinces(request, department):
+    provinces = UbigeoWidget().get_province(department)
+    arr_j = {}
+    for province in provinces:
+        arr_j[province[0]]=province[1]
+    return HttpResponse(simplejson.dumps(arr_j),mimetype='application/json')
 
-def get_districts(request):
-    department = request.GET["department"]
+def get_districts(request, province):
+    return HttpResponse(simplejson.dumps(province),mimetype='application/json')
