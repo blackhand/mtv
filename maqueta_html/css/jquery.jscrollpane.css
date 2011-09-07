@@ -22,7 +22,7 @@
 	top: 0;
 	right: 0;
 	/*width: 16px;*/
-	width:27px;
+	width:8px;
 	height: 100%;
 	/*background: red;*/
 }
@@ -34,6 +34,7 @@
 	left: 0;
 	width: 100%;
 	height: 16px;
+	display:none;
 	/*background: red;*/
 }
 
@@ -57,16 +58,16 @@
 .jspTrack
 {
 	/*background: #dde;*/
-	width:27px;
-	background:url(../images/bg-scroll-pane.png) no-repeat top center;
+	width:8px;
+	background:url(../images/bg-scroll-pane.png) repeat-y top center;
 	position:relative;
 }
 
 .jspDrag
 {
 	/*background: #bbd;*/
-	background:url(../images/bg-jspDrag.png) no-repeat 0 0;
-	width:27px;
+	background:#004B9C;
+	width:8px;
 	position: relative;
 	top: 0;
 	left: 0;
@@ -113,7 +114,6 @@
 
 .jspCorner
 {
-	background: #eeeef4;
 	float: left;
 	height: 100%;
 }

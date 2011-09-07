@@ -51,7 +51,7 @@
 			var h = $This.height();
 			
 			$This.replaceWith("<div id=\"" + config.classmodifier + "_" + parallaxCount + "\" rel=\"" + parallaxCount + "\"></div>");
-			$("#" + config.classmodifier + "_" + parallaxCount).css({ width: w+"px", height: h+"px", overflow: "hidden", position: "relative", cursor: "pointer" });
+			$("#" + config.classmodifier + "_" + parallaxCount).css({ width: w+"px", height: h+"px", overflow: "hidden", position: "relative", cursor: "default" });
 			
 			// Set up images
 			if (config.images.length > 0) {
@@ -118,8 +118,8 @@
 					var imageTop = ((myHeight - originalHeight) / 2) * -1;
 					
 					// Calculate movement, arbitrarily divided by 12 to reduce the speed
-					var myX = parseInt(imageLeft + ((x * i) / 10), 10);
-					var myY = parseInt(imageTop + ((y * i) / 10),  10);
+					var myX = parseInt(imageLeft + ((x * i) / 30), 10);
+					var myY = parseInt(imageTop + ((y * i) / 30),  10);
 					
 					if (config.allowHorizontal) {
 						$(img).css({ left: myX + "px" });

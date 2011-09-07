@@ -12,7 +12,9 @@
 <link rel="stylesheet" type="text/css" href="css/style.css" />
 <link rel="stylesheet" type="text/css" href="css/jquery.jscrollpane.css" />
 <link rel="stylesheet" type="text/css" href="css/colorbox.css" />
+<link rel="stylesheet" href="css/queryLoader.css" type="text/css" />
 <script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="js/queryLoader.js"></script>
 <script type="text/javascript" src="js/jquery.pngFix.js"></script>
 <script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
 <script type="text/javascript" src="js/jquery.jscrollpane.js"></script>
@@ -21,30 +23,14 @@
 <script type="text/javascript" src="js/jquery.colorbox.js"></script>
 <script type="text/javascript" src="js/jquery.imageparallax.js"></script>
 <script type="text/javascript" src="js/jquery.scrollTo.js"></script>
+<script type="text/javascript" src="js/jquery.backgroundparallax.js"></script>
+<script type="text/javascript" src="js/jquery.tubeplayer.js"></script>
+<script type="text/javascript" src="js/jquery-ui-1.7.2.custom.js" ></script>
+<script type="text/javascript" src="js/jquery.jcoverflip.js" ></script>
 <script type="text/javascript" src="js/init.js"></script>
-<script>
-$(document).ready(function(){ 
-	
-	// inicializar valor
-	$('#txtAutoCycle').val('1');
-	$('#txtBGCycle').val('0');
-	
-	// colorbox
-	$("#ganadoras, #bases, #contactenos").colorbox({iframe:true, innerWidth:547, innerHeight:381});
-	
-	//$('#parallax').jparallax();
-	var myImages = new Array();
-	myImages[0] = "images/img-home-layer-0.png";
-	myImages[1] = "images/img-home-layer-1.png";
-	myImages[2] = "images/img-home-layer-2.png";
-	myImages[3] = "images/img-home-layer-3.png";
-	$("#myimage2").imageparallax({ images: myImages, allowVertical: false });
-
-});
-</script>
+<script type="text/javascript" src="js/home.js"></script>
 </head>
 <body>
-<!--<div class="bg-body"><img src="images/bg-city.png" alt="" /></div>-->
 <div class="wrapper">
 	<div class="header">
 		<div class="h-logo"></div>
@@ -54,9 +40,9 @@ $(document).ready(function(){
 		</div>
 		<ul class="h-menu">
 			<li><a href="javascript:void(0)" class="on">Iniciar sesión</a></li>
-			<li><a id="ganadoras" href="ganadoras.html">Ganadoras</a></li>
-			<li><a id="bases" href="bases.html">Bases</a></li>
-			<li><a id="contactenos" href="contactenos.html">Contáctenos</a></li>
+			<li><a href="javascript:void(0)" id="ganadoras">Ganadoras</a></li>
+			<li><a href="javascript:void(0)" id="bases">Bases</a></li>
+			<li><a href="javascript:void(0)" id="contactenos">Contáctenos</a></li>
 		</ul>
 	</div>
 	<div class="clear"></div>
@@ -182,42 +168,42 @@ $(document).ready(function(){
 				</div>
 			</div>-->
 			<!-- ////////////////////// -->
-			<div id="divIntra4" class="content-body-item">
+			<!--<div id="divIntra4" class="content-body-item">
 				<div class="form-clave-correcta">
-					<p class="messages"><span>Suerte,</span> Catherin Rivera</p>
-					<p>&nbsp;</p>
-					<div class="content-msg"><img src="images/txt-clave-satisfactoria.png" width="377" height="67" alt="" /></div>
-					<p>&nbsp;</p>
-					<div class="content-msg"><a href="javascript:void(0)" class="btn-ingresa-otra-clave"></a></div>
+					<p class="title"><span>Suerte,</span> Catherin Rivera</p>
+					<p class="message">Tu clave ha sido procesada satisfactoriamente.</p>
+					<p class="message"><span>Tienes</span> 2 opciones <span>para el sorteo del iPod de hoy</span></p>
+					<p class="message"><span>Tienes</span> 2 opciones <span>para el sorteo final de 1 Grand Vitara</span></p>
+					<p class="message"><a href="javascript:void(0)" class="btn-ingresa-otra-clave"></a></p>
 				</div>
-			</div>
+			</div>-->
 			<!-- ////////////////////// -->		
-			<div id="divIntra5" class="content-body-item">
-				<div class="form3">
-					<p class="messages"><span>Lo sentimos</span> Catherin Rivera</p>
+			<!--<div id="divIntra5" class="content-body-item">
+				<div class="form-clave-ya-registrada">
+					<p class="title"><span>Lo sentimos</span> Catherin Rivera</p>
+					<p class="message">Esta clave ya ha sido ingresada.</p>
+					<p class="message"><span>Con anterioridad o en promociones anteriores.</span></p>
 					<p>&nbsp;</p>
-					<div class="content-msg"><img src="images/txt-clave-ingresada-igual.png" width="329" height="56" alt="" /></div>
-					<p>&nbsp;</p>
-					<div class="content-msg"><a href="javascript:void(0)" class="btn-ingresa-otra-clave"></a></div>
+					<p class="message"><a href="javascript:void(0)" class="btn-ingresa-otra-clave"></a></p>
 				</div>
-			</div>
+			</div>-->
 			<!-- ////////////////////// -->
-			<div id="divIntra6" class="content-body-item">
-				<div class="form3">
-					<p class="messages"><span>Lo sentimos</span> Catherin Rivera</p>
-					<p>&nbsp;</p>
-					<div class="content-msg"><img src="images/txt-clave-ingresada-no-valida.png" width="346" height="55" alt="" /></div>
-					<p>&nbsp;</p>
-					<div class="content-msg"><a href="javascript:void(0)" class="btn-intentar-nuevamente-aqui"></a></div>
+			<!--<div id="divIntra6" class="content-body-item">
+				<div class="form-clave-no-valida">
+					<p class="title"><span>Lo sentimos</span> Catherin Rivera</p>
+					<p class="message">La clave ingresada no es válida.</p>
+					<p class="message"><span>Revisa si las has ingresado correctamente o <br />si el producto participa de la promoción</span></p>
+					<p class="message"><a href="javascript:void(0)" class="btn-intentar-nuevamente-aqui"></a></p>
 				</div>
-			</div>
+			</div>-->
 			<!-- ////////////////////// -->
 			<div id="divCompartir" class="content-body-item">
-				<div class="form4">
-					<h1 style="font-size:16px;">¡Compártelo con todos!</h1>
-					<p>&nbsp;</p><p>&nbsp;</p>
-					<p><img src="images/img-sticker.png" width="436" height="172" alt="" /></p>
-					<p align="right"><a href="javscript:void(0)" class="btn-intentar-nuevamente-aqui"></a></p>
+				<div class="form-compartir">
+					<p class="title">¡Compártelo con todos!</p>
+					<p class="message">¿Esta frase Nosotras va contigo?</p>
+					<p class="message"><span>¡Entonces compártela y participa del sorteo semanal!</span></p>
+					<p class="message"><img src="images/img-sticker.png" width="475" height="138" alt="" /></p>
+					<p class="message" align="right"><a href="javscript:void(0)" class="btn-compartir-facebook"></a></p>
 				</div>
 			</div>
 			<!-- ////////////////////// -->
@@ -243,34 +229,29 @@ $(document).ready(function(){
 						</ul>
 						<ul class="tabs-content">
 							<li class="tab-bg-suzuki-vitara">
-								<div class="content-cycle" style="margin-left:20px;">
-									<a href="javascript:void(0)" class="prev"></a>
-									<div class="cycle">
-										<span><img src="images/img-cycle-suzuki-vitara.png" width="399" height="113" alt="" /></span>
-										<span><img src="images/img-cycle-suzuki-vitara.png" width="399" height="113" alt="" /></span>
-									</div>
-									<a href="javascript:void(0)" class="next"></a>
-								</div>
+								<p>&nbsp;</p>
+								<p>Gana una Grand Vitara o Suzuki Swift y siéntete libre de ir a donde quieras.</p>
+								<p><span>¡Conoce cada auto de cerca!</span></p>
+								<div class="img"><img src="images/img-premios-suzuki-vitara.png" width="527" height="194" alt="" /></div>
 							</li>
 							<li class="tab-bg-suzuki-swift not-visible">
-								<div class="content-cycle">
-									<a href="javascript:void(0)" class="prev"></a>
-									<div class="cycle">
-										<span><img src="images/img-cycle-suzuki-swift.png" width="399" height="113" alt="" /></span>
-										<span><img src="images/img-cycle-suzuki-swift.png" width="399" height="113" alt="" /></span>
-									</div>
-									<a href="javascript:void(0)" class="next"></a>
-								</div>
+								<p>&nbsp;</p>
+								<p>Gana una Grand Vitara o Suzuki Swift y siéntete libre de ir a donde quieras.</p>
+								<p><span>¡Conoce cada auto de cerca!</span></p>
+								<div class="img"><img src="images/img-premios-suzuki-swift.png" width="527" height="194" alt="" /></div>
 							</li>
 							<li class="tab-bg-ipod not-visible">
+								<p>&nbsp;</p>
+								<p>Lleva tu música a todos lados con los iPods que Nosotras te regala.</p>
 								<div class="content-cycle">
 									<a href="javascript:void(0)" class="prev"></a>
 									<div class="cycle">
-										<span><img src="images/img-cycle-ipod.png" width="399" height="113" alt="" /></span>
-										<span><img src="images/img-cycle-ipod.png" width="399" height="113" alt="" /></span>
+										<img src="images/img-premios-ipod-nano.png" width="447" height="173" alt="" />
+										<img src="images/img-premios-ipod-touch.png" width="447" height="173" alt="" />
 									</div>
 									<a href="javascript:void(0)" class="next"></a>
 								</div>
+								<p><span>*Todas tus claves te dan una opción para el sorteo diario. A mas claves ingresadas, más opciones de ganarlo.</span></p>
 							</li>
 						</ul>
 					</div>
@@ -280,23 +261,50 @@ $(document).ready(function(){
 			<div id="divProductos" class="content-body-item">
 				<div class="form-productos">
 					<h1><b>¡Que ninguno se te escape!</b> Entérate qué productos Nosotras participan en la promoción. ¡¡A más códigos, más opciones de ganar!!</h1>
-					<div class="content-cycle" style="margin-left:40px;">
-						<a href="javascript:void(0)" class="prev"></a>
-						<div class="cycle">
-							<span>
-								<img src="images/img-prod-01.png" width="83" height="123" alt="" />
-								<img src="images/img-prod-02.png" width="83" height="123" alt="" />
-								<img src="images/img-prod-03.png" width="83" height="123" alt="" />
-								<img src="images/img-prod-04.png" width="83" height="123" alt="" />
-							</span>
-							<span>
-								<img src="images/img-prod-01.png" width="83" height="123" alt="" />
-								<img src="images/img-prod-02.png" width="83" height="123" alt="" />
-								<img src="images/img-prod-03.png" width="83" height="123" alt="" />
-								<img src="images/img-prod-04.png" width="83" height="123" alt="" />
-							</span>
-						</div>
-						<a href="javascript:void(0)" class="next"></a>
+					<div class="content-productos">
+						<a href="javascript:void(0)" class="flecha_izq_carousel_productos" onclick="moveToPrev(); return false;"></a>
+						<a href="javascript:void(0)" class="flecha_der_carousel_productos" onclick="moveToNext(); return false;"></a>
+						<ul class="info-cartel">
+							<li id="img1"><img src="images/img-prod-01-cartel.png" /></li>
+							<li id="img2"><img src="images/img-prod-02-cartel.png" /></li>
+							<li id="img3"><img src="images/img-prod-03-cartel.png" /></li>
+							<li id="img4"><img src="images/img-prod-04-cartel.png" /></li>
+							<li id="img5"><img src="images/img-prod-05-cartel.png" /></li>
+							<li id="img6"><img src="images/img-prod-06-cartel.png" /></li>
+							<li id="img7"><img src="images/img-prod-07-cartel.png" /></li>
+							<li id="img8"><img src="images/img-prod-08-cartel.png" /></li>
+							<li id="img9"><img src="images/img-prod-09-cartel.png" /></li>
+							<li id="img10"><img src="images/img-prod-10-cartel.png" /></li>
+							<li id="img11"><img src="images/img-prod-11-cartel.png" /></li>
+							<li id="img12"><img src="images/img-prod-12-cartel.png" /></li>
+							<li id="img13"><img src="images/img-prod-13-cartel.png" /></li>
+							<li id="img14"><img src="images/img-prod-14-cartel.png" /></li>
+							<li id="img15"><img src="images/img-prod-15-cartel.png" /></li>
+							<li id="img16"><img src="images/img-prod-16-cartel.png" /></li>
+							<li id="img17"><img src="images/img-prod-17-cartel.png" /></li>
+							<li id="img18"><img src="images/img-prod-18-cartel.png" /></li>
+						</ul>
+						<ul id="flip">
+							<li id="01"><img src="images/img-prod-01-paquete.png" /></li>
+							<li id="02"><img src="images/img-prod-02-paquete.png" /></li>
+							<li id="03"><img src="images/img-prod-03-paquete.png" /></li>
+							<li id="04"><img src="images/img-prod-04-paquete.png" /></li>
+							<li id="05"><img src="images/img-prod-05-paquete.png" /></li>
+							<li id="06"><img src="images/img-prod-06-paquete.png" /></li>
+							<li id="07"><img src="images/img-prod-07-paquete.png" /></li>
+							<li id="08"><img src="images/img-prod-08-paquete.png" /></li>
+							<li id="09"><img src="images/img-prod-09-paquete.png" /></li>
+							<li id="10"><img src="images/img-prod-10-paquete.png" /></li>
+							<li id="11"><img src="images/img-prod-11-paquete.png" /></li>
+							<li id="12"><img src="images/img-prod-12-paquete.png" /></li>
+							<li id="13"><img src="images/img-prod-13-paquete.png" /></li>
+							<li id="14"><img src="images/img-prod-14-paquete.png" /></li>
+							<li id="15"><img src="images/img-prod-15-paquete.png" /></li>
+							<li id="16"><img src="images/img-prod-16-paquete.png" /></li>
+							<li id="17"><img src="images/img-prod-17-paquete.png" /></li>
+							<li id="18"><img src="images/img-prod-18-paquete.png" /></li>
+						</ul>
+						
 					</div>
 				</div>
 			</div>
@@ -305,13 +313,7 @@ $(document).ready(function(){
 				<div class="form-comercial">
 					<h1><b>Mira el comercial de la promo Nosotras</b><br />y prepárate para ser una chica Nosotras.</h1>
 					<div class="content-comercial">
-						<object width="313" height="213">
-							<param name="movie" value="http://www.youtube.com/v/HSJ0VoN7w38?version=3&amp;hl=es_ES&amp;rel=0"></param>
-							<param name="allowFullScreen" value="true"></param>
-							<param name="allowscriptaccess" value="always"></param>
-							<param name="wmode" value="opaque"></param>
-							<embed src="http://www.youtube.com/v/HSJ0VoN7w38?version=3&amp;hl=es_ES&amp;rel=0" type="application/x-shockwave-flash" width="313" height="213" allowscriptaccess="always" allowfullscreen="true"></embed>
-						</object>
+						<div id="youtube-player-container"></div>
 					</div>
 				</div>
 			</div>
@@ -347,6 +349,5 @@ $(document).ready(function(){
 	</div>
 </div>
 <input id="txtAutoCycle" name="txtAutoCycle" type="hidden" value="0" />
-<input id="txtBGCycle" name="txtBGCycle" type="hidden" value="0" />
 </body>
 </html>

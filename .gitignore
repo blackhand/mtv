@@ -2,6 +2,7 @@
 *.log
 .*.sw[po]
 ~*
+.installed.cfg
 parts/*
 bin/*
 eggs/*

@@ -48,14 +48,8 @@ p{ float:left; width:100%; }
 .scroll-pane, .bases{
 	float:left;
 	width:100%;
-	height:234px;
+	height:195px;
 }
-.bases{
-	height:234px;
-}
-	.bases .jspTrack{
-		background:url(../images/bg-scroll-pane-bases.png) no-repeat 0 0;
-	}
 	
 .wrapper{
 	margin:0 auto;
@@ -64,7 +58,7 @@ p{ float:left; width:100%; }
 }
 	.header{
 		position:absolute;
-		z-index:9999;
+		z-index:100;
 		top:0;
 		float:left;
 		width:100%;
@@ -121,26 +115,27 @@ p{ float:left; width:100%; }
 	.content-body{
 		position:absolute;
 		width:100%;
-		height:auto;
+		height:634px;
 		top:0;
 		left:0;
 		overflow:hidden;
+		background:url(../images/bg-city.jpg) no-repeat 0 0;
 	}
 		.content-body-hidden{
 			float:left;
 			width:auto;
 			height:634px;
-			background:url(../images/bg-city.jpg) no-repeat 0 28px
+			/*background:url(../images/bg-city.jpg) no-repeat 0 28px*/
 		}
 			.content-body-item{
 				float:left;
 				width:auto;
-				height:500px;
+				height:634px;
 			}
 	
 	.footer{
 		position:absolute;
-		z-index:9999;
+		z-index:100;
 		bottom:0;
 		float:left;
 		width:100%;
@@ -263,7 +258,7 @@ p{ float:left; width:100%; }
 	
 	#parallax{
 		position:absolute;
-		z-index:9999;
+		z-index:100;
 		top:0;
 		left:0;
 		width:100%;
@@ -272,8 +267,10 @@ p{ float:left; width:100%; }
 		margin-top:270px;
 		overflow:hidden;
 	}
-	.form1, .form2, .form3, .form4, .form-captcha, .form-clave-correcta, .form-premios, .form-productos, .form-comercial{
-		margin:50px auto 0 auto;
+	.form1, .form2, .form3, .form-compartir, .form-captcha, .form-clave-correcta, .form-clave-ya-registrada, .form-clave-no-valida, .form-premios, .form-productos, .form-comercial{
+		margin:70px auto 0 auto;
+	}
+	.form1{
 		width:564px;
 		height:398px;
 		background:url(../images/bg-form-1.png) no-repeat 0 0;
@@ -288,20 +285,10 @@ p{ float:left; width:100%; }
 		height:381px;
 		background:url(../images/bg-form-3.png) no-repeat 0 0;
 	}
-	.form4{
-		width:547px;
-		height:381px;
-		background:url(../images/bg-form-4.png) no-repeat 0 0;
-	}
 	.form-captcha{
 		width:547px;
 		height:381px;
 		background:url(../images/bg-form-captcha.png) no-repeat 0 0;
-	}
-	.form-clave-correcta{
-		width:601px;
-		height:381px;
-		background:url(../images/bg-form-clave-correcta.png) no-repeat 0 0;
 	}
 		.form1 h1{
 			float:left;
@@ -321,23 +308,14 @@ p{ float:left; width:100%; }
 			padding:0;
 			margin:70px 0 0 40px;
 		}
-		.form4 h1{
-			float:left;
-			width:470px;
-			height:27px;
-			font:normal 12px Arial, Helvetica, sans-serif;
-			color:#FFFFFF;
-			padding:0;
-			margin:70px 0 0 40px;
-		}
 		.form-captcha h1{
 			float:left;
 			width:470px;
-			height:42px;
+			height:30px;
 			font:normal 12px Arial, Helvetica, sans-serif;
 			color:#FFFFFF;
 			padding:0;
-			margin:70px 0 0 40px;
+			margin:68px 0 0 40px;
 		}
 			.form1 ul, .form2 ul, .form-captcha ul, .form-ganadoras ul, .form-contactenos ul{
 				list-style:none;
@@ -380,18 +358,21 @@ p{ float:left; width:100%; }
 				width:181px;
 				height:34px;
 				background:url(../images/btn-ingresa-otra-clave.png) no-repeat 0 0;
+				margin-top:15px;
 			}
 			a.btn-intentar-nuevamente-aqui{
 				display:inline-block;
-				width:182px;
-				height:29px;
+				width:221px;
+				height:34px;
 				background:url(../images/btn-intentar-nuevamente-aqui.png) no-repeat 0 0;
+				margin-top:15px;
 			}
 			a.btn-compartir-facebook{
 				display:inline-block;
-				width:123px;
-				height:29px;
+				width:138px;
+				height:34px;
 				background:url(../images/btn-compartir-facebook.png) no-repeat 0 0;
+				margin-right:20px;
 			}
 		/* *********************************** */
 		/* formulario 1*/
@@ -571,29 +552,96 @@ p{ float:left; width:100%; }
 				background:url(../images/img-codigo-empaque.png) no-repeat 0 0;
 				margin:-100px -175px 0 0;
 			}
-		/* forms mensajes */
-		p.messages{
-			float:left;
-			width:465px;
-			height:auto;
+	/* forms mensajes */
+	.form-clave-correcta{
+		width:601px;
+		height:381px;
+		background:url(../images/bg-form-clave-correcta.png) no-repeat 0 0;
+	}
+		.form-clave-correcta p.title{
+			width:450px;
+			height:30px;
 			font:normal 18px Arial, Helvetica, sans-serif;
 			color:#FFF;
-			margin:67px 0 0 86px;
+			margin:68px 0 43px 42px;
 		}
-			p.messages span{
+			.form-clave-correcta p.title span{
 				color:#fd98d9;
 			}
-			.content-msg{
-				float:left;
-				width:100%;
-				height:auto;
-				text-align:center;
-				margin:15px 0 0 0;
+		.form-clave-correcta p.message{
+			font:normal 15px Arial, Helvetica, sans-serif;
+			color:#FFF;
+			margin:4px 0 0 60px;
+		}
+			.message span{
+				font-size:12px;
+				color:#96fdf6;
 			}
-		/* form compartir */
-		.form4 p{
-			width:465px;
-			margin:0 0 0 40px;
+	
+	.form-clave-ya-registrada{
+		width:593px;
+		height:381px;
+		background:url(../images/bg-form-clave-ya-registrada.png) no-repeat 0 0;
+	}
+		.form-clave-ya-registrada p.title{
+			width:450px;
+			height:30px;
+			font:normal 18px Arial, Helvetica, sans-serif;
+			color:#FFF;
+			margin:68px 0 60px 85px;
+		}
+			.form-clave-ya-registrada p.title span{
+				color:#fd98d9;
+			}
+		.form-clave-ya-registrada p.message{
+			width:260px;
+			font:normal 15px Arial, Helvetica, sans-serif;
+			color:#FFF;
+			text-align:right;
+			margin:4px 0 0 280px;
+		}
+	.form-clave-no-valida{
+		width:651px;
+		height:381px;
+		background:url(../images/bg-form-clave-no-valida.png) no-repeat 0 0;
+	}
+		.form-clave-no-valida p.title{
+			width:450px;
+			height:30px;
+			font:normal 18px Arial, Helvetica, sans-serif;
+			color:#FFF;
+			margin:68px 0 60px 85px;
+		}
+			.form-clave-no-valida p.title span{
+				color:#fd98d9;
+			}
+		.form-clave-no-valida p.message{
+			width:280px;
+			font:normal 15px Arial, Helvetica, sans-serif;
+			color:#FFF;
+			text-align:center;
+			margin:5px 0 0 178px;
+		}
+	
+	/* form compartir */
+	
+	.form-compartir{
+		width:547px;
+		height:381px;
+		background:url(../images/bg-form-compartir.png) no-repeat 0 0;
+	}
+		.form-compartir p.title{
+			width:460px;
+			height:30px;
+			font:normal 13px Arial, Helvetica, sans-serif;
+			color:#FFF;
+			margin:68px 0 30px 40px;
+		}
+		.form-compartir p.message{
+			width:490px;
+			font:normal 15px Arial, Helvetica, sans-serif;
+			color:#FFF;
+			margin:0 0 5px 40px;
 		}
 		
 	/*  form premios */
@@ -601,21 +649,19 @@ p{ float:left; width:100%; }
 		width:547px;
 		height:381px;
 		background:url(../images/bg-premios.png) no-repeat 0 0;
-		/*margin-top:-190px;
-		margin-left:-273px;*/
 	}
 		.content-tabs{
 			float:left;
-			width:509px;
+			width:510px;
 			height:auto;
 			margin-top:71px;
-			margin-left:19px;
+			margin-left:18px;
 		}
 			ul.tabs-menu, ul.tabs-content,
 			ul.tabs-menu li, ul.tabs-content li{
 				list-style:none;
 				float:left;
-				width:509px;
+				width:510px;
 				height:31px;
 				overflow:hidden;
 			}
@@ -641,29 +687,56 @@ p{ float:left; width:100%; }
 			ul.tabs-content li.tab-bg-suzuki-vitara{ background:url(../images/tab-bg-suzuki-vitara.png) no-repeat 0 0; }
 			ul.tabs-content li.tab-bg-suzuki-swift{ background:url(../images/tab-bg-suzuki-swift.png) no-repeat 0 0; }
 			ul.tabs-content li.tab-bg-ipod{ background:url(../images/tab-bg-ipod.png) no-repeat 0 0; }
+			
+			ul.tabs-content li div.img{
+				float:left;
+				position:absolute;
+				z-index:200;
+				width:527px;
+				height:194px;
+				margin:55px 0 0 10px;
+				*margin:20px 0 0 -465px;
+			}
+				ul.tabs-content li div.img img{
+					position:absolute;
+					z-index:9999;
+				}
+			ul.tabs-content li p{
+				width:445px;
+				font:normal 12px Arial, Helvetica, sans-serif;
+				color:#FFF;
+				margin:0 0 2px 30px;
+			}
+				ul.tabs-content li p span{
+					color:#96fdf6;
+				}
 		
 		.content-cycle{
 			float:left;
-			width:463px;
-			height:143px;
-			margin-top:60px;
+			width:510px;
+			height:180px;
+			margin:10px 0 0 0;
 		}
-			a.prev, a.next{
+			a.prev, a.next,
+			a.flecha_izq_carousel_productos, a.flecha_der_carousel_productos{
 				float:left;
 				width:27px;
 				height:54px;
 				background:url(../images/btn-prev.png) no-repeat 0 0;
-				margin-top:43px;
+				margin-top:55px;
 			}
-			a.next{
+			a.next,
+			a.flecha_der_carousel_productos{
 				float:right;
 				background:url(../images/btn-next.png) no-repeat 0 0;
 			}
+			a.flecha_izq_carousel_productos, a.flecha_der_carousel_productos{
+				margin-top:90px;
+			}
 			.cycle{
 				float:left;
-				width:405px;
-				height:115px;
-				margin-top:28px;
+				width:454px;
+				height:180px;
 				overflow:hidden;
 			}
 				.cycle span{
@@ -677,8 +750,6 @@ p{ float:left; width:100%; }
 		width:547px;
 		height:381px;
 		background:url(../images/bg-productos.png) no-repeat 0 0;
-		/*margin-top:-190px;
-		margin-left:-273px;*/
 	}
 		.form-productos h1{
 			float:left;
@@ -689,27 +760,63 @@ p{ float:left; width:100%; }
 			padding:0;
 			margin:70px 0 0 40px;
 		}
+		.content-productos{
+			float:left;
+			width:510px;
+			height:auto;
+			margin-left:19px;
+		}
+			ul.info-cartel{
+				list-style:none;
+				position:relative;
+				float:left;
+				width:456px;
+				height:120px;
+				overflow:hidden;
+				margin-top:7px;
+			}
+				ul.info-cartel li{
+					position:absolute;
+					float:left;
+					width:100%;
+					height:120px;
+					text-align:center;
+					top:-120px;
+				}
+			
+			.ui-jcoverflip {
+				position: relative;
+				list-style:none;
+				float:left;
+				width:456px;
+				height:200px;
+				overflow:hidden;
+				margin-top:-55px;
+			}
+				.ui-jcoverflip--item {
+					position: absolute;
+					display: block;
+				}
+		
 	/* form comercial */
 	.form-comercial{
-		width:577px;
-		height:391px;
+		width:600px;
+		height:701px;
 		background:url(../images/bg-comercial.png) no-repeat 0 0;
-		/*margin-top:-195px;
-		margin-left:-288px;*/
 	}
 		.form-comercial h1{
 			float:left;
 			width:370px;
-			height:43px;
+			height:42px;
 			font:normal 12px Arial, Helvetica, sans-serif;
 			color:#FFFFFF;
 			margin:70px 0 0 40px;
 		}
 		.form-comercial .content-comercial{
 			float:left;
-			width:370px;
-			height:43px;
-			margin:17px 0 0 60px;
+			width:290px;
+			height:195px;
+			margin:26px 0 0 126px;
 		}
 	/* ********************************************************************************* */
 	/* ********************************************************************************* */
@@ -725,7 +832,7 @@ p{ float:left; width:100%; }
 		.form-ganadoras h1{
 			float:left;
 			width:450px;
-			height:27px;
+			height:28px;
 			font:normal 12px Arial, Helvetica, sans-serif;
 			color:#FFFFFF;
 			margin:70px 0 0 40px;
@@ -733,14 +840,14 @@ p{ float:left; width:100%; }
 		ul.lista-ganadoras-h, ul.lista-ganadoras{
 			width:435px;
 			height:auto;
-			margin:70px 0 0 60px;
+			margin:70px 0 0 95px;
 		}
 		ul.lista-ganadoras{
 			/*height:150px;*/
-			margin:0 0 0 60px;
+			margin:0 0 0 95px;
 		}
-			ul.lista-ganadoras-h li{ color:#FFF; }
-			ul.lista-ganadoras li{ color:#a7e1ff; }
+			ul.lista-ganadoras-h li{ color:#022c7a; }
+			ul.lista-ganadoras li{ color:#cc0c85; margin:3px 0 0 0; }
 			ul.lista-ganadoras-h li.fecha, ul.lista-ganadoras li.fecha{
 				width:105px;
 			}
@@ -757,15 +864,21 @@ p{ float:left; width:100%; }
 	}
 		.txt-bases-promo{
 			float:left;
-			width:440px;
-			height:234px;
-			margin:100px 0 0 60px;
+			width:420px;
+			height:195px;
+			margin:115px 0 0 80px;
 		}
+			.txt-bases-promo h1{
+				width:360px;
+				height:auto;
+				font:bold 12px Arial, Helvetica, sans-serif;
+				color:#12378a;
+			}
 			.txt-bases-promo p{
-				width:385px;
+				width:360px;
 				height:auto;
 				font:normal 12px Arial, Helvetica, sans-serif;
-				color:#FFFFFF;
+				color:#ce0789;
 				margin-bottom:10px;
 			}
 	
@@ -779,38 +892,42 @@ p{ float:left; width:100%; }
 		.form-contactenos h1{
 			float:left;
 			width:470px;
-			height:27px;
+			height:28px;
 			font:normal 12px Arial, Helvetica, sans-serif;
 			color:#FFFFFF;
 			margin:70px 0 0 40px;
 		}
 		ul.form-contact{
-			width:470px;
+			width:414px;
 			height:auto;
-			margin:32px 0 0 37px;
+			margin:22px 0 0 58px;
+			background:url(../images/bg-form-contactenos.png) no-repeat top right;
+			padding:10px 0 0 0;
 		}
 			ul.form-contact li{
 				height:32px;
 			}
 			ul.form-contact li.text{
-				width:130px;
+				width:94px;
 				height:29px;
 				text-align:right;
 				padding:3px 20px 0 0;
 			}
 			ul.form-contact li.textbox{
-				width:290px;
+				width:286px; /* 300px */
+				padding-left:14px;
 			}
 				ul.form-contact li.textbox input, ul.form-contact li textarea{
 					width:250px;
 					margin-top:2px;
+					border:solid 1px #F093D1;
 				}
 				ul.form-contact li textarea{
-					height:65px;
+					height:45px;
 				}
 				ul.form-contact li.botones{
-					width:415px;
-					margin-top:15px;
+					width:100%;
+					margin-top:30px;
 					text-align:right;
 				}
 
