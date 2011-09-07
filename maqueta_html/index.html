@@ -31,6 +31,7 @@
 <script type="text/javascript" src="js/home.js"></script>
 </head>
 <body>
+<div class="content-wrapper">
 <div class="wrapper">
 	<div class="header">
 		<div class="h-logo"></div>
@@ -47,9 +48,18 @@
 	</div>
 	<div class="clear"></div>
 	<!-- content inicio -->
-	<div class="content-body">
+	<div id="contenedor_1" class="content-body">
+		<div id="bla1" class="content-body-hidden">
+			<div id="bgDiv1" class="bgDiv"><img src="images/bg/bg-slide-01.jpg" /></div>
+			<div id="bgDiv2" class="bgDiv"><img src="images/bg/bg-slide-02.jpg" /></div>
+			<div class="bgDiv"><img src="images/bg/bg-slide-03.jpg" /></div>
+			<div class="bgDiv"><img src="images/bg/bg-slide-04.jpg" /></div>
+			<div class="bgDiv"><img src="images/bg/bg-slide-05.jpg" /></div>
+			<div class="bgDiv"><img src="images/bg/bg-slide-06.jpg" /></div>
+		</div>
+	</div>
+	<div id="contenedor_2" class="content-body">
 		<div class="content-body-hidden">
-			<!-- ////////////////////// -->
 			<div id="divInicio" class="content-body-item">
 				<div id="parallax" align="center"><img src="images/img-home-layer-0.png" id="myimage2" alt=""></div>
 			</div>
@@ -82,7 +92,7 @@
 				</div>
 			</div>
 			<!-- ////////////////////// -->
-			<!--<div id="divIntra2" class="content-body-item">
+			<div id="divIntra2" class="content-body-item">
 				<div class="form2">
 					<h1>Regístrate para ingresar tus claves</h1>
 					<ul class="form-reg">
@@ -147,9 +157,9 @@
 						</li>
 					</ul>
 				</div>
-			</div>-->
+			</div>
 			<!-- ////////////////////// -->
-			<!--<div id="divIntra3" class="content-body-item">
+			<div id="divIntra3" class="content-body-item">
 				<div class="form-captcha">
 					<h1>Ingresa la clave de tu empaque y participa del sorteo de<br /><b>un iPod diario y dos autos que regala Nosotras</b>.</h1>
 					<ul class="formulario3">
@@ -166,9 +176,9 @@
 						<li class="msg" style="font-weight:normal;">Recuerda que participará en el sorteo del día, las claves ingresadas desde las 00 horas hasta las 23:59. No son acumulables. ** Recuerda guardar el empaque con la clave.</li>
 					</ul>
 				</div>
-			</div>-->
+			</div>
 			<!-- ////////////////////// -->
-			<!--<div id="divIntra4" class="content-body-item">
+			<div id="divIntra4" class="content-body-item">
 				<div class="form-clave-correcta">
 					<p class="title"><span>Suerte,</span> Catherin Rivera</p>
 					<p class="message">Tu clave ha sido procesada satisfactoriamente.</p>
@@ -176,9 +186,9 @@
 					<p class="message"><span>Tienes</span> 2 opciones <span>para el sorteo final de 1 Grand Vitara</span></p>
 					<p class="message"><a href="javascript:void(0)" class="btn-ingresa-otra-clave"></a></p>
 				</div>
-			</div>-->
-			<!-- ////////////////////// -->		
-			<!--<div id="divIntra5" class="content-body-item">
+			</div>
+			<!-- ////////////////////// -->
+			<div id="divIntra5" class="content-body-item">
 				<div class="form-clave-ya-registrada">
 					<p class="title"><span>Lo sentimos</span> Catherin Rivera</p>
 					<p class="message">Esta clave ya ha sido ingresada.</p>
@@ -186,16 +196,16 @@
 					<p>&nbsp;</p>
 					<p class="message"><a href="javascript:void(0)" class="btn-ingresa-otra-clave"></a></p>
 				</div>
-			</div>-->
+			</div>
 			<!-- ////////////////////// -->
-			<!--<div id="divIntra6" class="content-body-item">
+			<div id="divIntra6" class="content-body-item">
 				<div class="form-clave-no-valida">
 					<p class="title"><span>Lo sentimos</span> Catherin Rivera</p>
 					<p class="message">La clave ingresada no es válida.</p>
 					<p class="message"><span>Revisa si las has ingresado correctamente o <br />si el producto participa de la promoción</span></p>
 					<p class="message"><a href="javascript:void(0)" class="btn-intentar-nuevamente-aqui"></a></p>
 				</div>
-			</div>-->
+			</div>
 			<!-- ////////////////////// -->
 			<div id="divCompartir" class="content-body-item">
 				<div class="form-compartir">
@@ -349,5 +359,6 @@
 	</div>
 </div>
 <input id="txtAutoCycle" name="txtAutoCycle" type="hidden" value="0" />
+</div>
 </body>
 </html>

@@ -3,21 +3,36 @@ $(document).ready(function(){
 	
 	
 	// precarga site
-	QueryLoader.init();
+	//QueryLoader.init();
 	
 	
 	// dimensiones
-	screen_width = screen.width;
-	screen_height = screen.height;
+	//alert($('.content-wrapper').width());
+	//alert($('.content-wrapper').height());
+	screen_width = $('.content-wrapper').width();
+	screen_height = $('.content-wrapper').height();
+	//alert($('.bg-wrapper').height());
+	$('.bgDiv img').attr('width',$('.content-wrapper').width());
+	//$('.bgDiv img').attr('height',screen_width*11);
+	
+	
+	//screen_width = screen.width;
+	//screen_height = screen.height;
 	//$('.bg-body img').attr('width',screen_width*11);
 	//$('.bg-body img').attr('height',screen_height);
 	//$('.content-body').css('width',screen_width);
-	$('.content-body-hidden').css('width',screen_width*11);
+	$('.content-body, .content-body-hidden, .content-body-item').css('height',screen_height);
+	$('.content-body-hidden').css('width',screen_width*6);
 	$('.content-body-item').css('width',screen_width);
+	
+	$('.bgDiv').fadeIn(3000,function()
+	{
+		//$(this).css('display','');	
+	});
 	
 	
 	// parallax background
-	$(".content-body").backgroundparallax();
+	//$(".content-body").backgroundparallax();
 	
 	// cargar primer cartel de producto
 	infoProd(2);
@@ -81,9 +96,10 @@ $(document).ready(function(){
 		$('#youtube-player-container').tubeplayer('stop');
 	});
 	$('a.btn-bot-02').click(function(){
-		secAutoCycle(2);
-		$paneOptions.scrollTo('#divIntra1', 3000);
-		$('#youtube-player-container').tubeplayer('stop');
+		//secAutoCycle(2);
+		$("#bla1").scrollTo("#bgDiv2", 3000);
+	//	$paneOptions.scrollTo('#divIntra1', 4000);
+		//$('#youtube-player-container').tubeplayer('stop');
 	});
 	$('a.btn-bot-03').click(function(){
 		secAutoCycle(3);
