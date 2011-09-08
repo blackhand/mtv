@@ -81,36 +81,54 @@ $(document).ready(function(){
 		$("#contenedor_1").scrollTo($('#bgDiv1'), 2000);
 		$("#contenedor_2").scrollTo('#divInicio', 3000);
 		$('#youtube-player-container').tubeplayer('stop');
+		//
+		//$('#iframe_ga').attr('src','inicio.html');
+		//$('#iframe_ga').load();
 	});
 	$('a.btn-bot-02').click(function(){
 		secAutoCycle(2);
 		$("#contenedor_1").scrollTo($('#bgDiv2'), 2000);
 		$("#contenedor_2").scrollTo('#divIntra1', 3000);
 		$('#youtube-player-container').tubeplayer('stop');
+		//
+		$('#iframe_ga').attr('src','participa.html');
+		$('#iframe_ga').load();
 	});
 	$('a.btn-bot-03').click(function(){
 		secAutoCycle(3);
 		$("#contenedor_1").scrollTo($('#bgDiv3'), 2000);
 		$("#contenedor_2").scrollTo('#divCompartir', 3000);
 		$('#youtube-player-container').tubeplayer('stop');
+		//
+		$('#iframe_ga').attr('src','compartir.html');
+		$('#iframe_ga').load();
 	});
 	$('a.btn-bot-04').click(function(){
 		secAutoCycle(4);
 		$("#contenedor_1").scrollTo($('#bgDiv4'), 2000);
 		$("#contenedor_2").scrollTo('#divPremios', 3000);
 		$('#youtube-player-container').tubeplayer('stop');
+		//
+		$('#iframe_ga').attr('src','premios.html');
+		$('#iframe_ga').load();
 	});
 	$('a.btn-bot-05').click(function(){
 		secAutoCycle(5);
 		$("#contenedor_1").scrollTo($('#bgDiv5'), 2000);
 		$("#contenedor_2").scrollTo('#divProductos', 3000);
 		$('#youtube-player-container').tubeplayer('stop');
+		//
+		$('#iframe_ga').attr('src','empaques.html');
+		$('#iframe_ga').load();
 	});
 	$('a.btn-bot-06, .btn-comercial').click(function(){
 		secAutoCycle(6);
 		$("#contenedor_1").scrollTo($('#bgDiv6'), 2000);
 		$("#contenedor_2").scrollTo('#divComercial', 3000);
 		$('#youtube-player-container').tubeplayer('play','HSJ0VoN7w38');
+		//
+		$('#iframe_ga').attr('src','comercial.html');
+		$('#iframe_ga').load();
 	});
 	
 	// tabs cycle
