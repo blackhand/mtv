@@ -4,7 +4,7 @@ $(document).ready(function(){
 
         $('.form1').addClass('not-visible');
         $('.form2').removeClass('not-visible');
-        $('.scroll-pane').jScrollPane();
+        //$('.scroll-pane').jScrollPane();
         //$('#iframe_ga').attr('src','inicio.html');
         //$('#iframe_ga').load();
     });
