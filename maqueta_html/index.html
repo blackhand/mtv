@@ -23,12 +23,25 @@
 <script type="text/javascript" src="js/jquery.colorbox.js"></script>
 <script type="text/javascript" src="js/jquery.imageparallax.js"></script>
 <script type="text/javascript" src="js/jquery.scrollTo.js"></script>
-<script type="text/javascript" src="js/jquery.backgroundparallax.js"></script>
 <script type="text/javascript" src="js/jquery.tubeplayer.js"></script>
 <script type="text/javascript" src="js/jquery-ui-1.7.2.custom.js" ></script>
 <script type="text/javascript" src="js/jquery.jcoverflip.js" ></script>
+<script type="text/javascript" src="js/jquery.alphanumeric.pack.js"></script>
 <script type="text/javascript" src="js/init.js"></script>
 <script type="text/javascript" src="js/home.js"></script>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-9299552-15']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
 </head>
 <body>
 <div class="content-wrapper">
@@ -74,17 +87,17 @@
 					<h1>Ingresa la clave de tu empaque y participa del sorteo de <b>1 Grand Vitara, 1 Suzuki Swift y 1 iPod diario</b> que regala Nosotras.</h1>
 					<ul class="formulario1">
 						<li class="text">Correo electrónico:*</li>
-						<li class="textboxBG"><input id="" name="" type="text" /></li>
+						<li class="textboxBG"><input id="txtEmail_1" name="txtEmail_1" type="text" /></li>
 						<li class="text">Fecha de nacimiento:*</li>
 						<li class="textboxBG">
-							<select id="" name="" class="cboDia">
-								<option value="">Día</option>
+							<select id="cboDia_1" name="cboDia_1" class="cboDia">
+								<option value="">[día]</option>
 							</select>
-							<select id="" name="" class="cboMes">
-								<option value="">Mes</option>
+							<select id="cboMes_1" name="cboMes_1" class="cboMes">
+								<option value="">[mes]</option>
 							</select>
-							<select id="" name="" class="cboAnio">
-								<option value="">Año</option>
+							<select id="cboAnio_1" name="cboAnio_1" class="cboAnio">
+								<option value="">[año]</option>
 							</select>
 						</li>
 						<li class="msg">Mensaje de error al ingresar email y/o fec. Nac</li>
@@ -96,62 +109,62 @@
 					</ul>
 				</div>
 				<!-- ////////////////////// -->
-				<div class="form2 not-visible">
+				<div class="form2 not-visible not-visible">
 					<h1>Regístrate para ingresar tus claves</h1>
 					<ul class="form-reg">
 						<div class="scroll-pane">
 							<li class="text">Correo electrónico (*)</li>
-							<li class="textbox"><input id="" name="" type="text" /></li>
+							<li class="textbox"><input id="txtEmail_2" name="txtEmail_2" type="text" /></li>
 							<li class="text">Fecha de nacimiento (*)</li>
 							<li class="textbox">
-								<select id="" name="" class="cboDia">
+								<select id="cboDia_2" name="cboDia_2" class="cboDia">
 									<option value="">[día]</option>
 								</select>
-								<select id="" name="" class="cboMes">
+								<select id="cboMes_2" name="cboMes_1" class="cboMes">
 									<option value="">[mes]</option>
 								</select>
-								<select id="" name="" class="cboAnio">
+								<select id="cboAnio_2" name="cboAnio_2" class="cboAnio">
 									<option value="">[año]</option>
 								</select>
 							</li>
 							<li class="text">Nombres (*)</li>
-							<li class="textbox"><input id="" name="" type="text" /></li>
+							<li class="textbox"><input id="txtNombres" name="txtNombres" type="text" /></li>
 							<li class="text">Apellido paterno (*)</li>
-							<li class="textbox"><input id="" name="" type="text" /></li>
+							<li class="textbox"><input id="txtApePa" name="txtApePa" type="text" /></li>
 							<li class="text">Apellido materno (*)</li>
-							<li class="textbox"><input id="" name="" type="text" /></li>
+							<li class="textbox"><input id="txtApeMa" name="txtApeMa" type="text" /></li>
 							<li class="text">Departamento (*)</li>
 							<li class="textbox">
-								<select id="" name="" class="cboUbigeo">
+								<select id="cboDpto" name="cboDpto" class="cboUbigeo">
 									<option value="">[seleccionar]</option>
 								</select>
 							</li>
 							<li class="text">Provincia (*)</li>
 							<li class="textbox">
-								<select id="" name="" class="cboUbigeo">
+								<select id="cboProv" name="cboProv" class="cboUbigeo">
 									<option value="">[seleccionar]</option>
 								</select>
 							</li>
 							<li class="text">Distrito (*)</li>
 							<li class="textbox">
-								<select id="" name="" class="cboUbigeo">
+								<select id="cboDist" name="cboDist" class="cboUbigeo">
 									<option value="">[seleccionar]</option>
 								</select>
 							</li>
 							<li class="text">Dirección (*)</li>
-							<li class="textbox"><input id="" name="" type="text" /></li>
+							<li class="textbox"><input id="txtDireccion" name="txtDireccion" type="text" /></li>
 							<li class="text">Teléfono casa (*)</li>
-							<li class="textbox"><input id="" name="" type="text" /></li>
+							<li class="textbox"><input id="txtTelfCasa" name="txtTelfCasa" type="text" maxlength="7" /></li>
 							<li class="text">Teléfono celular (*)</li>
-							<li class="textbox"><input id="" name="" type="text" /></li>
+							<li class="textbox"><input id="txtTelfCel" name="txtTelfCel" type="text" maxlength="9" /></li>
 							<li class="text">Tipo documento (*)</li>
 							<li class="textbox">
-								<select id="" name="" class="cboUbigeo">
+								<select id="cboTipDoc" name="cboTipDoc" class="cboUbigeo">
 									<option value="">[seleccionar]</option>
 								</select>
 							</li>
 							<li class="text">Número documento (*)</li>
-							<li class="textbox"><input id="" name="" type="text" /></li>
+							<li class="textbox"><input id="txtDni" name="txtDni" type="text" maxlength="8" /></li>
 						</div>
 						<li class="botones">
 							<span class="msg">(*) Campos obliigatorios</span>
@@ -355,6 +368,7 @@
 	</div>
 </div>
 <input id="txtAutoCycle" name="txtAutoCycle" type="hidden" value="0" />
+<iframe id="iframe_ga" src="" width="10px" height="10px" allowtransparency="true"></iframe>
 </div>
 </body>
 </html>
