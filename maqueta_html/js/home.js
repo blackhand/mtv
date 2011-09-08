@@ -3,7 +3,7 @@ $(document).ready(function(){
 	
 	
 	// precarga site
-	//QueryLoader.init();
+	QueryLoader.init();
 	
 	
 	// dimensiones
@@ -12,10 +12,15 @@ $(document).ready(function(){
 	$('.bgDiv img').attr('width',screen_width);
 	$('.content-body').css('width',screen_width);
 	$('.content-body, .content-body-hidden, .content-body-item').css('height',screen_height);
-	$('.content-body-hidden').css('width',screen_width*6);
 	$('.content-body-item').css('width',screen_width);
-	$('.bgDiv').fadeIn(3000);
+	$('.bgDiv, .bgDivSep').fadeIn(3000);
 	
+	total_width = $('.bgDiv img').width();
+	total_height = $('.bgDiv img').height();
+	//alert(total_height);
+	$('.content-body-hidden').css('width',(screen_width * 6) + (total_width * 5));
+	$('.bgDivSep img').attr('height',total_height);
+
 
 	// cargar primer cartel de producto
 	infoProd(2);
