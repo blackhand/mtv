@@ -253,9 +253,9 @@ function moveToPrev(){
 	}
 }
 
-function transicion(){
-	$('.form1').fadeOut(500, function(){
-		$('.form2').fadeIn(500);
+function transicion(source, dest){
+	$(source).fadeOut(500, function(){
+		$(dest).fadeIn(500);
 		$('.scroll-pane').jScrollPane();
 	});
 }

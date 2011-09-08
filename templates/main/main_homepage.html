@@ -43,7 +43,7 @@
                         <li class="msg">Mensaje de error al ingresar email y/o fec. Nac</li>
                         <li class="botones">
                             <span class="msg">(*) Campos obliigatorios</span>
-                            <a href="javascript:void(0)" class="btn-enviar" onclick="transicion()"></a>
+                            <a href="javascript:void(0)" class="btn-enviar" onclick="transicion('.form1', '.form2')"></a>
                             <a href="javascript:void(0)" class="btn-borrar"></a>
                         </li>
                     </ul>
@@ -108,13 +108,13 @@
                         </div>
                         <li class="botones">
                             <span class="msg">(*) Campos obliigatorios</span>
-                            <a href="javascript:void(0)" class="btn-enviar"></a>
+                            <a href="javascript:void(0)" class="btn-enviar" onclick="transicion('.form2', '.form-captcha')"></a>
                             <a href="javascript:void(0)" class="btn-borrar"></a>
                         </li>
                     </ul>
                 </div>
                 <!-- ////////////////////// -->
-                <div class="form-captcha not-visible">
+                <div class="form-captcha" style="display:none;">
                     <h1>Ingresa la clave de tu empaque y participa del sorteo de<br /><b>un iPod diario y dos autos que regala Nosotras</b>.</h1>
                     <ul class="formulario3">
                         <li class="text">Ingresa tu clave<br />de empaque:</li>
@@ -124,14 +124,14 @@
                             <span class="captcha_textbox"><input id="" name="" type="text" /></span>
                         </li>
                         <li class="botones">
-                            <a href="javascript:void(0)" class="btn-enviar"></a>
+                            <a href="javascript:void(0)" class="btn-enviar" onclick="transicion('.form-captcha', '.form-clave-correcta')"></a>
                             <a href="javascript:void(0)" class="btn-borrar"></a>
                         </li>
                         <li class="msg" style="font-weight:normal;">Recuerda que participará en el sorteo del día, las claves ingresadas desde las 00 horas hasta las 23:59. No son acumulables. ** Recuerda guardar el empaque con la clave.</li>
                     </ul>
                 </div>
                 <!-- ////////////////////// -->
-                <div class="form-clave-correcta not-visible">
+                <div class="form-clave-correcta" style="display:none;">
                     <p class="title"><span>Suerte,</span> Catherin Rivera</p>
                     <p class="message">Tu clave ha sido procesada satisfactoriamente.</p>
                     <p class="message"><span>Tienes</span> 2 opciones <span>para el sorteo del iPod de hoy</span></p>
@@ -139,7 +139,7 @@
                     <p class="message"><a href="javascript:void(0)" class="btn-ingresa-otra-clave"></a></p>
                 </div>
                 <!-- ////////////////////// -->
-                <div class="form-clave-ya-registrada not-visible">
+                <div class="form-clave-ya-registrada" style="display:none;">
                     <p class="title"><span>Lo sentimos</span> Catherin Rivera</p>
                     <p class="message">Esta clave ya ha sido ingresada.</p>
                     <p class="message"><span>Con anterioridad o en promociones anteriores.</span></p>
@@ -147,7 +147,7 @@
                     <p class="message"><a href="javascript:void(0)" class="btn-ingresa-otra-clave"></a></p>
                 </div>
                 <!-- ////////////////////// -->
-                <div class="form-clave-no-valida not-visible">
+                <div class="form-clave-no-valida" style="display:none;">
                     <p class="title"><span>Lo sentimos</span> Catherin Rivera</p>
                     <p class="message">La clave ingresada no es válida.</p>
                     <p class="message"><span>Revisa si las has ingresado correctamente o <br />si el producto participa de la promoción</span></p>
