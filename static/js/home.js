@@ -3,7 +3,7 @@ $(document).ready(function(){
 	
 	
 	// precarga site
-	QueryLoader.init();
+	//QueryLoader.init();
 	
 	
 	// dimensiones
@@ -253,9 +253,3 @@ function moveToPrev(){
 	}
 }
 
-function transicion(source, dest){
-	$(source).fadeOut(500, function(){
-		$(dest).fadeIn(500);
-		$('.scroll-pane').jScrollPane();
-	});
-}

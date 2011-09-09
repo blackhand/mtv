@@ -13,7 +13,7 @@ NOW = date.today()
 if NOW.weekday == 6:
     MAX_DATE = NOW
 else:
-    MAX_DATE.day = NOW - (NOW+1)
+    MAX_DATE = NOW
 
 
 def show_winners(request):    
