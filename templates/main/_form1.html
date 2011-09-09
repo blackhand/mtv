@@ -1,0 +1,37 @@
+                <div class="form1">
+                    <h1>Ingresa la clave de tu empaque y participa del sorteo de <b>1 Grand Vitara, 1 Suzuki Swift y 1 iPod diario</b> que regala Nosotras.</h1>
+                    <form action='.' method='post'>
+                    <ul class="formulario1">
+                        <li class="text">Correo electrónico:*</li>
+                        <li class="textboxBG"><input id="txtEmail_1" name="txtEmail_1" type="text" /></li>
+                        <li class="text">Fecha de nacimiento:*</li>
+                        <li class="textboxBG">
+                        <select id="cboDia_1" name="cboDia_1" class="cboDia">
+                            <option value="">[día]</option>
+                            {% for day in days %}
+                            <option value="{{ day }}">{{ day }}</option>
+                            {% endfor %}
+                        </select>
+                        <select id="cboMes_1" name="cboMes_1" class="cboMes">
+                            <option value="">[mes]</option>
+                            {% for key, month in months.items %}
+                            <option value="{{ key }}">{{ month }}</option>
+                            {% endfor %}
+                        </select>
+                        <select id="cboAnio_1" name="cboAnio_1" class="cboAnio">
+                            <option value="">[año]</option>
+                            {% for year in years %}
+                            <option value="{{ year }}">{{ year }}</option>
+                            {% endfor %}
+                        </select>
+                        </li>
+                        <li class="msg" id="msg"><!--Mensaje de error al ingresar email y/o fec. Nac--></li>
+                        <li class="botones">
+                            <span class="msg">(*) Campos obligatorios</span>
+                            <a href="javascript:void(0)" class="btn-enviar" onclick="validate_form1()"></a>
+                            <a href="javascript:void(0)" class="btn-borrar" onclick="clean_form1()"></a>
+                        </li>
+                    </ul>
+                    </form>
+                </div>
+

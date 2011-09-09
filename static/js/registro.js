@@ -68,13 +68,29 @@ function validate_form2() {
             }
         });
     return false;
-
-
-
 }
 
-function validate_form_captcha(form) {
-    return true;
+function clean_form2() {
+    $('#txtNombres').val('');
+    $('#txtApePa').val('');
+    $('#txtApeMa').val('');
+    $('#cboProv').val('')
+    $('#txtDireccion').val('');
+    $('#txtTelfCasa').val('');
+    $('#txtTelfCel').val('');
+    $('#txtDni').val('');
+}
+
+function validate_form_captcha() {
+    codigo = $('#codigoEmpaque').val()
+    var clave = new clavePersonal(codigo); //<-- clave nueva
+    clave.validar();
+    if(clave.esValida()) {
+        transicion('.form-captcha', '.form-clave-correcta');
+
+    } else {
+        transicion('.form-captcha', '.form-clave-no-valida');
+    };
 }
 
 function transicion(source, dest){
