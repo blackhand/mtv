@@ -87,7 +87,7 @@ $(document).ready(function(){
 		width: 290, // the width of the player
 		height: 195, // the height of the player
 		allowFullScreen: "true", // true by default, allow user to go full screen
-		initialVideo: "HSJ0VoN7w38", // the video that is loaded into the player
+		initialVideo: "5ILvSM7iGFk", // the video that is loaded into the player
 		preferredQuality: "default"
 	});
 	
@@ -313,41 +313,38 @@ function loginFacebook(){
 
 function shareFacebook(){
 	FB.api('/me', function(responseName) {
-	FB.ui({
-		method: 'feed',
-		name: 'Necesito espacio en la cochera para mi carronuevo... mmm ¿Cómo haríamos?',
-		link: 'http://www.nosotrasonline.com.pe/manejatuvida/',
-		picture: 'http://dev.tribalperu.com/sancela_nosotras/images/logo-nosotras.png',
-		//caption: 'Yo quiero el iPod y los vales de Saga que regala Nosotras esta semana',
-		description: responseName.name+' ya compartió la frase de la semana y está participando por un iPod y vales de Saga Falabella.<br />¡Tú también ENTRA AL SITE de la promoción, comparte la frase y participa!.',
-		target_id:responseName.id,
-      	action_links: [
-        	{ text: 'Comparte la frase de la semana', href: 'http://www.nosotrasonline.com.pe/manejatuvida/' }
-      	],
-      	user_message_prompt: 'Comparte la frase de la semana'
-		},
-		function(response) {
-			FB.api('/me', function(response2) {
-					$.ajax({
-						type: 'POST',
-						url: "data.php",
-						data: response2
+		FB.ui({
+			method: 'feed',
+			name: 'Necesito espacio en la cochera para mi carronuevo... mmm ¿Cómo haríamos?',
+			link: 'http://www.nosotrasonline.com.pe/manejatuvida/',
+			picture: 'http://dev.tribalperu.com/sancela_nosotras/images/share-facebook.jpg',
+			//caption: 'Yo quiero el iPod y los vales de Saga que regala Nosotras esta semana',
+			description: responseName.name+' ya compartió la frase de la semana y está participando por un iPod y vales de Saga Falabella.\n¡Tú también ENTRA AL SITE de la promoción, comparte la frase y participa!.',
+			actions: [
+				{ name: 'Comparte la frase', link: 'http://www.nosotrasonline.com.pe/manejatuvida/' }
+			]},
+			function(response) {
+				FB.api('/me', function(response2) {
+						$.ajax({
+							type: 'POST',
+							url: "data.php",
+							data: response2
+						});
+						/*
+						valores para Yonsy
+						id
+						username
+						gender
+						email
+						birthday
+						link
+						*/
+						
+						/*for(var i in response2){
+							alert(i+" "+response2[i]);
+						}*/
 					});
-					/*
-					valores para Yonsy
-					id
-					username
-					gender
-					email
-					birthday
-					link
-					*/
-					
-					/*for(var i in response2){
-						alert(i+" "+response2[i]);
-					}*/
-				});
-			
-	});
+				
+		});
 	});
 }

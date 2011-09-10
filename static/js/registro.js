@@ -14,6 +14,9 @@ function validate_form1() {
             }
             if(data==='exist') {
                 dest='.form-captcha';
+                $.get('/captcha', function(captcha) {
+                    $(".captcha").html(captcha);
+                })
             }
             if(data==='not-exist') {
                 dest='.form2';
@@ -60,6 +63,9 @@ function validate_form2() {
                 return false;
             }
             if(data==='success') {
+                $.get('/captcha', function(captcha) {
+                    $(".captcha").html(captcha);
+                })
                 transicion('.form2', '.form-captcha');
             }
         });
@@ -87,10 +93,6 @@ function validate_form_captcha() {
         $.get(
             '/validate_form_captcha',{'codigo': codigo,'random': random, 'password': password},
             function(data) {
-                resp = data;
-                $.get('/captcha', function(captcha) {
-                    $(".captcha_image").html(captcha);
-                })
                 if(data==='success') {
                     transicion('.form-captcha', '.form-clave-correcta');
                     return false;
@@ -99,6 +101,9 @@ function validate_form_captcha() {
                     transicion('.form-captcha', '.form-clave-ya-registrada');
                 };
                 if(data==='error') {
+                    $.get('/captcha', function(captcha) {
+                        $(".captcha").html(captcha);
+                    });
                     transicion('.form-captcha', '.form-clave-no-valida');
                 }
             });

@@ -43,13 +43,6 @@ def main_homepage(request):
             }
     years = range(1900, 1999)
     departments = Ubigeo.objects.departments()
-    captcha = CaptchasDotNet(
-            client   = 'tribalperu',
-            secret   = 'ZLydlgOUioIEeLb4p2dQYyyVGFYKRimzTwxcUSfT',
-            alphabet = 'abcdefghkmnopqrstuvwxyz',
-            letters  = 7,
-            width    = 215,
-            height   = 60,)
     return render(request, 'main/main_homepage.html', locals())
 
 
