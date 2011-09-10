@@ -8,12 +8,8 @@ function validate_form1() {
         '/validate_form1', 
         {'email': email, 'day': day, 'month': month, 'year': year}, 
         function(data) {
-            if(data==='email-error') {
-                $('#msg').html('Correo en blanco o invalido');
-                return false;
-            }
-            if(data==='date-error') {
-                $('#msg').html('Fecha incorrecta');
+            if(data==='error') {
+                $('#msg').html('Correo o Fecha de nacimiento inviliada o en blanco');
                 return false;
             }
             if(data==='exist') {
@@ -60,10 +56,10 @@ function validate_form2() {
         {'email': email, 'day': day, 'month': month, 'year': year, 'names': names, 'last_name1': last_name1, 'last_name2': last_name2, 'ubigeo': ubigeo, 'address': address, 'phone': phone, 'mobile': mobile, 'doc_number': doc_number}, 
         function(data) {
             if(data==='error') {
-                $('#msg').html('Correo en blanco o invalido');
+                $('#msg').html('Error en los datos de registro, por favor completar correctamente');
                 return false;
             }
-            if(data==='sucess') {
+            if(data==='success') {
                 transicion('.form2', '.form-captcha');
             }
         });
@@ -83,11 +79,29 @@ function clean_form2() {
 
 function validate_form_captcha() {
     codigo = $('#codigoEmpaque').val()
-    var clave = new clavePersonal(codigo); //<-- clave nueva
+    clave = new clavePersonal(codigo); //<-- clave nueva
     clave.validar();
     if(clave.esValida()) {
-        transicion('.form-captcha', '.form-clave-correcta');
-
+        random = $('#random').val();
+        password = $('#password').val();
+        $.get(
+            '/validate_form_captcha',{'codigo': codigo,'random': random, 'password': password},
+            function(data) {
+                resp = data;
+                $.get('/captcha', function(captcha) {
+                    $(".captcha_image").html(captcha);
+                })
+                if(data==='success') {
+                    transicion('.form-captcha', '.form-clave-correcta');
+                    return false;
+                };
+                if(data==='exist') {
+                    transicion('.form-captcha', '.form-clave-ya-registrada');
+                };
+                if(data==='error') {
+                    transicion('.form-captcha', '.form-clave-no-valida');
+                }
+            });
     } else {
         transicion('.form-captcha', '.form-clave-no-valida');
     };
