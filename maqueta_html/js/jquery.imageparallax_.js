@@ -9,8 +9,6 @@
 	var imageWidths = new Array();
 	var imageHeights = new Array();
 	var parallaxImages = new Array();
-	var interval = 0;
-	var imageArray = new Array();
 	
 	function GetSize(number, factor, intensity) {
 		if (factor > 0) {
@@ -47,7 +45,7 @@
 				intensity = 2;
 			}
 			
-			imageArray = new Array();
+			var imageArray = new Array();
 
 			var w = $This.width();
 			var h = $This.height();
@@ -85,26 +83,15 @@
 			imageHeights[parallaxCount] = h;
 			
 			// When the mouse moves over the parallax, follow its movement
-			
-			interval = setInterval(function()
-			{
-				console.log(parallaxImages[parallaxCount]);
-				/*$('#parallax').mousemove(function(e){
-					var tmp_x = e.pageX - this.offsetLeft;
-					var tmp_y = e.pageY - this.offsetTop;
-					console.log(tmp_x+'-'+tmp_y);
-				});*/
-				var offset = $("#" + config.classmodifier + "_" + parallaxCount).offset();
-				
-				//alert("----->#" + config.classmodifier + "_" + parallaxCount)
-				
+			$("#" + config.classmodifier + "_" + parallaxCount).mousemove( function (e) {
+				var offset = $(this).offset();
 				
 				// Mouse co-ordinates
 				var x = parseInt(e.pageX - offset.left, 10);
 				var y = parseInt(e.pageY - offset.top, 10);
 				
 				// Current element rel (tells us which collection to use)
-				var thisElement = $("#" + config.classmodifier + "_" + parallaxCount).attr("rel");
+				var thisElement = $(this).attr("rel");
 				var imageArray = parallaxImages[thisElement];
 				
 				// Original image dimensions
@@ -120,9 +107,8 @@
 				y = (y - h);
 
 				// Move each layer
-				for (var i = 1; i < parallaxImages[parallaxCount].length; i++) {
-					var img = $("#ip_0_" + i);
-					//alert("#" + config.classmodifier + "_" + thisElement + "_" + i)
+				for (var i = 1; i < imageArray.length; i++) {
+					var img = $("#" + config.classmodifier + "_" + thisElement + "_" + i);
 					
 					var myWidth = $(img).width();
 					var myHeight = $(img).height();
@@ -130,30 +116,24 @@
 					// Gets offset position based on the amount this is bigger than the original image
 					var imageLeft = ((myWidth - originalWidth) / 2) * -1;
 					var imageTop = ((myHeight - originalHeight) / 2) * -1;
-					//alert("originalWidth "+originalWidth);
 					
 					// Calculate movement, arbitrarily divided by 12 to reduce the speed
 					var myX = parseInt(imageLeft + ((x * i) / 30), 10);
 					var myY = parseInt(imageTop + ((y * i) / 30),  10);
 					
-					//if (config.allowHorizontal) {
-						alert("myX  "+myX)
+					if (config.allowHorizontal) {
 						$(img).css({ left: myX + "px" });
-					//}
+					}
 					
 					if (config.allowVertical) {
 						$(img).css({ top: myY + "px" });
 					}
 					
 				}
-			},1000)
-			
-			/*$("#" + config.classmodifier + "_" + parallaxCount).mousemove( function (e) {
 				
-				
-			});*/
+			});
 			
-		//	parallaxCount++;
+			parallaxCount++;
 		});
 	};
 })(jQuery);

@@ -13,10 +13,6 @@ $(document).ready(function(){
 	$('.scroll-pane').jScrollPane();
 	
 	
-	$('#txtNombres, #txtApePa, #txtApeMa, #txtDireccion').alpha();
-	$('#txtTelfCasa, #txtTelfCel, #txtDni').numeric();
-	
-	
 	// solo digitos
 	/*jQuery.fn.ForceNumericOnly =
 	function()

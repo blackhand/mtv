@@ -1,3 +1,4 @@
+var tmp;
 var QueryLoader = {
 	/*
 	 * QueryLoader		Preload your site before displaying it!
@@ -19,8 +20,10 @@ var QueryLoader = {
 	selectorPreload: "body",
 	ieLoadFixTime: 2000,
 	ieTimeout: "",
+	
+	init: function(data) {
 		
-	init: function() {
+		tmp = data;
 		if (navigator.userAgent.match(/MSIE (\d+(?:\.\d+)+(?:b\d*)?)/) == "MSIE 6.0,6.0") {
 			//break if IE6			
 			return false;
@@ -43,7 +46,7 @@ var QueryLoader = {
 	
 	ieLoadFix: function() {
 		var ie = navigator.userAgent.match(/MSIE (\d+(?:\.\d+)+(?:b\d*)?)/);
-		if (ie[0].match("MSIE")) {
+		if (ie[0].match("MSIE")){
 			while ((100 / QueryLoader.doneStatus) * QueryLoader.doneNow < 100) {
 				QueryLoader.imgCallback();
 			}
@@ -165,5 +168,10 @@ var QueryLoader = {
 			$(QueryLoader.overlay).fadeOut(800);
 			$(QueryLoader.preloader).remove();
 		});
+		
+		if(tmp != undefined)
+		{
+			tmp();
+		}
 	}
 }

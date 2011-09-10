@@ -1,12 +1,8 @@
 // JavaScript Document
-$(document).ready(function(){ 
-	
-	
-	// precarga site
-	QueryLoader.init();
-	
-	
-	// dimensiones
+function carga(){
+	calculateBackgroundDimensions();	
+}
+function calculateBackgroundDimensions(){
 	screen_width = $('.content-wrapper').width();
 	screen_height = $('.content-wrapper').height();
 	$('.bgDiv img').attr('width',screen_width);
@@ -14,16 +10,34 @@ $(document).ready(function(){
 	$('.content-body, .content-body-hidden, .content-body-item').css('height',screen_height);
 	$('.content-body-item').css('width',screen_width);
 	
-	$('.bgDiv, .bgDivSep').fadeIn(3000);
+	//$('.bgDiv, .bgDivSep').fadeIn(4000);
+	//$('.content-wrapper').fadeIn(4000);
+	$('.bgDiv, .bgDivSep').fadeIn(4000);
 	
 	total_width = $('.bgDiv img').width();
 	total_height = $('.bgDiv img').height();
 	//alert(total_height);
 	$('.content-body-hidden').css('width',(screen_width * 6) + (total_width * 5));
 	$('.bgDivSep img').attr('height',total_height);
+	//
+	$("#contenedor_1").scrollTo($('#bgDiv1'), 0);
+	$("#contenedor_2").scrollTo('#divInicio', 0);
+}
 
-
-	// cargar primer cartel de producto
+$(document).ready(function(){
+	
+	// precarga site
+	//alert(navigator.appVersion)
+	/*IE7 = (navigator.appVersion.indexOf("MSIE 7.")==-1) ? false : true;
+	if(IE7){
+		QueryLoader.init(carga);
+	}else{
+		QueryLoader.init();
+		calculateBackgroundDimensions();
+	}*/
+	QueryLoader.init(carga);
+	$('.content-wrapper').removeClass('not-visible');
+	
 	infoProd(2);
 	
 	
@@ -38,7 +52,6 @@ $(document).ready(function(){
 	
 	// inicializar valor
 	$('#txtAutoCycle').val('1');
-	$('#txtBGCycle').val('0');
 	
 	
 	// colorbox
@@ -56,6 +69,19 @@ $(document).ready(function(){
 	});
 	
 	
+	// animacion home
+	var flashvars = {
+	};
+	var params = {
+	  menu: "false",
+	  wmode: "transparent",
+	  allowScriptAccess: "always"
+	};
+	var attributes = {
+	  wmode: "transparent"
+	};
+	swfobject.embedSWF("swf/NosotrasCartels.swf", "NosotrasCartels", "772", "267", "9.0.0", "", flashvars, params, attributes);
+	
 	// reproductor youtube
 	$("#youtube-player-container").tubeplayer({
 		width: 290, // the width of the player
@@ -64,6 +90,11 @@ $(document).ready(function(){
 		initialVideo: "HSJ0VoN7w38", // the video that is loaded into the player
 		preferredQuality: "default"
 	});
+	
+	
+	// validar campos de texto
+	$('#txtNombres, #txtApePa, #txtApeMa, #txtDireccion').alpha();
+	$('#txtTelfCasa, #txtTelfCel, #txtDni').numeric();
 	
 	
 	// cycle
@@ -80,7 +111,7 @@ $(document).ready(function(){
 	$('a.btn-bot-01').click(function(){
 		secAutoCycle(1);
 		$("#contenedor_1").scrollTo($('#bgDiv1'), 3000);
-		$("#contenedor_2").scrollTo('#divInicio', 2000);
+		$("#contenedor_2").scrollTo('#divInicio', 3000);
 		$('#youtube-player-container').tubeplayer('stop');
 		//
 		//$('#iframe_ga').attr('src','inicio.html');
@@ -89,16 +120,16 @@ $(document).ready(function(){
 	$('a.btn-bot-02').click(function(){
 		secAutoCycle(2);
 		$("#contenedor_1").scrollTo($('#bgDiv2'), 3000);
-		$("#contenedor_2").scrollTo('#divIntra1', 2000);
+		$("#contenedor_2").scrollTo('#divIntra1', 3000);
 		$('#youtube-player-container').tubeplayer('stop');
 		//
-		$('#iframe_ga').attr('src','participa.html');
+		$('#iframe_ga').attr('src','login.html');
 		$('#iframe_ga').load();
 	});
 	$('a.btn-bot-03').click(function(){
 		secAutoCycle(3);
 		$("#contenedor_1").scrollTo($('#bgDiv3'), 3000);
-		$("#contenedor_2").scrollTo('#divCompartir', 2000);
+		$("#contenedor_2").scrollTo('#divCompartir', 3000);
 		$('#youtube-player-container').tubeplayer('stop');
 		//
 		$('#iframe_ga').attr('src','compartir.html');
@@ -107,7 +138,7 @@ $(document).ready(function(){
 	$('a.btn-bot-04').click(function(){
 		secAutoCycle(4);
 		$("#contenedor_1").scrollTo($('#bgDiv4'), 3000);
-		$("#contenedor_2").scrollTo('#divPremios', 2000);
+		$("#contenedor_2").scrollTo('#divPremios', 3000);
 		$('#youtube-player-container').tubeplayer('stop');
 		//
 		$('#iframe_ga').attr('src','premios.html');
@@ -116,7 +147,7 @@ $(document).ready(function(){
 	$('a.btn-bot-05').click(function(){
 		secAutoCycle(5);
 		$("#contenedor_1").scrollTo($('#bgDiv5'), 3000);
-		$("#contenedor_2").scrollTo('#divProductos', 2000);
+		$("#contenedor_2").scrollTo('#divProductos', 3000);
 		$('#youtube-player-container').tubeplayer('stop');
 		//
 		$('#iframe_ga').attr('src','empaques.html');
@@ -125,7 +156,7 @@ $(document).ready(function(){
 	$('a.btn-bot-06, .btn-comercial').click(function(){
 		secAutoCycle(6);
 		$("#contenedor_1").scrollTo($('#bgDiv6'), 3000);
-		$("#contenedor_2").scrollTo('#divComercial', 2000);
+		$("#contenedor_2").scrollTo('#divComercial', 3000);
 		$('#youtube-player-container').tubeplayer('play','HSJ0VoN7w38');
 		//
 		$('#iframe_ga').attr('src','comercial.html');
@@ -226,6 +257,16 @@ $(function(){
 	$(".ui-jcoverflip").unbind('click');
 });
 
+function ingresaClave(){
+	secAutoCycle(2);
+	$("#contenedor_1").scrollTo($('#bgDiv2'), 3000);
+	$("#contenedor_2").scrollTo('#divIntra1', 3000);
+	$('#youtube-player-container').tubeplayer('stop');
+	//
+	$('#iframe_ga').attr('src','login.html');
+	$('#iframe_ga').load();
+}
+
 function moveToNext(){
 	var item_length = jQuery( '#flip' ).jcoverflip( 'length')
 	var current_index = jQuery( '#flip' ).jcoverflip( 'current')
@@ -253,9 +294,60 @@ function moveToPrev(){
 	}
 }
 
-function transicion(){
-	$('.form1').fadeOut(500, function(){
-		$('.form2').fadeIn(500);
-		$('.scroll-pane').jScrollPane();
+
+function loginFacebook(){
+	FB.login(function(response) {
+	  if (response.session) {
+		if (response.perms) {
+			shareFacebook()
+		  // user is logged in and granted some permissions.
+		  // perms is a comma separated list of granted permissions
+		} else {
+		  // user is logged in, but did not grant any permissions
+		}
+	  } else {
+		// user is not logged in
+	  }
+	}, {perms:'read_stream,publish_stream'});;
+}
+
+function shareFacebook(){
+	FB.api('/me', function(responseName) {
+	FB.ui({
+		method: 'feed',
+		name: 'Necesito espacio en la cochera para mi carronuevo... mmm ¿Cómo haríamos?',
+		link: 'http://www.nosotrasonline.com.pe/manejatuvida/',
+		picture: 'http://dev.tribalperu.com/sancela_nosotras/images/logo-nosotras.png',
+		//caption: 'Yo quiero el iPod y los vales de Saga que regala Nosotras esta semana',
+		description: responseName.name+' ya compartió la frase de la semana y está participando por un iPod y vales de Saga Falabella.<br />¡Tú también ENTRA AL SITE de la promoción, comparte la frase y participa!.',
+		target_id:responseName.id,
+      	action_links: [
+        	{ text: 'Comparte la frase de la semana', href: 'http://www.nosotrasonline.com.pe/manejatuvida/' }
+      	],
+      	user_message_prompt: 'Comparte la frase de la semana'
+		},
+		function(response) {
+			FB.api('/me', function(response2) {
+					$.ajax({
+						type: 'POST',
+						url: "data.php",
+						data: response2
+					});
+					/*
+					valores para Yonsy
+					id
+					username
+					gender
+					email
+					birthday
+					link
+					*/
+					
+					/*for(var i in response2){
+						alert(i+" "+response2[i]);
+					}*/
+				});
+			
+	});
 	});
 }

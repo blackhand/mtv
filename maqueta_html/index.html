@@ -9,10 +9,10 @@
 <meta name="robots" content="index, follow" />
 <meta http-equiv="cache-control" content="no-cache" />
 <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+<link rel="stylesheet" href="css/queryLoader.css" type="text/css" />
 <link rel="stylesheet" type="text/css" href="css/style.css" />
 <link rel="stylesheet" type="text/css" href="css/jquery.jscrollpane.css" />
 <link rel="stylesheet" type="text/css" href="css/colorbox.css" />
-<link rel="stylesheet" href="css/queryLoader.css" type="text/css" />
 <script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
 <script type="text/javascript" src="js/queryLoader.js"></script>
 <script type="text/javascript" src="js/jquery.pngFix.js"></script>
@@ -21,12 +21,13 @@
 <script type="text/javascript" src="js/jquery.mousewheel.js"></script>
 <script type="text/javascript" src="js/jquery.cycle.all.2.74.js"></script>
 <script type="text/javascript" src="js/jquery.colorbox.js"></script>
-<script type="text/javascript" src="js/jquery.imageparallax.js"></script>
+<script type="text/javascript" src="js/jquery.imageparallax_.js"></script>
 <script type="text/javascript" src="js/jquery.scrollTo.js"></script>
 <script type="text/javascript" src="js/jquery.tubeplayer.js"></script>
 <script type="text/javascript" src="js/jquery-ui-1.7.2.custom.js" ></script>
 <script type="text/javascript" src="js/jquery.jcoverflip.js" ></script>
 <script type="text/javascript" src="js/jquery.alphanumeric.pack.js"></script>
+<script type="text/javascript" src="js/swfobject.js"></script>
 <script type="text/javascript" src="js/init.js"></script>
 <script type="text/javascript" src="js/home.js"></script>
 <script type="text/javascript">
@@ -44,13 +45,40 @@
 </script>
 </head>
 <body>
-<div class="content-wrapper">
+<div id="fb-root"></div>
+<script>
+
+  window.fbAsyncInit = function() {
+    FB.init({appId: '198511763547182', status: true, cookie: true,
+             xfbml: true});
+			 
+	 FB.getLoginStatus(function(response) {
+		if (response.session) {
+			// logged in and connected user, someone you know
+		//alert("YA ESTA LOGUEADO");
+		//shareFacebook();
+		}
+	});
+	
+	FB.Event.subscribe('auth.login', function(response) {
+		shareFacebook();
+	});
+  };
+  (function() {
+    var e = document.createElement('script'); e.async = true;
+    e.src = document.location.protocol +
+      '//connect.facebook.net/en_US/all.js';
+    document.getElementById('fb-root').appendChild(e);
+  }());
+
+</script>
+<div class="content-wrapper not-visible">
 <div class="wrapper">
 	<div class="header">
 		<div class="h-logo"></div>
 		<div class="h-social">
-			<a href="javascript:void(0)" class="s-facebook"></a>
-			<a href="javascript:void(0)" class="s-youtube"></a>
+			<a href="http://www.facebook.com/nosotras" target="_blank" class="s-facebook"></a>
+			<a href="http://www.youtube.com/canalnosotras" target="_blank" class="s-youtube"></a>
 		</div>
 		<ul class="h-menu">
 			<!--<li><a href="javascript:void(0)" class="on">Iniciar sesión</a></li>-->
@@ -79,12 +107,16 @@
 	<div id="contenedor_2" class="content-body">
 		<div class="content-body-hidden">
 			<div id="divInicio" class="content-body-item">
-				<div id="parallax" align="center"><img src="images/img-home-layer-0.png" id="myimage2" alt=""></div>
+				<div class="NosotrasCartels">
+					<div id="NosotrasCartels"></div>
+				</div>
+				<div class="nosotrasHome"><img src="images/img-home.png" width="851" height="427" alt="" /></div>
+				&nbsp;<!--<div id="parallax" align="center"><img src="images/img-home-layer-0.png" id="myimage2" alt=""></div>-->
 			</div>
 			<!-- ////////////////////// -->
 			<div id="divIntra1" class="content-body-item">
 				<div class="form1">
-					<h1>Ingresa la clave de tu empaque y participa del sorteo de <b>1 Grand Vitara, 1 Suzuki Swift y 1 iPod diario</b> que regala Nosotras.</h1>
+					<h1>Ingresa tus claves y participa del sorteo de <b>1 Grand Vitara, 1 Suzuki Swift y iPods</b> semanales que regala Nosotras.</h1>
 					<ul class="formulario1">
 						<li class="text">Correo electrónico:*</li>
 						<li class="textboxBG"><input id="txtEmail_1" name="txtEmail_1" type="text" /></li>
@@ -103,7 +135,7 @@
 						<li class="msg">Mensaje de error al ingresar email y/o fec. Nac</li>
 						<li class="botones">
 							<span class="msg">(*) Campos obliigatorios</span>
-							<a href="javascript:void(0)" class="btn-enviar" onclick="transicion()"></a>
+							<a href="javascript:void(0)" class="btn-enviar"></a>
 							<a href="javascript:void(0)" class="btn-borrar"></a>
 						</li>
 					</ul>
@@ -174,8 +206,8 @@
 					</ul>
 				</div>
 				<!-- ////////////////////// -->
-				<div class="form-captcha not-visible">
-					<h1>Ingresa la clave de tu empaque y participa del sorteo de<br /><b>un iPod diario y dos autos que regala Nosotras</b>.</h1>
+				<div class="form-captcha" style="display:none;">
+					<h1>Participa, ingresa la clave de tu empaque y entra al sorteo de iPods semanales<br />y dos autos que regala Nosotras.</h1>
 					<ul class="formulario3">
 						<li class="text">Ingresa tu clave<br />de empaque:</li>
 						<li class="textbox"><input id="" name="" type="text" /> <a href="javascript:void(0)" class="btn-interrogante" onclick="codEmpaque()"></a><span class="codigo-empaque hidden" style="visibility:hidden;"></span></li>
@@ -191,23 +223,23 @@
 					</ul>
 				</div>
 				<!-- ////////////////////// -->
-				<div class="form-clave-correcta not-visible">
+				<div class="form-clave-correcta" style="display:none;">
 					<p class="title"><span>Suerte,</span> Catherin Rivera</p>
 					<p class="message">Tu clave ha sido procesada satisfactoriamente.</p>
-					<p class="message"><span>Tienes</span> 2 opciones <span>para el sorteo del iPod de hoy</span></p>
-					<p class="message"><span>Tienes</span> 2 opciones <span>para el sorteo final de 1 Grand Vitara</span></p>
+					<p class="message"><span>Tienes</span> 2 opciones <span>para el sorteo de los iPods de esta semana</span></p>
+					<p class="message"><span>Tienes</span> 2 opciones <span>para el sorteo final de los autos</span></p>
 					<p class="message"><a href="javascript:void(0)" class="btn-ingresa-otra-clave"></a></p>
 				</div>
 				<!-- ////////////////////// -->
-				<div class="form-clave-ya-registrada not-visible">
+				<div class="form-clave-ya-registrada" style="display:none;">
 					<p class="title"><span>Lo sentimos</span> Catherin Rivera</p>
-					<p class="message">Esta clave ya ha sido ingresada.</p>
-					<p class="message"><span>Con anterioridad o en promociones anteriores.</span></p>
+					<p class="message">Esta clave ya ha sido ingresada</p>
+					<p class="message"><span>en ésta o en promociones anteriores.</span></p>
 					<p>&nbsp;</p>
 					<p class="message"><a href="javascript:void(0)" class="btn-ingresa-otra-clave"></a></p>
 				</div>
 				<!-- ////////////////////// -->
-				<div class="form-clave-no-valida not-visible">
+				<div class="form-clave-no-valida" style="display:none;">
 					<p class="title"><span>Lo sentimos</span> Catherin Rivera</p>
 					<p class="message">La clave ingresada no es válida.</p>
 					<p class="message"><span>Revisa si las has ingresado correctamente o <br />si el producto participa de la promoción</span></p>
@@ -218,11 +250,11 @@
 			<!-- ////////////////////// -->
 			<div id="divCompartir" class="content-body-item">
 				<div class="form-compartir">
-					<p class="title">¡Compártelo con todos!</p>
+					<p class="title">¡Compártelo con todas!</p>
 					<p class="message">¿Esta frase Nosotras va contigo?</p>
-					<p class="message"><span>¡Entonces compártela y participa del sorteo semanal!</span></p>
+					<p class="message"><span>¡¡Entonces compártela en tu muro y participa del sorteo de iPods y vales de Saga!!</span></p>
 					<p class="message"><img src="images/img-sticker.png" width="475" height="138" alt="" /></p>
-					<p class="message" align="right"><a href="javscript:void(0)" class="btn-compartir-facebook"></a></p>
+					<p class="message" align="right"><a href="javascript:void(0)" class="btn-compartir-facebook" onclick="loginFacebook()"></a></p>
 				</div>
 			</div>
 			<!-- ////////////////////// -->
@@ -270,7 +302,7 @@
 									</div>
 									<a href="javascript:void(0)" class="next"></a>
 								</div>
-								<p><span>*Todas tus claves te dan una opción para el sorteo diario. A mas claves ingresadas, más opciones de ganarlo.</span></p>
+								<p><span>*Todas tus claves te dan una opción para el sorteo semanal. A más claves ingresadas, más opciones de ganarlo.</span></p>
 							</li>
 						</ul>
 					</div>
@@ -279,7 +311,7 @@
 			<!-- ////////////////////// -->
 			<div id="divProductos" class="content-body-item">
 				<div class="form-productos">
-					<h1><b>¡Que ninguno se te escape!</b> Entérate qué productos Nosotras participan en la promoción. ¡¡A más códigos, más opciones de ganar!!</h1>
+					<h1><b>¡Que ninguno se te escape!</b> Entérate qué productos Nosotras participan en la promoción. ¡¡A más claves, más opciones de ganar!!</h1>
 					<div class="content-productos">
 						<a href="javascript:void(0)" class="flecha_izq_carousel_productos" onclick="moveToPrev(); return false;"></a>
 						<a href="javascript:void(0)" class="flecha_der_carousel_productos" onclick="moveToNext(); return false;"></a>
@@ -345,6 +377,7 @@
 		<div class="botonera">
 			<div class="botonera-mascara"></div>
 			<a href="javascript:void(0)" class="btn-comercial"></a>
+			<div class="legal">MIN  2011-0319439</div>
 			<ul class="btns-cycle">
 				<li><a href="javascript:void(0)" class="btn-bot-01" onmouseover="secCycle(1)" onmouseout="secCycleOut()"></a></li>
 				<li><a href="javascript:void(0)" class="btn-bot-02" onmouseover="secCycle(2)" onmouseout="secCycleOut()"></a></li>
@@ -368,6 +401,7 @@
 	</div>
 </div>
 <input id="txtAutoCycle" name="txtAutoCycle" type="hidden" value="0" />
+<input id="txtBGCycle" name="txtBGCycle" type="hidden" value="0" />
 <iframe id="iframe_ga" src="" width="10px" height="10px" allowtransparency="true"></iframe>
 </div>
 </body>

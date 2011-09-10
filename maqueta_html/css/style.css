@@ -8,6 +8,7 @@
 }
 
 body{
+	background:#000;
 }
 
 .bg-body{
@@ -129,19 +130,27 @@ p{ float:left; width:100%; }
 	}
 	/* ********* */
 	.content-body{
-		float:left;
 		position:absolute;
-		width:auto;
-		height:auto;
 		top:0;
 		left:0;
+		float:left;
+		width:auto;
+		height:auto;
 		overflow:hidden;
-		/*background:url(../images/bg-city.jpg) no-repeat 0 0;*/
+			}
+	#contenedor_1{
+		/*display:none;*/
+	}
+	#contenedor_2{
+		
 	}
 		.content-body-hidden{
 			float:left;
 			width:auto;
 			height:auto;
+			position:absolute;
+			top:0;
+			left:0;
 		}
 			.content-body-item{
 				float:left;
@@ -191,6 +200,16 @@ p{ float:left; width:100%; }
 				background:url(../images/btn-comercial.png) no-repeat 0 0;
 				margin:-20px 0 0 0;
 				left:10px;
+			}
+			.legal{
+				float:right;
+				position:absolute;
+				width:auto;
+				height:auto;
+				font:normal 10px Arial, Helvetica, sans-serif;
+				color:#fdafe2;
+				margin:-5px 0 0 0;
+				right:10px;
 			}
 		
 		.mascara-auto{
@@ -284,27 +303,47 @@ p{ float:left; width:100%; }
 		overflow:hidden;
 	}
 	.form1, .form2, .form3, .form-compartir, .form-captcha, .form-clave-correcta, .form-clave-ya-registrada, .form-clave-no-valida, .form-premios, .form-productos, .form-comercial{
-		margin:80px auto;
+		/*margin:80px auto;*/
+		position:relative;
+		top:50%;
+		left:50%;
 	}
 	.form1{
 		width:564px;
 		height:398px;
 		background:url(../images/bg-form-1.png) no-repeat 0 0;
+		margin:-199px 0 0 -282px;
 	}
+		.NosotrasCartels{
+			margin:0 auto;
+			width:772px;
+			height:267px;
+		}
+		.nosotrasHome{
+			position:relative;
+			left:50%;
+			bottom:-20px;
+			width:851px;
+			height:427px;
+			margin-left:-425px;
+		}
 	.form2{
 		width:547px;
 		height:381px;
 		background:url(../images/bg-form-2.png) no-repeat 0 0;
+		margin:-190px 0 0 -273px;
 	}
 	.form3{
 		width:651px;
 		height:381px;
 		background:url(../images/bg-form-3.png) no-repeat 0 0;
+		margin:-190px 0 0 -273px;
 	}
 	.form-captcha{
 		width:547px;
 		height:381px;
 		background:url(../images/bg-form-captcha.png) no-repeat 0 0;
+		margin:-190px 0 0 -273px;
 	}
 		.form1 h1{
 			float:left;
@@ -573,6 +612,7 @@ p{ float:left; width:100%; }
 		width:601px;
 		height:381px;
 		background:url(../images/bg-form-clave-correcta.png) no-repeat 0 0;
+		margin:-190px 0 0 -300px;
 	}
 		.form-clave-correcta p.title{
 			width:450px;
@@ -598,6 +638,7 @@ p{ float:left; width:100%; }
 		width:593px;
 		height:381px;
 		background:url(../images/bg-form-clave-ya-registrada.png) no-repeat 0 0;
+		margin:-190px 0 0 -296px;
 	}
 		.form-clave-ya-registrada p.title{
 			width:450px;
@@ -620,6 +661,7 @@ p{ float:left; width:100%; }
 		width:651px;
 		height:381px;
 		background:url(../images/bg-form-clave-no-valida.png) no-repeat 0 0;
+		margin:-190px 0 0 -325px;
 	}
 		.form-clave-no-valida p.title{
 			width:450px;
@@ -645,6 +687,7 @@ p{ float:left; width:100%; }
 		width:547px;
 		height:381px;
 		background:url(../images/bg-form-compartir.png) no-repeat 0 0;
+		margin:-190px 0 0 -273px;
 	}
 		.form-compartir p.title{
 			width:460px;
@@ -665,6 +708,7 @@ p{ float:left; width:100%; }
 		width:547px;
 		height:381px;
 		background:url(../images/bg-premios.png) no-repeat 0 0;
+		margin:-190px 0 0 -273px;
 	}
 		.content-tabs{
 			float:left;
@@ -766,6 +810,7 @@ p{ float:left; width:100%; }
 		width:547px;
 		height:381px;
 		background:url(../images/bg-productos.png) no-repeat 0 0;
+		margin:-190px 0 0 -273px;
 	}
 		.form-productos h1{
 			float:left;
@@ -819,6 +864,7 @@ p{ float:left; width:100%; }
 		width:600px;
 		height:701px;
 		background:url(../images/bg-comercial.png) no-repeat 0 0;
+		margin:-190px 0 0 -300px;
 	}
 		.form-comercial h1{
 			float:left;
@@ -856,7 +902,7 @@ p{ float:left; width:100%; }
 		ul.lista-ganadoras-h, ul.lista-ganadoras{
 			width:435px;
 			height:auto;
-			margin:70px 0 0 95px;
+			/*margin:70px 0 0 95px;*/
 		}
 		ul.lista-ganadoras{
 			/*height:150px;*/
@@ -865,10 +911,13 @@ p{ float:left; width:100%; }
 			ul.lista-ganadoras-h li{ color:#022c7a; }
 			ul.lista-ganadoras li{ color:#cc0c85; margin:3px 0 0 0; }
 			ul.lista-ganadoras-h li.fecha, ul.lista-ganadoras li.fecha{
-				width:105px;
+				width:375px; /* 105px */
+				color:#022c7a;
+				font-weight:bold;
+				margin-top:10px;
 			}
 			ul.lista-ganadoras-h li.ganadoras, ul.lista-ganadoras li.ganadoras{
-				width:260px;
+				width:375px; /* 260px */
 			}
 			
 	/* form bases */
