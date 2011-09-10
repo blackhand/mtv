@@ -3,7 +3,6 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 from django.core.validators import email_re
-from django.utils.safestring import SafeString
 from datetime import date
 
 from captcha import CaptchasDotNet
