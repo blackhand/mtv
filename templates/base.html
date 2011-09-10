@@ -14,24 +14,51 @@
         <link rel="shortcut icon" type="image/x-icon" href="{{ STATIC_URL }}favicon.ico"/>
         {% endblock %}
         {% block css %}
+        <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/queryLoader.css" />
         <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/style.css"/>
         <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/jquery.jscrollpane.css"/>
         <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/colorbox.css"/>
-        <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/queryLoader.css" />
         {% endblock %}
     </head>
 <body>
-<div class="content-wrapper">
+<div id="fb-root"></div>
+<script>
+
+  window.fbAsyncInit = function() {
+    FB.init({appId: '198511763547182', status: true, cookie: true,
+             xfbml: true});
+			 
+	 FB.getLoginStatus(function(response) {
+		if (response.session) {
+			// logged in and connected user, someone you know
+		//alert("YA ESTA LOGUEADO");
+		//shareFacebook();
+		}
+	});
+	
+	FB.Event.subscribe('auth.login', function(response) {
+		shareFacebook();
+	});
+  };
+  (function() {
+    var e = document.createElement('script'); e.async = true;
+    e.src = document.location.protocol +
+      '//connect.facebook.net/en_US/all.js';
+    document.getElementById('fb-root').appendChild(e);
+  }());
+</script>
+<div class="content-wrapper not-visible">
 <div class="wrapper">
 	<div class="header">
 		<div class="h-logo"></div>
 		<div class="h-social">
-			<a href="javascript:void(0)" class="s-facebook"></a>
-			<a href="javascript:void(0)" class="s-youtube"></a>
+			<a href="http://www.facebook.com/nosotras" target="_blank" class="s-facebook"></a>
+			<a href="http://www.youtube.com/canalnosotras" target="_blank" class="s-youtube"></a>
 		</div>
 		<ul class="h-menu">
-			<li><a id="ganadoras" href="ganadoras.html">Ganadoras</a></li>
-			<li><a id="bases" href="bases.html">Bases</a></li>
+			<!--<li><a href="javascript:void(0)" class="on">Iniciar sesión</a></li>-->
+			<!--<li><a href="javascript:void(0)" id="ganadoras">Ganadoras</a></li>-->
+            <li><a href="{{ STATIC_URL }}bases.html" id="bases">Bases</a></li>
 			<li><a id="contactenos" href="contact/send/">Contáctenos</a></li>
 		</ul>
 	</div>
@@ -75,13 +102,13 @@
     <script type="text/javascript" src="{{ STATIC_URL }}js/jquery.mousewheel.js"></script>
     <script type="text/javascript" src="{{ STATIC_URL }}js/jquery.cycle.all.2.74.js"></script>
     <script type="text/javascript" src="{{ STATIC_URL }}js/jquery.colorbox.js"></script>
-    <script type="text/javascript" src="{{ STATIC_URL }}js/jquery.imageparallax.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}js/jquery.imageparallax_.js"></script>
     <script type="text/javascript" src="{{ STATIC_URL }}js/jquery.scrollTo.js"></script>
-    <script type="text/javascript" src="{{ STATIC_URL }}js/jquery.backgroundparallax.js"></script>
     <script type="text/javascript" src="{{ STATIC_URL }}js/jquery.tubeplayer.js"></script>
     <script type="text/javascript" src="{{ STATIC_URL }}js/jquery-ui-1.7.2.custom.js" ></script>
     <script type="text/javascript" src="{{ STATIC_URL }}js/jquery.jcoverflip.js" ></script>
     <script type="text/javascript" src="{{ STATIC_URL }}js/jquery.alphanumeric.pack.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}js/swfobject.js"></script>
     <script type="text/javascript" src="{{ STATIC_URL }}js/clavePersonal.js"></script>
     <script type="text/javascript" src="{{ STATIC_URL }}js/init.js"></script>
     <script type="text/javascript" src="{{ STATIC_URL }}js/home.js"></script>

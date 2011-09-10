@@ -141,3 +141,6 @@ def validate_form_captcha(request):
     except Exception, e:
         return HttpResponse('error')
 
+
+def facebook_send(request):
+    return HttpResponse('pass')
