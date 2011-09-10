@@ -40,126 +40,13 @@
                 <!-- ////////////////////// -->
             </div>
             <!-- ////////////////////// -->
-            <div id="divCompartir" class="content-body-item">
-                <div class="form-compartir">
-                    <p class="title">¡Compártelo con todos!</p>
-                    <p class="message">¿Esta frase Nosotras va contigo?</p>
-                    <p class="message"><span>¡Entonces compártela y participa del sorteo semanal!</span></p>
-                    <p class="message"><img src="{{ STATIC_URL }}images/img-sticker.png" width="475" height="138" alt="" /></p>
-                    <p class="message" align="right"><a href="javscript:void(0)" class="btn-compartir-facebook"></a></p>
-                </div>
-            </div>
+            {% include 'main/_div_compartir.html' %}
             <!-- ////////////////////// -->
-            <div id="divPremios" class="content-body-item">
-                <div class="form-premios">
-                    <div class="content-tabs">
-                        <ul class="tabs-menu">
-                            <li class="tab-menu-suzuki-vitara">
-                                <a href="javascript:void(0)" class="tab-suzuki-vitara"></a>
-                                <a href="javascript:void(0)" class="tab-suzuki-swift"></a>
-                                <a href="javascript:void(0)" class="tab-ipod"></a>
-                            </li>
-                            <li class="tab-menu-suzuki-swift not-visible">
-                                <a href="javascript:void(0)" class="tab-suzuki-vitara"></a>
-                                <a href="javascript:void(0)" class="tab-suzuki-swift"></a>
-                                <a href="javascript:void(0)" class="tab-ipod"></a>
-                            </li>
-                            <li class="tab-menu-ipod not-visible">
-                                <a href="javascript:void(0)" class="tab-suzuki-vitara"></a>
-                                <a href="javascript:void(0)" class="tab-suzuki-swift"></a>
-                                <a href="javascript:void(0)" class="tab-ipod"></a>
-                            </li>
-                        </ul>
-                        <ul class="tabs-content">
-                            <li class="tab-bg-suzuki-vitara">
-                                <p>&nbsp;</p>
-                                <p>Gana una Grand Vitara o Suzuki Swift y siéntete libre de ir a donde quieras.</p>
-                                <p><span>¡Conoce cada auto de cerca!</span></p>
-                                <div class="img"><img src="{{ STATIC_URL }}images/img-premios-suzuki-vitara.png" width="527" height="194" alt="" /></div>
-                            </li>
-                            <li class="tab-bg-suzuki-swift not-visible">
-                                <p>&nbsp;</p>
-                                <p>Gana una Grand Vitara o Suzuki Swift y siéntete libre de ir a donde quieras.</p>
-                                <p><span>¡Conoce cada auto de cerca!</span></p>
-                                <div class="img"><img src="{{ STATIC_URL }}images/img-premios-suzuki-swift.png" width="527" height="194" alt="" /></div>
-                            </li>
-                            <li class="tab-bg-ipod not-visible">
-                                <p>&nbsp;</p>
-                                <p>Lleva tu música a todos lados con los iPods que Nosotras te regala.</p>
-                                <div class="content-cycle">
-                                    <a href="javascript:void(0)" class="prev"></a>
-                                    <div class="cycle">
-                                        <img src="{{ STATIC_URL }}images/img-premios-ipod-nano.png" width="447" height="173" alt="" />
-                                        <img src="{{ STATIC_URL }}images/img-premios-ipod-touch.png" width="447" height="173" alt="" />
-                                    </div>
-                                    <a href="javascript:void(0)" class="next"></a>
-                                </div>
-                                <p><span>*Todas tus claves te dan una opción para el sorteo diario. A mas claves ingresadas, más opciones de ganarlo.</span></p>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+            {% include 'main/_div_premios.html' %}
             <!-- ////////////////////// -->
-            <div id="divProductos" class="content-body-item">
-                <div class="form-productos">
-                    <h1><b>¡Que ninguno se te escape!</b> Entérate qué productos Nosotras participan en la promoción. ¡¡A más códigos, más opciones de ganar!!</h1>
-                    <div class="content-productos">
-                        <a href="javascript:void(0)" class="flecha_izq_carousel_productos" onclick="moveToPrev(); return false;"></a>
-                        <a href="javascript:void(0)" class="flecha_der_carousel_productos" onclick="moveToNext(); return false;"></a>
-                        <ul class="info-cartel">
-                            <li id="img1"><img src="{{ STATIC_URL }}images/img-prod-01-cartel.png" /></li>
-                            <li id="img2"><img src="{{ STATIC_URL }}images/img-prod-02-cartel.png" /></li>
-                            <li id="img3"><img src="{{ STATIC_URL }}images/img-prod-03-cartel.png" /></li>
-                            <li id="img4"><img src="{{ STATIC_URL }}images/img-prod-04-cartel.png" /></li>
-                            <li id="img5"><img src="{{ STATIC_URL }}images/img-prod-05-cartel.png" /></li>
-                            <li id="img6"><img src="{{ STATIC_URL }}images/img-prod-06-cartel.png" /></li>
-                            <li id="img7"><img src="{{ STATIC_URL }}images/img-prod-07-cartel.png" /></li>
-                            <li id="img8"><img src="{{ STATIC_URL }}images/img-prod-08-cartel.png" /></li>
-                            <li id="img9"><img src="{{ STATIC_URL }}images/img-prod-09-cartel.png" /></li>
-                            <li id="img10"><img src="{{ STATIC_URL }}images/img-prod-10-cartel.png" /></li>
-                            <li id="img11"><img src="{{ STATIC_URL }}images/img-prod-11-cartel.png" /></li>
-                            <li id="img12"><img src="{{ STATIC_URL }}images/img-prod-12-cartel.png" /></li>
-                            <li id="img13"><img src="{{ STATIC_URL }}images/img-prod-13-cartel.png" /></li>
-                            <li id="img14"><img src="{{ STATIC_URL }}images/img-prod-14-cartel.png" /></li>
-                            <li id="img15"><img src="{{ STATIC_URL }}images/img-prod-15-cartel.png" /></li>
-                            <li id="img16"><img src="{{ STATIC_URL }}images/img-prod-16-cartel.png" /></li>
-                            <li id="img17"><img src="{{ STATIC_URL }}images/img-prod-17-cartel.png" /></li>
-                            <li id="img18"><img src="{{ STATIC_URL }}images/img-prod-18-cartel.png" /></li>
-                        </ul>
-                        <ul id="flip">
-                            <li id="01"><img src="{{ STATIC_URL }}images/img-prod-01-paquete.png" /></li>
-                            <li id="02"><img src="{{ STATIC_URL }}images/img-prod-02-paquete.png" /></li>
-                            <li id="03"><img src="{{ STATIC_URL }}images/img-prod-03-paquete.png" /></li>
-                            <li id="04"><img src="{{ STATIC_URL }}images/img-prod-04-paquete.png" /></li>
-                            <li id="05"><img src="{{ STATIC_URL }}images/img-prod-05-paquete.png" /></li>
-                            <li id="06"><img src="{{ STATIC_URL }}images/img-prod-06-paquete.png" /></li>
-                            <li id="07"><img src="{{ STATIC_URL }}images/img-prod-07-paquete.png" /></li>
-                            <li id="08"><img src="{{ STATIC_URL }}images/img-prod-08-paquete.png" /></li>
-                            <li id="09"><img src="{{ STATIC_URL }}images/img-prod-09-paquete.png" /></li>
-                            <li id="10"><img src="{{ STATIC_URL }}images/img-prod-10-paquete.png" /></li>
-                            <li id="11"><img src="{{ STATIC_URL }}images/img-prod-11-paquete.png" /></li>
-                            <li id="12"><img src="{{ STATIC_URL }}images/img-prod-12-paquete.png" /></li>
-                            <li id="13"><img src="{{ STATIC_URL }}images/img-prod-13-paquete.png" /></li>
-                            <li id="14"><img src="{{ STATIC_URL }}images/img-prod-14-paquete.png" /></li>
-                            <li id="15"><img src="{{ STATIC_URL }}images/img-prod-15-paquete.png" /></li>
-                            <li id="16"><img src="{{ STATIC_URL }}images/img-prod-16-paquete.png" /></li>
-                            <li id="17"><img src="{{ STATIC_URL }}images/img-prod-17-paquete.png" /></li>
-                            <li id="18"><img src="{{ STATIC_URL }}images/img-prod-18-paquete.png" /></li>
-                        </ul>
-                        
-                    </div>
-                </div>
-            </div>
+            {% include 'main/_div_productos.html' %}
             <!-- ////////////////////// -->
-            <div id="divComercial" class="content-body-item">
-                <div class="form-comercial">
-                    <h1><b>Mira el comercial de la promo Nosotras</b><br />y prepárate para ser una chica Nosotras.</h1>
-                    <div class="content-comercial">
-                        <div id="youtube-player-container"></div>
-                    </div>
-                </div>
-            </div>
+            {% include 'main/_div_comercial.html' %}
             <!-- ////////////////////// -->
         </div>
     </div>

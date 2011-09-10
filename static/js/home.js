@@ -61,11 +61,11 @@ $(document).ready(function(){
 	});
 	$('#bases').click(function(){
 		$('#youtube-player-container').tubeplayer('stop');
-		$("#bases").colorbox({iframe:true, href:"bases.html", innerWidth:547, innerHeight:381});
+		$("#bases").colorbox({iframe:true, href:"static/bases.html", innerWidth:547, innerHeight:381});
 	});
 	$('#contactenos').click(function(){
 		$('#youtube-player-container').tubeplayer('stop');
-		$("#contactenos").colorbox({iframe:true, href:"contactenos.html", innerWidth:547, innerHeight:381});
+		$("#contactenos").colorbox({iframe:true, href:"contact/send", innerWidth:547, innerHeight:381});
 	});
 	
 	
