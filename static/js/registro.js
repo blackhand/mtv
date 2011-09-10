@@ -93,6 +93,9 @@ function validate_form_captcha() {
         $.get(
             '/validate_form_captcha',{'codigo': codigo,'random': random, 'password': password},
             function(data) {
+                $.get('/captcha', function(captcha) {
+                    $(".captcha").html(captcha);
+                });
                 if(data==='success') {
                     transicion('.form-captcha', '.form-clave-correcta');
                     return false;
@@ -101,9 +104,6 @@ function validate_form_captcha() {
                     transicion('.form-captcha', '.form-clave-ya-registrada');
                 };
                 if(data==='error') {
-                    $.get('/captcha', function(captcha) {
-                        $(".captcha").html(captcha);
-                    });
                     transicion('.form-captcha', '.form-clave-no-valida');
                 }
             });
