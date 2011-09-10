@@ -467,13 +467,13 @@ p{ float:left; width:100%; }
 					border:solid 1px #E127A3;
 				}
 					ul.formulario1 li.textboxBG select.cboDia{
-						width:60px;
+						width:55px;
 					}
 					ul.formulario1 li.textboxBG select.cboMes{
-						width:125px;
+						width:122px;
 					}
 					ul.formulario1 li.textboxBG select.cboAnio{
-						width:60px;
+						width:68px;
 						margin:0;
 					}
 			ul.formulario1 li.msg{
