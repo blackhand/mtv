@@ -17,6 +17,19 @@
 <script type="text/javascript" src="{{ STATIC_URL }}js/jquery.mousewheel.js"></script>
 <script type="text/javascript" src="{{ STATIC_URL }}js/jquery.cycle.all.2.74.js"></script>
 <script type="text/javascript" src="{{ STATIC_URL }}js/init.js"></script>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-9299552-15']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
 </head>
 <body class="not-bg">
 <div class="wrapper">
@@ -32,8 +45,8 @@
 			<li class="textbox">{{ contact_form.errors.second_name }}<input id="second_name" name="second_name" type="text" /></li>
 			<li class="text">E-mail:</li>
 			<li class="textbox">{{ contact_form.errors.email }}<input id="email" name="email" type="text" /></li>
-			<li class="text">Mensaje:</li>
-			<li style="height:auto;">{{ contact_form.errors.comment }}<textarea id="comment" name="comment"></textarea></li>
+            <li class="text">Mensaje:</li>
+			<li class="textbox" style="height:auto;">{{ contact_form.errors.comment }}<textarea id="comment" name="comment"></textarea></li>
 			<li class="botones">
 				<a href="javascript:void(0)" class="btn-enviar" onClick="$('#contacnt_form').submit();"></a>
 				<a href="javascript:void(0)" class="btn-borrar"></a>
