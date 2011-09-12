@@ -2,4 +2,4 @@
 from project.settings import *
 
 MEDIA_URL = '/manejatuvida/media/'
-STATIC_URL = '/maejatuvida/static/'
+STATIC_URL = '/manejatuvida/static/'
