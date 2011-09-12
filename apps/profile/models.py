@@ -91,3 +91,24 @@ class Winner(Profile):
         verbose_name_plural = 'Ganadoras'
 
 
+class TblUsuarios(models.Model):
+    pk_usuario = models.IntegerField(primary_key=True)
+    txt_nombre = models.CharField(max_length=300, blank=True)
+    txt_apellido_paterno = models.CharField(max_length=300, blank=True)
+    txt_apellido_materno = models.CharField(max_length=300, blank=True)
+    txt_correo = models.CharField(max_length=300, blank=True)
+    txt_tipo_doc = models.CharField(max_length=90, blank=True)
+    txt_num_doc = models.CharField(unique=True, max_length=24, blank=True)
+    date_nacimiento = models.DateField(null=True, blank=True)
+    txt_telefono = models.CharField(max_length=45, blank=True)
+    txt_celular = models.CharField(max_length=27, blank=True)
+    int_operador = models.CharField(max_length=3, blank=True)
+    txt_direccion = models.CharField(max_length=300, blank=True)
+    date_registro = models.DateTimeField(null=True, blank=True)
+    txt_departamento = models.CharField(max_length=240, blank=True)
+    txt_provincia = models.CharField(max_length=240, blank=True)
+    txt_distrito = models.CharField(max_length=450, blank=True)
+
+    class Meta:
+        db_table = u'tbl_usuarios'
+        managed = False

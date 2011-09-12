@@ -49,6 +49,13 @@ class CustomIndexDashboard(Dashboard):
         ))
         
         self.children.append(modules.ModelList(
+            _('Registros de Facebook'),
+            column=1,
+            collapsible=False,
+            models=('facebook.*',),
+        ))
+        
+        self.children.append(modules.ModelList(
             _('Administration de usuarios del CMS'),
             column=1,
             collapsible=False,
