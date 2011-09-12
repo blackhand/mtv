@@ -105,7 +105,7 @@ function validate_form_captcha() {
         var recaptcha_response_field = $("input[name='recaptcha_response_field']").val()
 
         $.post(
-            '/manejatuvida/validate_form_captcha',{'recaptcha_challenge_field': recaptcha_challenge_field,'recaptcha_response_field': recaptcha_response_field},
+            '/manejatuvida/validate_form_captcha',{'codigo':codigo,'recaptcha_challenge_field': recaptcha_challenge_field,'recaptcha_response_field': recaptcha_response_field},
             function(data) {
                 $.get('/manejatuvida/captcha', function(captcha) {
                     $(".captcha").html(captcha);

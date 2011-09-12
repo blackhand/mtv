@@ -119,7 +119,7 @@ def validate_form2(request):
 @csrf_exempt
 def validate_form_captcha(request):
 	
-    code = request.GET.get('codigo')
+    code = request.POST.get('codigo')
 
     recaptcha_challenge_field = request.POST.get('recaptcha_challenge_field')
     recaptcha_response_field = request.POST.get('recaptcha_response_field') 
