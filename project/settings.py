@@ -179,9 +179,8 @@ LOGGING = {
     }
 }
 
-# PROVISIONAL GMAIL ACCOUNT
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'themiseck.rock@gmail.com'
-EMAIL_HOST_PASSWORD = 'Dianateamo25'
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
+EMAIL_HOST = 'mail.nosotrasperu.com'
+EMAIL_HOST_USER = 'contacto@nosotrasperu.com'
+EMAIL_HOST_PASSWORD = 'tr1b4lp3ru'
+#EMAIL_PORT = 587
+#EMAIL_USE_TLS = True
