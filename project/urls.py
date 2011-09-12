@@ -5,29 +5,29 @@ from django.views.generic.simple import direct_to_template
 
 urlpatterns = patterns('',
     # Profile URLs
-    (r'^profile/', include('profile.urls')),
+    (r'^manejatuvida/profile/', include('profile.urls')),
     
     # Contact URLs
-    (r'^contact/', include('contact.urls')),
+    (r'^manejatuvida/contact/', include('contact.urls')),
 
     # Profile URLs
-    (r'^contest/', include('contest.urls')),
+    (r'^manejatuvida/contest/', include('contest.urls')),
     
     # Home URLs
-    (r'', include('main.urls')),
+    (r'^manejatuvida/', include('main.urls')),
     
     # Home URLs
-    (r'^ubigeo/', include('ubigeo.urls')),
+    (r'^manejatuvida/ubigeo/', include('ubigeo.urls')),
 
 	#Facebook
-    url(r'^facebook_save/', 'facebook.views.save', name='facebook_save'),
+    url(r'^manejatuvida/facebook_save/', 'facebook.views.save', name='facebook_save'),
 
 	#Directos GA
-	url(r'^login.html',direct_to_template,{'template':'ga/login.html'},name='login.html'),
-	url(r'^compartir.html',direct_to_template,{'template':'ga/compartir.html'},name='compartir.html'),
-	url(r'^premios.html',direct_to_template,{'template':'ga/premios.html'},name='premios.html'),
-	url(r'^empaques.html',direct_to_template,{'template':'ga/empaques.html'},name='empaques.html'),
-	url(r'^comercial.html',direct_to_template,{'template':'ga/comercial.html'},name='comercial.html'),
+	url(r'^manejatuvida/login.html',direct_to_template,{'template':'ga/login.html'},name='login.html'),
+	url(r'^manejatuvida/compartir.html',direct_to_template,{'template':'ga/compartir.html'},name='compartir.html'),
+	url(r'^manejatuvida/premios.html',direct_to_template,{'template':'ga/premios.html'},name='premios.html'),
+	url(r'^manejatuvida/empaques.html',direct_to_template,{'template':'ga/empaques.html'},name='empaques.html'),
+	url(r'^manejatuvida/comercial.html',direct_to_template,{'template':'ga/comercial.html'},name='comercial.html'),
 
 
 

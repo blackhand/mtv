@@ -327,7 +327,7 @@ function shareFacebook(){
 				FB.api('/me?fields=id,name,link,gender,birthday,email', function(response2) {
 						$.ajax({
 							type: 'POST',
-							url: "/facebook_save/",
+							url: "/manejatuvida/facebook_save/",
 							data: response2
 						});
 						/*

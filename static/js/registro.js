@@ -5,7 +5,7 @@ function validate_form1() {
     month = $('#cboMes_1').val();
     year = $('#cboAnio_1').val();
     $.get(
-        'validate_form1', 
+        '/manejatuvida/validate_form1', 
         {'email': email, 'day': day, 'month': month, 'year': year}, 
         function(data) {
             if(data==='error') {
@@ -14,7 +14,7 @@ function validate_form1() {
             }
             if(data==='exist') {
                 dest='.form-captcha';
-                $.get('captcha', function(captcha) {
+                $.get('/manejatuvida/captcha', function(captcha) {
                     $(".captcha").html(captcha);
                 })
             }
@@ -55,7 +55,7 @@ function validate_form2() {
     mobile = $('#txtTelfCel').val();
     doc_number = $('#txtDni').val();
     $.get(
-        'validate_form2', 
+        '/manejatuvida/validate_form2', 
         {'email': email, 'day': day, 'month': month, 'year': year, 'names': names, 'last_name1': last_name1, 'last_name2': last_name2, 'ubigeo': ubigeo, 'address': address, 'phone': phone, 'mobile': mobile, 'doc_number': doc_number}, 
         function(data) {
             if(data==='error') {
@@ -63,7 +63,7 @@ function validate_form2() {
                 return false;
             }
             if(data==='success') {
-                $.get('captcha', function(captcha) {
+                $.get('/manejatuvida/captcha', function(captcha) {
                     $(".captcha").html(captcha);
                 })
                 transicion('.form2', '.form-captcha');
@@ -88,8 +88,8 @@ function validate_form_captcha() {
     clave = new clavePersonal(codigo); //<-- clave nueva
     clave.validar();
     if(clave.esValida()) {
-        $('.profile_name').load('get_profile_name');
-        $.get('validate_generic', {'code': clave.getGenerico()}, function(data) {
+        $('.profile_name').load('/manejatuvida/get_profile_name');
+        $.get('/manejatuvida/validate_generic', {'code': clave.getGenerico()}, function(data) {
             if(data==='notvalid') {
                 transicion('.form-captcha', '.form-clave-no-valida');
             } else {
@@ -105,9 +105,9 @@ function validate_form_captcha() {
         var recaptcha_response_field = $("input[name='recaptcha_response_field']").val()
 
         $.post(
-            'validate_form_captcha',{'recaptcha_challenge_field': recaptcha_challenge_field,'recaptcha_response_field': recaptcha_response_field},
+            '/manejatuvida/validate_form_captcha',{'recaptcha_challenge_field': recaptcha_challenge_field,'recaptcha_response_field': recaptcha_response_field},
             function(data) {
-                $.get('captcha', function(captcha) {
+                $.get('/manejatuvida/captcha', function(captcha) {
                     $(".captcha").html(captcha);
                 });
                 if(data==='success') {
@@ -138,7 +138,7 @@ $(document).ready(function() {
     // Ubigeo magic here
     $('#cboDpto').change(function() {
 	  if($('#cboDpto').val() =='0')return false;
-	  $.get('ubigeo/get_ubigeo/'+$('#cboDpto').val()+"/", function(data){
+	  $.get('/manejatuvida/ubigeo/get_ubigeo/'+$('#cboDpto').val()+"/", function(data){
 	  	var provincias = jQuery.parseJSON(data);
 	  	$("select[name='cboProv'] > option").remove();
 	  	$("select[name='cboProv']").append('<option value="" selected="selected">[seleccionar]</option>');
@@ -151,7 +151,7 @@ $(document).ready(function() {
 	});
 	$('#cboProv').change(function() {
 	  if($('#cboProv').val() =='0')return false;
-	  $.get('ubigeo/get_ubigeo/'+$('#cboProv').val()+"/",function(data){
+	  $.get('/manejatuvida/ubigeo/get_ubigeo/'+$('#cboProv').val()+"/",function(data){
 	  	var distritos = jQuery.parseJSON(data)
 	  	$("select[name='cboDist'] > option").remove();
 	  	$("select[name='cboDist']").append('<option value="" selected="selected">[seleccionar]</option>');
