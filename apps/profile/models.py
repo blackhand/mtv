@@ -19,7 +19,7 @@ class Profile(models.Model):
     address         = models.CharField('direccion', max_length=64)
     home_phone      = models.CharField('telefono fijo', max_length=9)
     mobile_phone    = models.CharField('movil', max_length=9)
-    document_code   = models.CharField('DNI', max_length=8)
+    document_code   = models.CharField('DNI', max_length=8, unique=True)
     is_participant  = models.BooleanField('participa', default=False, editable=False)
     is_winner       = models.BooleanField('ganadora', default=False, editable=False)
 
