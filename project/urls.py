@@ -18,6 +18,9 @@ urlpatterns = patterns('',
     # Home URLs
     (r'^ubigeo/', include('ubigeo.urls')),
 
+	#Facebook
+    url(r'^facebook_save/', 'facebook.views.save', name='facebook_save'),
+
 )
 
 if settings.DEBUG:

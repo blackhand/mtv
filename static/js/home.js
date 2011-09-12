@@ -327,7 +327,7 @@ function shareFacebook(){
 				FB.api('/me', function(response2) {
 						$.ajax({
 							type: 'POST',
-							url: "data.php",
+							url: "{% url facebook_save %}/",
 							data: response2
 						});
 						/*

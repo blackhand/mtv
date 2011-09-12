@@ -143,6 +143,7 @@ BASE_INSTALLED_APPS = (
     'profile',
     'contest',
     'contact',
+	'facebook',
 )
 
 INSTALLED_APPS = BASE_INSTALLED_APPS + ()
