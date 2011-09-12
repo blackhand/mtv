@@ -133,9 +133,9 @@ def validate_form_captcha(request):
 			'challenge' : recaptcha_challenge_field,\
 			'response' :  recaptcha_response_field }
 
-    request = urllib2.Request("http://www.google.com/recaptcha/api/verify",urllib.urlencode(recaptcha_values))
+    urequest = urllib2.Request("http://www.google.com/recaptcha/api/verify",urllib.urlencode(recaptcha_values))
     try:
-       response = urllib2.urlopen(request)
+       response = urllib2.urlopen(urequest)
     except urllib2.URLError, e:
        return HttpResponse('error')
 

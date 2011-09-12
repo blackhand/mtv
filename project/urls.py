@@ -37,8 +37,8 @@ urlpatterns = patterns('',
 if settings.DEBUG:
     from django.views.static import serve
     urlpatterns += patterns('',
-            url(r'^media/(?P<path>.*)$',
+            url(r'^manejatuvida/media/(?P<path>.*)$',
                 serve, {'document_root': settings.MEDIA_ROOT, 'show_indexes': True}),
-            url(r'^static/(?P<path>.*)$',
+            url(r'^manejatuvida/static/(?P<path>.*)$',
                 serve, {'document_root': settings.STATIC_ROOT, 'show_indexes': True}),
 )
