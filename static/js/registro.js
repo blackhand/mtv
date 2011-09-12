@@ -88,6 +88,18 @@ function validate_form_captcha() {
     clave = new clavePersonal(codigo); //<-- clave nueva
     clave.validar();
     if(clave.esValida()) {
+        $('.profile_name').load('/get_profile_name');
+        $.get('/validate_generic', {'code': clave.getGenerico()}, function(data) {
+            if(data==='notvalid') {
+                transicion('.form-captcha', '.form-clave-no-valida');
+            } else {
+                if(data==='1') {
+                    $('.profile_options').html('1 opción');
+                } else {
+                    $('.profile_options').html('2 opciones');
+                }
+            };
+        });
         random = $('#random').val();
         password = $('#password').val();
         $.get(

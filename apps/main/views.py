@@ -138,8 +138,56 @@ def validate_form_captcha(request):
             return HttpResponse('success')
         else:
             raise Exception
+
     except Exception, e:
         return HttpResponse('error')
+
+
+def validate_generic(request):
+    code = request.GET.get('code')
+    generic = code[0:2]
+    generic_codes = {
+            'MC': 1,
+            'ME': 2,
+            'LP': 2,
+            'MF': 2,
+            'MR': 1,
+            'TR': 1,
+            'UE': 2,
+            'MJ': 1,
+            'MK': 1,
+            'ZE': 2,
+            'UF': 2,
+            'SL': 1,
+            'RN': 2,
+            'PA': 1,
+            'PC': 1,
+            'NW': 1,
+            'PT': 1,
+            'PZ': 1,
+            'PK': 1,
+            'YY': 1,
+            'RA': 1,
+            'PN': 1,
+            'C4': 1,
+            'C3': 1,
+            'PM': 1,
+            'YZ': 1,
+            'MZ': 1,
+            'NE': 1,
+            'MW': 1,
+            'MY': 1,
+    }
+    if generic in generic_codes:
+        return HttpResponse(generic_codes[generic])
+    else:
+        return HttpResponse('notvalid')
+
+
+def get_profile_name(request):
+    profile = Profile.objects.get(pk=request.session['profile_id'])
+    profile_name = profile.first_name + ' ' + profile.first_surname
+    return HttpResponse(profile_name)
 
 
 def facebook_send(request):
