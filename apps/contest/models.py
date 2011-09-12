@@ -12,7 +12,9 @@ class Option(models.Model):
     class Meta:
         verbose_name = 'opcion'
         verbose_name_plural = 'opciones'
-        
+
+    def __unicode__(self):
+        return u'%s - %s' % (self.participant, self.product_code)
 
 class Draw(models.Model):
     play_date = models.DateField()
