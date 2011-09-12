@@ -55,12 +55,12 @@ def validate_form1(request):
         return HttpResponse('error')
 
     try:
-        birthday = date(int(year), int(month), int(day))
+        birth_date = date(int(year), int(month), int(day))
     except:
         return HttpResponse('error')
 
     try:
-        profile = Profile.objects.get(email=email)
+        profile = Profile.objects.get(email=email, birth_date=birth_date)
         request.session['profile_id'] = profile.pk
         return HttpResponse('exist')
 
