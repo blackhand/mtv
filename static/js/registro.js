@@ -9,7 +9,7 @@ function validate_form1() {
         {'email': email, 'day': day, 'month': month, 'year': year}, 
         function(data) {
             if(data==='error') {
-                $('#msg').html('Correo o Fecha de nacimiento inviliada o en blanco');
+                $('#msg').html('Correo o Fecha de nacimiento invalida o en blanco');
                 return false;
             }
             if(data==='exist') {
@@ -59,7 +59,7 @@ function validate_form2() {
         {'email': email, 'day': day, 'month': month, 'year': year, 'names': names, 'last_name1': last_name1, 'last_name2': last_name2, 'ubigeo': ubigeo, 'address': address, 'phone': phone, 'mobile': mobile, 'doc_number': doc_number}, 
         function(data) {
             if(data==='error') {
-                $('#msg').html('Error en los datos de registro, por favor completar correctamente');
+                $('#msg_registro').html('Error en los datos de registro, por favor complete todos los campos obligatorios');
                 return false;
             }
             if(data==='success') {

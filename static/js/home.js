@@ -93,7 +93,7 @@ $(document).ready(function(){
 	
 	
 	// validar campos de texto
-	$('#txtNombres, #txtApePa, #txtApeMa, #txtDireccion').alpha();
+	$('#txtNombres, #txtApePa, #txtApeMa, #txtDireccion').alpha({allow:" ñÑáéíóúÁÉÍÓÚ"});
 	$('#txtTelfCasa, #txtTelfCel, #txtDni').numeric();
 	
 	
