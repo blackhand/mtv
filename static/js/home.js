@@ -123,7 +123,7 @@ $(document).ready(function(){
 		$("#contenedor_2").scrollTo('#divIntra1', 3000);
 		$('#youtube-player-container').tubeplayer('stop');
 		//
-		$('#iframe_ga').attr('src','login.html');
+		$('#iframe_ga').attr('src','/manejatuvida/login.html');
 		$('#iframe_ga').load();
 	});
 	$('a.btn-bot-03').click(function(){
@@ -132,7 +132,7 @@ $(document).ready(function(){
 		$("#contenedor_2").scrollTo('#divCompartir', 3000);
 		$('#youtube-player-container').tubeplayer('stop');
 		//
-		$('#iframe_ga').attr('src','compartir.html');
+		$('#iframe_ga').attr('src','/manejatuvida/compartir.html');
 		$('#iframe_ga').load();
 	});
 	$('a.btn-bot-04').click(function(){
@@ -141,7 +141,7 @@ $(document).ready(function(){
 		$("#contenedor_2").scrollTo('#divPremios', 3000);
 		$('#youtube-player-container').tubeplayer('stop');
 		//
-		$('#iframe_ga').attr('src','premios.html');
+		$('#iframe_ga').attr('src','/manejatuvida/premios.html');
 		$('#iframe_ga').load();
 	});
 	$('a.btn-bot-05').click(function(){
@@ -150,7 +150,7 @@ $(document).ready(function(){
 		$("#contenedor_2").scrollTo('#divProductos', 3000);
 		$('#youtube-player-container').tubeplayer('stop');
 		//
-		$('#iframe_ga').attr('src','empaques.html');
+		$('#iframe_ga').attr('src','/manejatuvida/empaques.html');
 		$('#iframe_ga').load();
 	});
 	$('a.btn-bot-06, .btn-comercial').click(function(){
@@ -159,7 +159,7 @@ $(document).ready(function(){
 		$("#contenedor_2").scrollTo('#divComercial', 3000);
 		$('#youtube-player-container').tubeplayer('play','5ILvSM7iGFk');
 		//
-		$('#iframe_ga').attr('src','comercial.html');
+		$('#iframe_ga').attr('src','/manejatuvida/comercial.html');
 		$('#iframe_ga').load();
 	});
 	
@@ -263,7 +263,7 @@ function ingresaClave(){
 	$("#contenedor_2").scrollTo('#divIntra1', 3000);
 	$('#youtube-player-container').tubeplayer('stop');
 	//
-	$('#iframe_ga').attr('src','login.html');
+	$('#iframe_ga').attr('src','/manejatuvida/login.html');
 	$('#iframe_ga').load();
 }
 

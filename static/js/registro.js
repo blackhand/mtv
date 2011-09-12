@@ -66,6 +66,10 @@ function validate_form2() {
                 $.get('/manejatuvida/captcha', function(captcha) {
                     $(".captcha").html(captcha);
                 })
+
+            $('#iframe_ga').attr('src','/manejatuvida/registro.html');
+            $('#iframe_ga').load();
+
                 transicion('.form2', '.form-captcha');
             }
         });
@@ -111,13 +115,19 @@ function validate_form_captcha() {
                     $(".captcha").html(captcha);
                 });
                 if(data==='success') {
+                    $('#iframe_ga').attr('src','/manejatuvida/codigo-correcto.html');
+                    $('#iframe_ga').load();
                     transicion('.form-captcha', '.form-clave-correcta');
                     return false;
                 };
                 if(data==='exist') {
+                    $('#iframe_ga').attr('src','/manejatuvida/codigo-incorrecto.html');
+                    $('#iframe_ga').load();
                     transicion('.form-captcha', '.form-clave-ya-registrada');
                 };
                 if(data==='error') {
+                    $('#iframe_ga').attr('src','/manejatuvida/codigo-ya-registrado.html');
+                    $('#iframe_ga').load();
                     transicion('.form-captcha', '.form-clave-no-valida');
                 }
             });
@@ -127,37 +137,37 @@ function validate_form_captcha() {
 }
 
 function transicion(source, dest){
-	$(source).fadeOut(500, function(){
-		$(dest).fadeIn(500);
-		$('.scroll-pane').jScrollPane();
-	});
+    $(source).fadeOut(500, function(){
+        $(dest).fadeIn(500);
+        $('.scroll-pane').jScrollPane();
+    });
 }
 
 
 $(document).ready(function() {
     // Ubigeo magic here
     $('#cboDpto').change(function() {
-	  if($('#cboDpto').val() =='0')return false;
-	  $.get('/manejatuvida/ubigeo/get_ubigeo/'+$('#cboDpto').val()+"/", function(data){
-	  	var provincias = jQuery.parseJSON(data);
-	  	$("select[name='cboProv'] > option").remove();
-	  	$("select[name='cboProv']").append('<option value="" selected="selected">[seleccionar]</option>');
-	  	$("select[name='cboDist'] > option").remove();
-	  	$("select[name='cboDist']").append('<option value="" selected="selected">[seleccionar]</option>');
-	  	for(var i in provincias){
-			$("select[name='cboProv']").append('<option value="'+provincias[i]['pk']+'">'+provincias[i]['fields']['name']+'</option>');
-	  	}
-	  })
-	});
-	$('#cboProv').change(function() {
-	  if($('#cboProv').val() =='0')return false;
-	  $.get('/manejatuvida/ubigeo/get_ubigeo/'+$('#cboProv').val()+"/",function(data){
-	  	var distritos = jQuery.parseJSON(data)
-	  	$("select[name='cboDist'] > option").remove();
-	  	$("select[name='cboDist']").append('<option value="" selected="selected">[seleccionar]</option>');
-	  	for(var i in distritos){
-			$("select[name='cboDist']").append('<option value="'+distritos[i]['pk']+'">'+distritos[i]['fields']['name']+'</option>');
-	  	}
-	  })
-	});
+      if($('#cboDpto').val() =='0')return false;
+      $.get('/manejatuvida/ubigeo/get_ubigeo/'+$('#cboDpto').val()+"/", function(data){
+        var provincias = jQuery.parseJSON(data);
+        $("select[name='cboProv'] > option").remove();
+        $("select[name='cboProv']").append('<option value="" selected="selected">[seleccionar]</option>');
+        $("select[name='cboDist'] > option").remove();
+        $("select[name='cboDist']").append('<option value="" selected="selected">[seleccionar]</option>');
+        for(var i in provincias){
+            $("select[name='cboProv']").append('<option value="'+provincias[i]['pk']+'">'+provincias[i]['fields']['name']+'</option>');
+        }
+      })
+    });
+    $('#cboProv').change(function() {
+      if($('#cboProv').val() =='0')return false;
+      $.get('/manejatuvida/ubigeo/get_ubigeo/'+$('#cboProv').val()+"/",function(data){
+        var distritos = jQuery.parseJSON(data)
+        $("select[name='cboDist'] > option").remove();
+        $("select[name='cboDist']").append('<option value="" selected="selected">[seleccionar]</option>');
+        for(var i in distritos){
+            $("select[name='cboDist']").append('<option value="'+distritos[i]['pk']+'">'+distritos[i]['fields']['name']+'</option>');
+        }
+      })
+    });
 })

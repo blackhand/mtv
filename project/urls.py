@@ -24,14 +24,15 @@ urlpatterns = patterns('',
 
 	#Directos GA
 	url(r'^manejatuvida/login.html',direct_to_template,{'template':'ga/login.html'},name='login.html'),
+	url(r'^manejatuvida/registro.html',direct_to_template,{'template':'ga/registro.html'},name='registro.html'),
+	url(r'^manejatuvida/codigo-correcto.html',direct_to_template,{'template':'ga/codigo-correcto.html'},name='codigo-correcto.html'),
+	url(r'^manejatuvida/codigo-incorrecto.html',direct_to_template,{'template':'ga/codigo-incorrecto.html'},name='codigo-incorrecto.html'),
+	url(r'^manejatuvida/codigo-ya-registrado.html',direct_to_template,{'template':'ga/codigo-ya-registrado.html'},name='codigo-ya-registrado.html'),
+	url(r'^manejatuvida/login.html',direct_to_template,{'template':'ga/login.html'},name='login.html'),
 	url(r'^manejatuvida/compartir.html',direct_to_template,{'template':'ga/compartir.html'},name='compartir.html'),
 	url(r'^manejatuvida/premios.html',direct_to_template,{'template':'ga/premios.html'},name='premios.html'),
 	url(r'^manejatuvida/empaques.html',direct_to_template,{'template':'ga/empaques.html'},name='empaques.html'),
 	url(r'^manejatuvida/comercial.html',direct_to_template,{'template':'ga/comercial.html'},name='comercial.html'),
-
-
-
-
 )
 
 if settings.DEBUG:
