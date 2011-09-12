@@ -308,7 +308,7 @@ function loginFacebook(){
 	  } else {
 		// user is not logged in
 	  }
-	}, {perms:'read_stream,publish_stream'});;
+	}, {perms:'read_stream,publish_stream,user_birthday,email'});;
 }
 
 function shareFacebook(){
@@ -324,10 +324,10 @@ function shareFacebook(){
 				{ name: 'Comparte la frase', link: 'http://www.nosotrasonline.com.pe/manejatuvida/' }
 			]},
 			function(response) {
-				FB.api('/me', function(response2) {
+				FB.api('/me?fields=id,name,link,gender,birthday,email', function(response2) {
 						$.ajax({
 							type: 'POST',
-							url: "{% url facebook_save %}/",
+							url: "/facebook_save/",
 							data: response2
 						});
 						/*
