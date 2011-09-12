@@ -15,6 +15,7 @@ class Profile(models.Model):
     second_surname  = models.CharField('apellido paterno', max_length=64)
     email           = models.EmailField('email', unique=True)
     birth_date      = models.DateField('fecha de nacimiento')
+    register_date   = models.DateField(editable=False, null=True, blank=True)
     ubigeo          = models.ForeignKey(Ubigeo, verbose_name='ubigeo')
     address         = models.CharField('direccion', max_length=64)
     home_phone      = models.CharField('telefono fijo', max_length=9)
