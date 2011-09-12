@@ -12,11 +12,15 @@
 <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/style.css" />
 <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/jquery.jscrollpane.css" />
 <script type="text/javascript" src="{{ STATIC_URL }}js/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="{{ STATIC_URL }}js/jquery.validate.js"></script>
 <script type="text/javascript" src="{{ STATIC_URL }}js/jquery.pngFix.js"></script>
 <script type="text/javascript" src="{{ STATIC_URL }}js/jquery.jscrollpane.min.js"></script>
 <script type="text/javascript" src="{{ STATIC_URL }}js/jquery.mousewheel.js"></script>
 <script type="text/javascript" src="{{ STATIC_URL }}js/jquery.cycle.all.2.74.js"></script>
 <script type="text/javascript" src="{{ STATIC_URL }}js/init.js"></script>
+<style>
+.errorHighlight { border: 1px solid #FF0000 !important; } .textinput { border:1px solid #E127A3 !important;}
+</style>
 <script type="text/javascript">
 
   var _gaq = _gaq || [];
@@ -29,6 +33,74 @@
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
   })();
 
+</script>
+<script>
+$(document).ready(function(){
+		
+		$("#first_name").addClass("textinput");
+		$("#second_name").addClass("textinput");
+		$("#email").addClass("textinput");
+		$("#comment").addClass("textinput");
+		
+		$.validator.setDefaults({
+		            invalidHandler: function(form, validator){
+				//clearTimeout(t)
+				//t=setTimeout("clearErrorMessage()",3000);
+				$(".txt_error").show()
+			 },
+			    errorPlacement: function(error, element) {  
+				$(element).attr({"title": error.append()});
+			    },
+			    highlight: function(element){
+				$("input").attr("style", "");
+				$("select").attr("style", "");
+				$(element).removeClass("textinput");
+				$(element).addClass("errorHighlight");
+			    },
+			    unhighlight: function(element){
+				$(element).removeClass("errorHighlight");
+				$(element).addClass("textinput");
+			    }
+
+		});
+
+	        $.validator.messages.required = ''
+		$("#contacnt_form").validate({
+			rules: {
+				first_name: {
+					required: true
+				},
+				second_name: {
+					required: true
+				},
+				email: {
+					required: true,
+					email: true
+				},
+				comment: {
+					required: true
+				}
+			
+			}
+		});
+
+	})
+
+function saveContact()
+{   
+	var is_valid = $("#contacnt_form").valid()     
+	if(is_valid)
+	{	
+
+		$("#contacnt_form").submit()
+		return true;
+	}
+	else
+	{
+	}	
+        
+        return false;
+}
 </script>
 </head>
 <body class="not-bg">
@@ -48,7 +120,7 @@
             <li class="text">Mensaje:</li>
 			<li class="textbox" style="height:auto;">{{ contact_form.errors.comment }}<textarea id="comment" name="comment"></textarea></li>
 			<li class="botones">
-				<a href="javascript:void(0)" class="btn-enviar" onClick="$('#contacnt_form').submit();"></a>
+				<a href="#" class="btn-enviar" onClick="saveContact(); return false;"></a>
 				<a href="javascript:void(0)" class="btn-borrar"></a>
 			</li>
 		</ul>
