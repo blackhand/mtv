@@ -1,4 +1,6 @@
                 <div class="form-captcha" style="display:none;">
+
+		
 					<h1>Participa, ingresa la clave de tu empaque y entra al sorteo de iPods semanales<br />y dos autos que regala Nosotras.</h1>
                     <ul class="formulario3">
                         <li class="text">Ingresa tu clave<br />de empaque:</li>
@@ -11,5 +13,33 @@
                         </li>
                         <li class="msg" style="font-weight:normal;width: 438px !important;">(*)Recuerda que participarán en el sorteo semanal las claves ingresadas desde las 00:00 horas del lunes hasta las 23:59 del día domingo de la misma semana. No son acumulables para las siguientes semanas.(**) Recuerda guardar el empaque con la clave.</li>
                     </ul>
+<div style="float: left;margin-left: 74px;margin-top: -157px;">
+<script type="text/javascript">
+ var RecaptchaOptions = {
+    theme : 'custom',
+    custom_theme_widget: 'recaptcha_widget'
+ };
+ </script>
+<!--<script type="text/javascript" src="http://www.google.com/recaptcha/api/challenge?k=6LcZB8gSAAAAAGSmdLCJuwtJbqpoR0DHZzXTY9Tm">
+  </script>-->
+<div id="recaptcha_widget" style="display:none">
+	<div style="margin-left:1px;" id="recaptcha_image"></div>
+	<input style="float: left;margin-left: 303px;margin-top: -20px;width: 95px;" type="text" id="recaptcha_response_field" name="recaptcha_response_field"> 
+	<div style="margin-left: 340px;margin-top: -53px;"><a href="javascript:Recaptcha.reload()"><img src="{{STATIC_URL}}images/reload_captcha.png" /></a></div> 
+	<span style="color: #96FDF6;font-family: Arial;font-size: 12px;font-weight: bold;margin-top: 39px;width: 200px !important;margin-top: 14px;float:left;">Ingresa las dos palabras</span>
+</div> 
+  <script type="text/javascript"
+    src="http://www.google.com/recaptcha/api/challenge?k=6LcZB8gSAAAAAGSmdLCJuwtJbqpoR0DHZzXTY9Tm">
+ </script>
+ <noscript>
+   <iframe src="http://www.google.com/recaptcha/api/noscript?k=6LcZB8gSAAAAAGSmdLCJuwtJbqpoR0DHZzXTY9Tm"
+        height="300" width="500" frameborder="0"></iframe><br>
+   <textarea name="recaptcha_challenge_field" rows="3" cols="40">
+   </textarea>
+   <input type="hidden" name="recaptcha_response_field"
+        value="manual_challenge">
+ </noscript>
+</div>
                 </div>
+
 

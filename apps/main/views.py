@@ -11,6 +11,11 @@ from ubigeo.models import Ubigeo
 from profile.models import Profile
 from contest.models import Option
 
+import urllib2
+import urllib
+from django.views.decorators.csrf import csrf_exempt 
+import pdb
+
 def not_implemented(request):
     return HttpResponse('NOT IMPLEMENTED')
 
@@ -111,21 +116,36 @@ def validate_form2(request):
     except:
         return HttpResponse('error')
 
-
+@csrf_exempt
 def validate_form_captcha(request):
-    code = request.GET.get('codigo')
-    random = request.GET.get('random')
-    password = request.GET.get('password')
 
-    captcha = CaptchasDotNet(
-            client   = 'tribalperu',
-            secret   = 'ZLydlgOUioIEeLb4p2dQYyyVGFYKRimzTwxcUSfT',
-            alphabet = 'abcdefghkmnopqrstuvwxyz',
-            letters  = 7,)
+    recaptcha_challenge_field = request.POST.get('recaptcha_challenge_field')
+    recaptcha_response_field = request.POST.get('recaptcha_response_field') 
+
+
+
+    #pdb.set_trace()
+
+    recaptcha_values = 	{'privatekey' :	'6LcZB8gSAAAAAAHbaCnh-_V82fZ5fvJials2X3Ae',\
+			'remoteip' : request.META['REMOTE_ADDR'] ,\
+			'challenge' : recaptcha_challenge_field,\
+			'response' :  recaptcha_response_field }
+
+    request = urllib2.Request("http://www.google.com/recaptcha/api/verify",urllib.urlencode(recaptcha_values))
+    try:
+       response = urllib2.urlopen(request)
+    except urllib2.URLError, e:
+       return HttpResponse('error')
+
+	
+    response = response.read()
+    is_accepted = response.split("\n")[0]
+
+    print is_accepted
 
     try:
         profile = Profile.objects.get(pk=request.session['profile_id'])
-        if captcha.validate(random) and captcha.verify(password):
+        if is_accepted == "true":
             try:
                 option = Option.objects.get(product_code = code)
                 return HttpResponse('exist')

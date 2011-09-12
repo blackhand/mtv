@@ -100,10 +100,12 @@ function validate_form_captcha() {
                 }
             };
         });
-        random = $('#random').val();
-        password = $('#password').val();
-        $.get(
-            '/validate_form_captcha',{'codigo': codigo,'random': random, 'password': password},
+
+        var recaptcha_challenge_field = $("input[name='recaptcha_challenge_field']").val()
+        var recaptcha_response_field = $("input[name='recaptcha_response_field']").val()
+
+        $.post(
+            '/validate_form_captcha',{'recaptcha_challenge_field': recaptcha_challenge_field,'recaptcha_response_field': recaptcha_response_field},
             function(data) {
                 $.get('/captcha', function(captcha) {
                     $(".captcha").html(captcha);

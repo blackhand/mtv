@@ -315,7 +315,7 @@ function shareFacebook(){
 	FB.api('/me', function(responseName) {
 		FB.ui({
 			method: 'feed',
-			name: 'Necesito espacio en la cochera para mi carronuevo... mmm ¿Cómo haríamos?',
+			name: 'Necesito espacio en la cochera para mi carro nuevo... mmm ¿Cómo haríamos?',
 			link: 'http://www.nosotrasonline.com.pe/manejatuvida/',
 			picture: 'http://dev.tribalperu.com/sancela_nosotras/images/share-facebook.jpg',
 			//caption: 'Yo quiero el iPod y los vales de Saga que regala Nosotras esta semana',
