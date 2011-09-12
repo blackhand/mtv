@@ -65,9 +65,12 @@ def validate_form1(request):
         return HttpResponse('error')
 
     try:
-        profile = Profile.objects.get(email=email, birth_date=birth_date)
-        request.session['profile_id'] = profile.pk
-        return HttpResponse('exist')
+        profile = Profile.objects.get(email=email)
+        if profile.birth_date == birth_date:
+            request.session['profile_id'] = profile.pk
+            return HttpResponse('exist')
+        else:
+            return HttpResponse('error')
 
     except Profile.DoesNotExist:
         return HttpResponse('not-exist')
