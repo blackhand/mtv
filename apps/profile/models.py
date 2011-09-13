@@ -68,10 +68,21 @@ class Registered(Profile):
 
 class ParticipantManager(models.Manager):
     def get_query_set(self):
-        return super(ParticipantManager, self).get_query_set().filter(is_participant=True)
+        return	super(ParticipantManager,self).get_query_set().filter(option__gt=0)
 
 
 class Participant(Profile):
+	
+    def get_user_code(self):
+		option = self.option_set.all()
+		codes = ""
+		for o in option:
+			codes += "Codigo: "+o.product_code+" - Fecha: "+str(o.register_date)+str('<br>')
+		return codes
+
+    get_user_code.short_description = "Empaques"
+    get_user_code.allow_tags = True
+
     objects = ParticipantManager()
     class Meta:
         proxy = True

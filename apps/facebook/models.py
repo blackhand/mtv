@@ -8,5 +8,12 @@ class FacebookUser(models.Model):
 	email = models.CharField(max_length=255,verbose_name="Email de	usuario")
 	gender = models.CharField(max_length=255,verbose_name="Genero")
 	birthday = models.DateField()
-	created_date = models.DateTimeField(auto_now_add=True)
+	created_date = models.DateTimeField(auto_now_add=True,verbose_name="Fecha de creacion")
+
+	class Meta:
+		verbose_name = 'Usuario Facebook'
+        verbose_name_plural = 'Usuarios de Facebook'
+
+	def __unicode__(self):
+		return self.name
 
