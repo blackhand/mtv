@@ -3,7 +3,7 @@ mtv=/home/mordonez/repositories/mtv CD=. filter="*.py" {
  bootstrap.py
 apps=apps {
   __init__.py
-e facebook=facebook {
+  facebook=facebook {
   __init__.py
   admin.py
   models.py

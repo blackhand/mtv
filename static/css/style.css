@@ -302,7 +302,7 @@ p{ float:left; width:100%; }
 		margin-top:270px;
 		overflow:hidden;
 	}
-	.form1, .form2, .form3, .form-compartir, .form-captcha, .form-clave-correcta, .form-clave-ya-registrada, .form-clave-no-valida, .form-premios, .form-productos, .form-comercial{
+	.form1, .form2, .form3, .form-compartir, .form-captcha, .form-clave-correcta, .form-clave-ya-registrada, .form-clave-no-valida,.form-clave-captcha-no-valida, .form-premios, .form-productos, .form-comercial{
 		/*margin:80px auto;*/
 		position:relative;
 		top:50%;
@@ -674,6 +674,30 @@ p{ float:left; width:100%; }
 				color:#fd98d9;
 			}
 		.form-clave-no-valida p.message{
+			width:280px;
+			font:normal 15px Arial, Helvetica, sans-serif;
+			color:#FFF;
+			text-align:center;
+			margin:5px 0 0 178px;
+		}
+
+	.form-clave-captcha-no-valida{
+		width:651px;
+		height:381px;
+		background:url(../images/bg-form-clave-no-valida.png) no-repeat 0 0;
+		margin:-190px 0 0 -325px;
+	}
+		.form-clave-captcha-no-valida p.title{
+			width:450px;
+			height:30px;
+			font:normal 18px Arial, Helvetica, sans-serif;
+			color:#FFF;
+			margin:68px 0 60px 85px;
+		}
+			.form-clave-captcha-no-valida p.title span{
+				color:#fd98d9;
+			}
+		.form-clave-captcha-no-valida p.message{
 			width:280px;
 			font:normal 15px Arial, Helvetica, sans-serif;
 			color:#FFF;

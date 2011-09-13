@@ -162,7 +162,7 @@ def validate_form_captcha(request):
                     product_code = code)
             return HttpResponse('success')
         else:
-            raise Exception
+            return HttpResponse('captcha_error')
 
     except Exception, e:
         return HttpResponse('error')

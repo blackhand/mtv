@@ -40,6 +40,12 @@ function clean_form1() {
 
 }
 
+function clean_form_captcha()
+{
+    $('#recaptcha_response_field').val('');
+    $('#codigoEmpaque').val('');
+}
+
 function validate_form2() {
     // register
     email = $('#txtEmail_2').val();
@@ -91,11 +97,16 @@ function validate_form_captcha() {
     codigo = $('#codigoEmpaque').val()
     clave = new clavePersonal(codigo); //<-- clave nueva
     clave.validar();
+	$('.profile_name').each(function(index) {
+		$(this).load('/manejatuvida/get_profile_name');
+	});
     if(clave.esValida()) {
-        $('.profile_name').load('/manejatuvida/get_profile_name');
+        //$('.profile_name').load('/manejatuvida/get_profile_name');
+	
         $.get('/manejatuvida/validate_generic', {'code': clave.getGenerico()}, function(data) {
             if(data==='notvalid') {
                 transicion('.form-captcha', '.form-clave-no-valida');
+		return false;
             } else {
                 if(data==='1') {
                     $('.profile_options').html('1 opción');
@@ -129,6 +140,11 @@ function validate_form_captcha() {
                     $('#iframe_ga').attr('src','/manejatuvida/codigo-ya-registrado.html');
                     $('#iframe_ga').load();
                     transicion('.form-captcha', '.form-clave-no-valida');
+                }
+		 if(data==='captcha_error') {
+                    $('#iframe_ga').attr('src','/manejatuvida/codigo-captcha-error.html');
+                    $('#iframe_ga').load();
+                    transicion('.form-captcha', '.form-clave-captcha-no-valida');
                 }
             });
     } else {
